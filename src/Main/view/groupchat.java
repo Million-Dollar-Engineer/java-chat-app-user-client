@@ -587,7 +587,7 @@ public class groupchat extends javax.swing.JFrame {
                 homeExit(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel3MousePressed(evt);
+                homeMousePressed(evt);
             }
         });
 
@@ -597,8 +597,7 @@ public class groupchat extends javax.swing.JFrame {
             homebtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(homebtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(chatLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(chatLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         homebtnLayout.setVerticalGroup(
             homebtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -613,6 +612,9 @@ public class groupchat extends javax.swing.JFrame {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 chatExit(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                chatMoousePressed(evt);
+            }
         });
 
         chatLabel7.setBackground(new java.awt.Color(128, 190, 183));
@@ -626,7 +628,7 @@ public class groupchat extends javax.swing.JFrame {
                 chatLabel7MouseClicked(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel7MousePressed(evt);
+                chatboxMousePressed(evt);
             }
         });
 
@@ -636,8 +638,7 @@ public class groupchat extends javax.swing.JFrame {
             chatbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(chatbtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(chatLabel7)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addComponent(chatLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         chatbtnLayout.setVerticalGroup(
             chatbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -671,9 +672,7 @@ public class groupchat extends javax.swing.JFrame {
         groupbtn.setLayout(groupbtnLayout);
         groupbtnLayout.setHorizontalGroup(
             groupbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(groupbtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(chatLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(chatLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
         );
         groupbtnLayout.setVerticalGroup(
             groupbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -699,7 +698,7 @@ public class groupchat extends javax.swing.JFrame {
                 favoutiteExit(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel9MousePressed(evt);
+                favouriteMousePressed(evt);
             }
         });
 
@@ -735,7 +734,7 @@ public class groupchat extends javax.swing.JFrame {
                 otherExit(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel10MousePressed(evt);
+                otherScreenMousePressed(evt);
             }
         });
 
@@ -771,7 +770,7 @@ public class groupchat extends javax.swing.JFrame {
                 logoutExit(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel11MousePressed(evt);
+                logoutMousePressed(evt);
             }
         });
 
@@ -841,17 +840,32 @@ public class groupchat extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void chatLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel3MousePressed
+    private void homeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel3MousePressed
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new homeScreen().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_homeMousePressed
 
     private void chatLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel7MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_chatLabel7MouseClicked
 
-    private void chatLabel7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel7MousePressed
+    private void chatboxMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatboxMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel7MousePressed
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new chatbox().setVisible(true);
+            }
+        });
+        
+    }//GEN-LAST:event_chatboxMousePressed
 
     private void chatLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel8MouseClicked
         // TODO add your handling code here:
@@ -865,25 +879,46 @@ public class groupchat extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_chatLabel9MouseClicked
 
-    private void chatLabel9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel9MousePressed
+    private void favouriteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favouriteMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel9MousePressed
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new favourite().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_favouriteMousePressed
 
     private void chatLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel10MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_chatLabel10MouseClicked
 
-    private void chatLabel10MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel10MousePressed
+    private void otherScreenMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_otherScreenMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel10MousePressed
+                dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new otherScreen().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_otherScreenMousePressed
 
     private void chatLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel11MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_chatLabel11MouseClicked
 
-    private void chatLabel11MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel11MousePressed
+    private void logoutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel11MousePressed
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new loginForm().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_logoutMousePressed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
@@ -924,12 +959,12 @@ public class groupchat extends javax.swing.JFrame {
 
     private void menuFriendMouseEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuFriendMouseEnter
         // TODO add your handling code here:
-        resetColor(menuFriend);
+        //resetColor(menuFriend);
     }//GEN-LAST:event_menuFriendMouseEnter
 
     private void MenuFriendExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuFriendExit
         // TODO add your handling code here:
-        setColor(menuFriend);
+        //setColor(menuFriend);
     }//GEN-LAST:event_MenuFriendExit
 
     private void homeEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeEnter
@@ -939,53 +974,53 @@ public class groupchat extends javax.swing.JFrame {
 
     private void homeExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeExit
         // TODO add your handling code here:
-        resetColor(homebtn);
+       // resetColor(homebtn);
     }//GEN-LAST:event_homeExit
 
     private void groupExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_groupExit
         // TODO add your handling code here:
-        resetColor(groupbtn);
+       // resetColor(groupbtn);
     }//GEN-LAST:event_groupExit
 
     private void favouriteEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favouriteEnter
         // TODO add your handling code here:
-        setColor(favouritebtn);
+       // setColor(favouritebtn);
     }//GEN-LAST:event_favouriteEnter
 
     private void favoutiteExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favoutiteExit
         // TODO add your handling code here:
-        resetColor(favouritebtn);
+        //resetColor(favouritebtn);
     }//GEN-LAST:event_favoutiteExit
 
     private void otherEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_otherEnter
         // TODO add your handling code here:
-        setColor(otherbtn);
+       // setColor(otherbtn);
 
     }//GEN-LAST:event_otherEnter
 
     private void otherExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_otherExit
-        // TODO add your handling code here:
-        resetColor(otherbtn);
+      //  // TODO add your handling code here:
+       // resetColor(otherbtn);
     }//GEN-LAST:event_otherExit
 
     private void logoutEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutEnter
         // TODO add your handling code here:
-        setColor(logoutbtn);
+      //  setColor(logoutbtn);
     }//GEN-LAST:event_logoutEnter
 
     private void logoutExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutExit
         // TODO add your handling code here:
-        resetColor(logoutbtn);
+        //resetColor(logoutbtn);
     }//GEN-LAST:event_logoutExit
 
     private void chatEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatEnter
         // TODO add your handling code here:
-        setColor(chatbtn);
+       // setColor(chatbtn);
     }//GEN-LAST:event_chatEnter
 
     private void chatExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatExit
         // TODO add your handling code here:
-        resetColor(chatbtn);
+       // resetColor(chatbtn);
     }//GEN-LAST:event_chatExit
 
     private void user2Enter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user2Enter
@@ -1070,6 +1105,17 @@ public class groupchat extends javax.swing.JFrame {
         setColor(user1);
         setColor(user3);
     }//GEN-LAST:event_user4Press
+
+    private void chatMoousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatMoousePressed
+        // TODO add your handling code here:
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new chatbox().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_chatMoousePressed
 
 
     void setColor(JPanel label) {

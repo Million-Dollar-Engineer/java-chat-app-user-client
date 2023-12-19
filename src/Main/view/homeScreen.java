@@ -125,7 +125,7 @@ public class homeScreen extends javax.swing.JFrame {
                 chatLabel7MouseClicked(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel7MousePressed(evt);
+                chatMousePressed(evt);
             }
         });
 
@@ -156,7 +156,7 @@ public class homeScreen extends javax.swing.JFrame {
                 chatLabel8MouseClicked(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel8MousePressed(evt);
+                groupchatMousePressed(evt);
             }
         });
 
@@ -186,7 +186,7 @@ public class homeScreen extends javax.swing.JFrame {
                 chatLabel9MouseClicked(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel9MousePressed(evt);
+                favouriteMousePressed(evt);
             }
         });
 
@@ -216,7 +216,7 @@ public class homeScreen extends javax.swing.JFrame {
                 chatLabel10MouseClicked(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel10MousePressed(evt);
+                otherScreenMousePressed(evt);
             }
         });
 
@@ -246,7 +246,7 @@ public class homeScreen extends javax.swing.JFrame {
                 chatLabel11MouseClicked(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel11MousePressed(evt);
+                logoutMousePressed(evt);
             }
         });
 
@@ -328,41 +328,76 @@ public class homeScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_chatLabel7MouseClicked
 
-    private void chatLabel7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel7MousePressed
+    private void chatMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel7MousePressed
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new chatbox().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_chatMousePressed
 
     private void chatLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel8MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_chatLabel8MouseClicked
 
-    private void chatLabel8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel8MousePressed
+    private void groupchatMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_groupchatMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel8MousePressed
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new groupchat().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_groupchatMousePressed
 
     private void chatLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel9MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_chatLabel9MouseClicked
 
-    private void chatLabel9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel9MousePressed
+    private void favouriteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favouriteMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel9MousePressed
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new favourite().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_favouriteMousePressed
 
     private void chatLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel10MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_chatLabel10MouseClicked
 
-    private void chatLabel10MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel10MousePressed
+    private void otherScreenMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_otherScreenMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel10MousePressed
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new otherScreen().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_otherScreenMousePressed
 
     private void chatLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel11MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_chatLabel11MouseClicked
 
-    private void chatLabel11MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel11MousePressed
+    private void logoutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel11MousePressed
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new loginForm().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_logoutMousePressed
 
 
     void setColor(JPanel label) {

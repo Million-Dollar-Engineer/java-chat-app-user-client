@@ -60,13 +60,11 @@ public class chatbox extends javax.swing.JFrame {
         menuFriend = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
-        emoji = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        attach = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
+        sendMessage = new javax.swing.JTextField();
         send = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        area = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -98,7 +96,7 @@ public class chatbox extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(128, 161, 183));
 
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField1.setText("Seach here");
+        jTextField1.setText("Search here");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -396,7 +394,7 @@ public class chatbox extends javax.swing.JFrame {
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(menuFriend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel12Layout.setVerticalGroup(
@@ -412,66 +410,12 @@ public class chatbox extends javax.swing.JFrame {
 
         jPanel13.setBackground(new java.awt.Color(128, 190, 183));
 
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        sendMessage.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        sendMessage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                sendMessageActionPerformed(evt);
             }
         });
-
-        emoji.setBackground(new java.awt.Color(128, 190, 183));
-
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-smile-30 (1).png"))); // NOI18N
-        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                emojiMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                emojiMouseExit(evt);
-            }
-        });
-
-        javax.swing.GroupLayout emojiLayout = new javax.swing.GroupLayout(emoji);
-        emoji.setLayout(emojiLayout);
-        emojiLayout.setHorizontalGroup(
-            emojiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(emojiLayout.createSequentialGroup()
-                .addComponent(jLabel12)
-                .addGap(0, 1, Short.MAX_VALUE))
-        );
-        emojiLayout.setVerticalGroup(
-            emojiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        attach.setBackground(new java.awt.Color(128, 190, 183));
-
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-add-link-30.png"))); // NOI18N
-        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                attachMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                attachMouseExit(evt);
-            }
-        });
-
-        javax.swing.GroupLayout attachLayout = new javax.swing.GroupLayout(attach);
-        attach.setLayout(attachLayout);
-        attachLayout.setHorizontalGroup(
-            attachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(attachLayout.createSequentialGroup()
-                .addComponent(jLabel14)
-                .addGap(0, 1, Short.MAX_VALUE))
-        );
-        attachLayout.setVerticalGroup(
-            attachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, attachLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel14))
-        );
 
         send.setBackground(new java.awt.Color(128, 190, 183));
 
@@ -483,6 +427,9 @@ public class chatbox extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 sendMouseExit(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                sendMessageToServer(evt);
             }
         });
 
@@ -508,12 +455,8 @@ public class chatbox extends javax.swing.JFrame {
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(emoji, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(attach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2)
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addComponent(sendMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(send, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -521,15 +464,17 @@ public class chatbox extends javax.swing.JFrame {
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(attach, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(emoji, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(sendMessage)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(send, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        area.setColumns(20);
+        area.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        area.setRows(5);
+        jScrollPane1.setViewportView(area);
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -537,12 +482,15 @@ public class chatbox extends javax.swing.JFrame {
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
+                .addComponent(jScrollPane1)
+                .addGap(0, 0, 0)
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -587,7 +535,7 @@ public class chatbox extends javax.swing.JFrame {
                 homeExit(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel3MousePressed(evt);
+                homeScreenMousePressed(evt);
             }
         });
 
@@ -597,8 +545,7 @@ public class chatbox extends javax.swing.JFrame {
             homebtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(homebtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(chatLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(chatLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         homebtnLayout.setVerticalGroup(
             homebtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -663,7 +610,7 @@ public class chatbox extends javax.swing.JFrame {
                 groupExit(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel8MousePressed(evt);
+                groupScreenMousePressed(evt);
             }
         });
 
@@ -699,7 +646,7 @@ public class chatbox extends javax.swing.JFrame {
                 favoutiteExit(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel9MousePressed(evt);
+                favouriteScreenMousePressed(evt);
             }
         });
 
@@ -735,7 +682,7 @@ public class chatbox extends javax.swing.JFrame {
                 otherExit(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel10MousePressed(evt);
+                otherScreenMousePressed(evt);
             }
         });
 
@@ -771,7 +718,7 @@ public class chatbox extends javax.swing.JFrame {
                 logoutExit(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel11MousePressed(evt);
+                logoutMousePressed(evt);
             }
         });
 
@@ -841,9 +788,17 @@ public class chatbox extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void chatLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel3MousePressed
+    private void homeScreenMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeScreenMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel3MousePressed
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new homeScreen().setVisible(true);
+            }
+        });
+        
+    }//GEN-LAST:event_homeScreenMousePressed
 
     private void chatLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel7MouseClicked
         // TODO add your handling code here:
@@ -857,66 +812,73 @@ public class chatbox extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_chatLabel8MouseClicked
 
-    private void chatLabel8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel8MousePressed
+    private void groupScreenMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_groupScreenMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel8MousePressed
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+           @Override 
+           public void run() {
+               new groupchat().setVisible(true);
+           }
+        });
+    }//GEN-LAST:event_groupScreenMousePressed
 
     private void chatLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel9MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_chatLabel9MouseClicked
 
-    private void chatLabel9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel9MousePressed
+    private void favouriteScreenMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favouriteScreenMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel9MousePressed
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+           @Override 
+           public void run() {
+               new favourite().setVisible(true);
+           }
+        });
+    }//GEN-LAST:event_favouriteScreenMousePressed
 
     private void chatLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel10MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_chatLabel10MouseClicked
 
-    private void chatLabel10MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel10MousePressed
+    private void otherScreenMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_otherScreenMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel10MousePressed
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run(){
+                new otherScreen().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_otherScreenMousePressed
 
     private void chatLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel11MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_chatLabel11MouseClicked
 
-    private void chatLabel11MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel11MousePressed
+    private void logoutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel11MousePressed
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run(){
+                new loginForm().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_logoutMousePressed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void sendMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendMessageActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void emojiMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emojiMouseEntered
-        // TODO add your handling code here:
-        setColor(emoji);
-    }//GEN-LAST:event_emojiMouseEntered
-
-    private void emojiMouseExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emojiMouseExit
-        // TODO add your handling code here:        
-        resetColor(emoji);
-    }//GEN-LAST:event_emojiMouseExit
-
-    private void attachMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_attachMouseEntered
-        // TODO add your handling code here:
-        setColor(attach);
-
-    }//GEN-LAST:event_attachMouseEntered
-
-    private void attachMouseExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_attachMouseExit
-        // TODO add your handling code here:
-        resetColor(attach);
-    }//GEN-LAST:event_attachMouseExit
+    }//GEN-LAST:event_sendMessageActionPerformed
 
     private void sendMouseEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sendMouseEnter
         // TODO add your handling code here:
-        setColor(send);
+        //setColor(send);
     }//GEN-LAST:event_sendMouseEnter
 
     private void sendMouseExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sendMouseExit
@@ -924,48 +886,48 @@ public class chatbox extends javax.swing.JFrame {
 
     private void menuFriendMouseEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuFriendMouseEnter
         // TODO add your handling code here:
-        resetColor(menuFriend);
+        //resetColor(menuFriend);
     }//GEN-LAST:event_menuFriendMouseEnter
 
     private void MenuFriendExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuFriendExit
         // TODO add your handling code here:
-        setColor(menuFriend);
+       // setColor(menuFriend);
     }//GEN-LAST:event_MenuFriendExit
 
     private void homeEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeEnter
         // TODO add your handling code here:
-        setColor(homebtn);
+        //setColor(homebtn);
     }//GEN-LAST:event_homeEnter
 
     private void homeExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeExit
         // TODO add your handling code here:
-        resetColor(homebtn);
+        //resetColor(homebtn);
     }//GEN-LAST:event_homeExit
 
     private void groupExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_groupExit
         // TODO add your handling code here:
-        resetColor(groupbtn);
+        //resetColor(groupbtn);
     }//GEN-LAST:event_groupExit
 
     private void favouriteEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favouriteEnter
         // TODO add your handling code here:
-        setColor(favouritebtn);
+        //setColor(favouritebtn);
     }//GEN-LAST:event_favouriteEnter
 
     private void favoutiteExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favoutiteExit
         // TODO add your handling code here:
-        resetColor(favouritebtn);
+        //resetColor(favouritebtn);
     }//GEN-LAST:event_favoutiteExit
 
     private void otherEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_otherEnter
         // TODO add your handling code here:
-        setColor(otherbtn);
+        //setColor(otherbtn);
 
     }//GEN-LAST:event_otherEnter
 
     private void otherExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_otherExit
         // TODO add your handling code here:
-        resetColor(otherbtn);
+        //resetColor(otherbtn);
     }//GEN-LAST:event_otherExit
 
     private void logoutEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutEnter
@@ -975,17 +937,17 @@ public class chatbox extends javax.swing.JFrame {
 
     private void logoutExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutExit
         // TODO add your handling code here:
-        resetColor(logoutbtn);
+        //resetColor(logoutbtn);
     }//GEN-LAST:event_logoutExit
 
     private void chatEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatEnter
         // TODO add your handling code here:
-        setColor(chatbtn);
+        //setColor(chatbtn);
     }//GEN-LAST:event_chatEnter
 
     private void chatExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatExit
         // TODO add your handling code here:
-        resetColor(chatbtn);
+        //resetColor(chatbtn);
     }//GEN-LAST:event_chatExit
 
     private void user2Enter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user2Enter
@@ -1071,6 +1033,39 @@ public class chatbox extends javax.swing.JFrame {
         setColor(user3);
     }//GEN-LAST:event_user4Press
 
+    private void sendMessageToServer(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sendMessageToServer
+        // TODO add your handling code here:
+        String mess = getMessage();
+        String getMess = sendMessage.getText();
+        String sender = "Bao Pham";
+        sendMessage.setText("");
+        String appendtxt = sender.toUpperCase() + ": " + getMess;
+        area.append(appendtxt);
+        sendMessage.setText("");
+        System.out.println(mess);
+
+        
+
+ 
+    }//GEN-LAST:event_sendMessageToServer
+    
+    private static String colorString(String text) {
+        StringBuilder coloredText = new StringBuilder("<html>");
+        for (char c : text.toCharArray()) {
+            coloredText.append("<font color='").append(getRandomColor()).append("'>").append(c).append("</font>");
+        }
+        coloredText.append("</html>");
+        return coloredText.toString();
+    }
+
+    private static Color getRandomColor() {
+        return new Color((int) (Math.random() * 256), (int) (Math.random() * 256), (int) (Math.random() * 256));
+    }
+    
+    String getMessage(){
+        String getMess = sendMessage.getText();
+        return getMess;
+    }
 
     void setColor(JPanel label) {
         label.setBackground(new Color(128, 161, 183));
@@ -1129,7 +1124,7 @@ public class chatbox extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel attach;
+    private javax.swing.JTextArea area;
     private javax.swing.JLabel chatLabel10;
     private javax.swing.JLabel chatLabel11;
     private javax.swing.JLabel chatLabel3;
@@ -1137,7 +1132,6 @@ public class chatbox extends javax.swing.JFrame {
     private javax.swing.JLabel chatLabel8;
     private javax.swing.JLabel chatLabel9;
     private javax.swing.JPanel chatbtn;
-    private javax.swing.JPanel emoji;
     private javax.swing.JPanel favouritebtn;
     private javax.swing.JPanel groupbtn;
     private javax.swing.JPanel home;
@@ -1146,9 +1140,7 @@ public class chatbox extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -1172,12 +1164,13 @@ public class chatbox extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JPanel logoutbtn;
     private javax.swing.JPanel menuFriend;
     private javax.swing.JPanel otherbtn;
     private javax.swing.JPanel send;
+    private javax.swing.JTextField sendMessage;
     private javax.swing.JPanel user1;
     private javax.swing.JPanel user2;
     private javax.swing.JPanel user3;

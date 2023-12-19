@@ -82,6 +82,11 @@ public class otherScreen extends javax.swing.JFrame {
         jLabel4.setText("ZALU");
 
         jPanel2.setBackground(new java.awt.Color(128, 190, 183));
+        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                homeMousePressed(evt);
+            }
+        });
 
         chatLabel3.setBackground(new java.awt.Color(128, 190, 183));
         chatLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -94,7 +99,7 @@ public class otherScreen extends javax.swing.JFrame {
                 chatLabel3MouseClicked(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel3MousePressed(evt);
+                homeScreenMousePressed(evt);
             }
         });
 
@@ -104,8 +109,7 @@ public class otherScreen extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(chatLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(chatLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,7 +129,7 @@ public class otherScreen extends javax.swing.JFrame {
                 chatLabel7MouseClicked(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel7MousePressed(evt);
+                chatboxMousePressed(evt);
             }
         });
 
@@ -135,8 +139,7 @@ public class otherScreen extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(chatLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(chatLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,7 +159,7 @@ public class otherScreen extends javax.swing.JFrame {
                 chatLabel8MouseClicked(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel8MousePressed(evt);
+                groupchatMousePressed(evt);
             }
         });
 
@@ -186,7 +189,7 @@ public class otherScreen extends javax.swing.JFrame {
                 chatLabel9MouseClicked(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel9MousePressed(evt);
+                favouriteMousePressed(evt);
             }
         });
 
@@ -194,9 +197,7 @@ public class otherScreen extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(chatLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(chatLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,7 +248,7 @@ public class otherScreen extends javax.swing.JFrame {
                 chatLabel11MouseClicked(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                chatLabel11MousePressed(evt);
+                logoutMousePressed(evt);
             }
         });
 
@@ -321,33 +322,61 @@ public class otherScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_chatLabel3MouseClicked
 
-    private void chatLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel3MousePressed
+    private void homeScreenMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeScreenMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel3MousePressed
+                dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new homeScreen().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_homeScreenMousePressed
 
     private void chatLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel7MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_chatLabel7MouseClicked
 
-    private void chatLabel7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel7MousePressed
+    private void chatboxMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatboxMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel7MousePressed
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new chatbox().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_chatboxMousePressed
 
     private void chatLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel8MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_chatLabel8MouseClicked
 
-    private void chatLabel8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel8MousePressed
+    private void groupchatMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_groupchatMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel8MousePressed
+                dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new groupchat().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_groupchatMousePressed
 
     private void chatLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel9MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_chatLabel9MouseClicked
 
-    private void chatLabel9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel9MousePressed
+    private void favouriteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favouriteMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel9MousePressed
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new favourite().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_favouriteMousePressed
 
     private void chatLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel10MouseClicked
         // TODO add your handling code here:
@@ -361,9 +390,27 @@ public class otherScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_chatLabel11MouseClicked
 
-    private void chatLabel11MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel11MousePressed
+    private void logoutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chatLabel11MousePressed
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new loginForm().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_logoutMousePressed
+
+    private void homeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMousePressed
+        // TODO add your handling code here:
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new homeScreen().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_homeMousePressed
 
 
     void setColor(JPanel label) {
