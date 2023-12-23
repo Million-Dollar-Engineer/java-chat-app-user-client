@@ -4,7 +4,7 @@
  */
 package Main.view;
 import Main.entity.Friend;
-import Main.controller.friendList;
+import Main.controller.friendController;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.*;
@@ -21,7 +21,7 @@ public class friendScreen extends javax.swing.JFrame {
      */
     public friendScreen() {
         initComponents();
-        ArrayList<Friend> listFriend = friendList.apiFriendList();
+        ArrayList<Friend> listFriend = friendController.apiFriendList();
         DefaultTableModel model = (DefaultTableModel) friendListTable.getModel();
         model.setRowCount(0);
         int i = 0;
@@ -501,7 +501,7 @@ public class friendScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutMousePressed
 
     private void onlyFriendMousePress(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_onlyFriendMousePress
-        ArrayList<Friend> listFriend = friendList.apiFriendListOnline();
+        ArrayList<Friend> listFriend = friendController.apiFriendListOnline();
         DefaultTableModel model = (DefaultTableModel) friendListTable.getModel();
         model.setRowCount(0);
         int i = 0;

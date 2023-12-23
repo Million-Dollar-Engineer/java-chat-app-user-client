@@ -68,7 +68,7 @@ public class chatbox extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        chatPerson = new javax.swing.JLabel();
         block = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         spam = new javax.swing.JPanel();
@@ -478,9 +478,9 @@ public class chatbox extends javax.swing.JFrame {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-user-30 (1).png"))); // NOI18N
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Bao Pham Hong Gia");
+        chatPerson.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        chatPerson.setForeground(new java.awt.Color(255, 255, 255));
+        chatPerson.setText("Bao Pham Hong Gia");
 
         block.setBackground(new java.awt.Color(128, 161, 183));
 
@@ -528,7 +528,7 @@ public class chatbox extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(chatPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(spam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -541,7 +541,7 @@ public class chatbox extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(chatPerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addComponent(block, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -1133,16 +1133,20 @@ public class chatbox extends javax.swing.JFrame {
 
     private void user2Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user2Press
         // TODO add your handling code here:
+        chatPerson.setText(friends.get(1).getFullname());
         setColor1(user2);
         setColor(user1);        
         setColor(user3);
         setColor(user4);
+        setColor(user5);
+        setColor(user6);
 
     }//GEN-LAST:event_user2Press
 
     private void user1Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user1Press
         // TODO add your handling code here:
         setColor1(user1);
+        chatPerson.setText(friends.get(0).getFullname());
         setColor(user2);        
         setColor(user3);
         setColor(user4);        
@@ -1154,6 +1158,7 @@ public class chatbox extends javax.swing.JFrame {
     private void user3Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user3Press
         // TODO add your handling code here:
         setColor1(user3);
+        chatPerson.setText(friends.get(2).getFullname());
         setColor(user2);        
         setColor(user1);
         setColor(user4);
@@ -1164,6 +1169,7 @@ public class chatbox extends javax.swing.JFrame {
     private void user4Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user4Press
         // TODO add your handling code here:
         setColor1(user4);
+        chatPerson.setText(friends.get(3).getFullname());
         setColor(user2);        
         setColor(user1);
         setColor(user3);
@@ -1210,6 +1216,7 @@ public class chatbox extends javax.swing.JFrame {
     private void user5Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user5Press
         // TODO add your handling code here:
         setColor1(user5);
+        chatPerson.setText(friends.get(4).getFullname());
         setColor(user2);        
         setColor(user1);
         setColor(user3);
@@ -1232,6 +1239,7 @@ public class chatbox extends javax.swing.JFrame {
     private void user6Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user6Press
         // TODO add your handling code here:
         setColor1(user6);
+        chatPerson.setText(friends.get(5).getFullname());
         setColor(user2);        
         setColor(user1);
         setColor(user3);
@@ -1272,7 +1280,7 @@ public class chatbox extends javax.swing.JFrame {
     
     
     final void initUser(){
-        ArrayList<Friend> friends = friendList.apiFriendList();
+        //ArrayList<Friend> friends = friendList.apiFriendList();
 
         int lengFriend = friends.size();
         switch (lengFriend){
@@ -1288,6 +1296,7 @@ public class chatbox extends javax.swing.JFrame {
   
             case 1:{
                 fullname1.setText(friends.get(0).getFullname());
+                chatPerson.setText(friends.get(0).getFullname());
                 user2.setVisible(false);
                 user3.setVisible(false);
                 user4.setVisible(false);
@@ -1298,6 +1307,7 @@ public class chatbox extends javax.swing.JFrame {
                         
             case 2:{
                 fullname1.setText(friends.get(0).getFullname());
+                chatPerson.setText(friends.get(0).getFullname());
                 fullname2.setText(friends.get(1).getFullname());
                 user3.setVisible(false);
                 user4.setVisible(false);
@@ -1308,6 +1318,7 @@ public class chatbox extends javax.swing.JFrame {
                         
             case 3:{
                 fullname1.setText(friends.get(0).getFullname());
+                chatPerson.setText(friends.get(0).getFullname());
                 fullname2.setText(friends.get(1).getFullname());                
                 fullname3.setText(friends.get(2).getFullname());
                 user4.setVisible(false);
@@ -1318,6 +1329,7 @@ public class chatbox extends javax.swing.JFrame {
                         
             case 4:{
                 fullname1.setText(friends.get(0).getFullname());
+                chatPerson.setText(friends.get(0).getFullname());
                 fullname2.setText(friends.get(1).getFullname());
                 fullname3.setText(friends.get(2).getFullname());
                 fullname4.setText(friends.get(3).getFullname());
@@ -1328,6 +1340,7 @@ public class chatbox extends javax.swing.JFrame {
                         
             case 5:{
                 fullname1.setText(friends.get(0).getFullname());
+                chatPerson.setText(friends.get(0).getFullname());
                 fullname2.setText(friends.get(1).getFullname());
                 fullname3.setText(friends.get(2).getFullname());
                 fullname4.setText(friends.get(3).getFullname());
@@ -1338,6 +1351,7 @@ public class chatbox extends javax.swing.JFrame {
                         
             case 6:{
                 fullname1.setText(friends.get(0).getFullname());
+                chatPerson.setText(friends.get(0).getFullname());
                 fullname2.setText(friends.get(1).getFullname());
                 fullname3.setText(friends.get(2).getFullname());
                 fullname4.setText(friends.get(3).getFullname());                
@@ -1412,6 +1426,7 @@ public class chatbox extends javax.swing.JFrame {
     private javax.swing.JLabel chatLabel7;
     private javax.swing.JLabel chatLabel8;
     private javax.swing.JLabel chatLabel9;
+    private javax.swing.JLabel chatPerson;
     private javax.swing.JPanel chatbtn;
     private javax.swing.JPanel favouritebtn;
     private javax.swing.JPanel friendChat;
@@ -1426,7 +1441,6 @@ public class chatbox extends javax.swing.JFrame {
     private javax.swing.JPanel homebtn;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -29,6 +29,7 @@ Main\view\loginForm$2.class
 Main\view\chatbox$5.class
 Main\view\otherScreen$3.class
 Main\view\groupchat$10.class
+Main\entity\MessageEntity.class
 Main\view\groupchat.class
 Main\view\chatbox$15.class
 Main\view\testChatApp$17.class
@@ -50,7 +51,6 @@ Main\view\forgotPasswordScreen$7.class
 Main\view\homeScreen$7.class
 Main\view\testChatApp$16.class
 Main\view\groupchat$15.class
-Main\controller\apiLogin.class
 Main\view\chatbox$10.class
 Main\view\chatbox$13.class
 Main\view\homeScreen$8.class
