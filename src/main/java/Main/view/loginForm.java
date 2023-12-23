@@ -1,6 +1,6 @@
 package Main.view;
 
-import Main.controller.*;
+import main.controller.AuthController;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -47,6 +47,7 @@ public class loginForm extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(132, 189, 196));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("LOG IN");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -71,8 +72,17 @@ public class loginForm extends javax.swing.JFrame {
             }
         });
 
+        forgotPassword.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        forgotPassword.setForeground(new java.awt.Color(132, 189, 196));
         forgotPassword.setText("Forgot Password?");
+        forgotPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                forgotPasswordMousePressed(evt);
+            }
+        });
 
+        register.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        register.setForeground(new java.awt.Color(132, 189, 196));
         register.setText("Create Account");
         register.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -84,10 +94,6 @@ public class loginForm extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(117, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(106, 106, 106))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -100,7 +106,11 @@ public class loginForm extends javax.swing.JFrame {
                         .addComponent(forgotPassword)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(register)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,18 +170,16 @@ public class loginForm extends javax.swing.JFrame {
         String usernameLogin = username.getText();
         String passwordLogin = new String(password.getPassword());
         
-//        boolean isLogged = AuthController.apiLogin(usernameLogin, passwordLogin);
-//        if (isLogged){
-//            
-//            dispose();
-//        
-//        // Open the new window
-//            java.awt.EventQueue.invokeLater(new Runnable() {
-//                public void run() {
-//                    new homeScreen().setVisible(true);
-//                }
-//            });
-//        }
+        boolean isLogged = AuthController.apiLogin(usernameLogin, passwordLogin);
+        if (isLogged){
+            dispose();
+        // Open the new window
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new homeScreen().setVisible(true);
+                }
+            });
+        }
     }//GEN-LAST:event_loginMousePressed
 
     private void registerPageMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerPageMousePressed
@@ -183,6 +191,16 @@ public class loginForm extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_registerPageMousePressed
+
+    private void forgotPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_forgotPasswordMousePressed
+        // TODO add your handling code here:
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new forgotPasswordScreen().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_forgotPasswordMousePressed
 
     /**
      * @param args the command line arguments

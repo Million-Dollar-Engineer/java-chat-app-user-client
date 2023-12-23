@@ -9,6 +9,6 @@ package Main.shareEnv;
  * @author HP-PC
  */
 public class Share {
-    public static String apiURL = "http://10.126.4.82:8881";
+    public static String apiURL = "http://13.215.176.178:8881";
     
 }

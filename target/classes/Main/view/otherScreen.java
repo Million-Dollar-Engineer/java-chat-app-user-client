@@ -373,7 +373,7 @@ public class otherScreen extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new favourite().setVisible(true);
+                new friendScreen().setVisible(true);
             }
         });
     }//GEN-LAST:event_favouriteMousePressed

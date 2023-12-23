@@ -686,7 +686,7 @@ public class groupchat extends javax.swing.JFrame {
         chatLabel9.setForeground(new java.awt.Color(255, 255, 255));
         chatLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         chatLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-star-30.png"))); // NOI18N
-        chatLabel9.setText("Favourite");
+        chatLabel9.setText("Friend");
         chatLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 chatLabel9MouseClicked(evt);
@@ -706,9 +706,7 @@ public class groupchat extends javax.swing.JFrame {
         favouritebtn.setLayout(favouritebtnLayout);
         favouritebtnLayout.setHorizontalGroup(
             favouritebtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, favouritebtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(chatLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(chatLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         favouritebtnLayout.setVerticalGroup(
             favouritebtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -885,7 +883,7 @@ public class groupchat extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new favourite().setVisible(true);
+                new friendScreen().setVisible(true);
             }
         });
     }//GEN-LAST:event_favouriteMousePressed

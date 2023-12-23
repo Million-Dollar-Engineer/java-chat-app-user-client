@@ -330,7 +330,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Main/icon/icons8-star-30.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Favourite"/>
+                <Property name="text" type="java.lang.String" value="Friend"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="chatLabel9MouseClicked"/>

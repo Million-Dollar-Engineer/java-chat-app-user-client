@@ -234,6 +234,16 @@ public class registerForm extends javax.swing.JFrame {
         String passwordRegister = new String(password.getPassword());
         String gender = "Male";
         
+        System.out.println(nameRegister);        
+        System.out.println(emailRegister);
+        System.out.println(addressRegister);
+        System.out.println(dobRegister);
+        System.out.println(usernameRegister);
+        System.out.println(passwordRegister);        
+        System.out.println(gender);
+
+
+        
 
     }//GEN-LAST:event_registerMousePressed
 
