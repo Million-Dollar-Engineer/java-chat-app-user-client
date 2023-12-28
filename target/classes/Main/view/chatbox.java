@@ -4,24 +4,42 @@
  */
 package Main.view;
 
+import Main.controller.MessageController;
 import java.awt.Color;
 import javax.swing.*;
-import Main.controller.friendList;
+import Main.controller.friendController;
 import Main.entity.Friend;
+import Main.entity.MessageEntity;
+import Main.file.File;
 import java.util.ArrayList;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import main.socket.SocketThread;
+import Main.shareEnv.*;
+
 
 /**
  *
  * @author HP-PC
  */
 public class chatbox extends javax.swing.JFrame {
-    ArrayList<Friend> friends = new ArrayList<>();
-
+    static ArrayList<Friend> friends = new ArrayList<>();    
+    ArrayList<MessageEntity> historyMessage = new ArrayList<>();
+    
+    
+    static {
+        SocketThread.startSocket(Share.socketHost, Share.socketPort);
+    }
+            
+            
     /**
      * Creates new form boxChat
      */
     public chatbox() {
-        friends = friendList.apiFriendList();
+        String userId = File.readFromFile();
+        SocketThread.sendIdUser(userId);
+        friends = friendController.apiFriendList();
         initComponents();
         initUser();
     }
@@ -1133,72 +1151,169 @@ public class chatbox extends javax.swing.JFrame {
 
     private void user2Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user2Press
         // TODO add your handling code here:
-        chatPerson.setText(friends.get(1).getFullname());
+        chatPerson.setText(friends.get(1).getUsername());
         setColor1(user2);
         setColor(user1);        
         setColor(user3);
         setColor(user4);
         setColor(user5);
         setColor(user6);
+        
+        String username2 = friends.get(1).getUsername();
+        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(username2);
+
+
+        area.setText("");
+        for (MessageEntity i : historyUser){
+            if (i.getsenderId().endsWith(File.readFromFile())) {
+                String appendtxt = "@YOU: " + i.getMessage() + "\n";
+                area.append(appendtxt);
+            } else {
+                String appendtxt = "@" + username2 + ": " + i.getMessage() + "\n";
+                area.append(appendtxt);
+            }
+        }
 
     }//GEN-LAST:event_user2Press
 
     private void user1Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user1Press
         // TODO add your handling code here:
+        
         setColor1(user1);
-        chatPerson.setText(friends.get(0).getFullname());
+        chatPerson.setText(friends.get(0).getUsername());
         setColor(user2);        
         setColor(user3);
         setColor(user4);        
         setColor(user5);
         setColor(user6);
+        
+        String username = friends.get(0).getUsername();
+        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(friends.get(0).getUsername());
+        area.setText("");
+        for (MessageEntity i : historyUser){
+            if (i.getsenderId().endsWith(File.readFromFile())) {
+                String appendtxt = "@YOU: " + i.getMessage() + "\n";
+                area.append(appendtxt);
+            } else {
+                String appendtxt = "@" + username + ": " + i.getMessage() + "\n";
+                area.append(appendtxt);
+            }
+        }
 
     }//GEN-LAST:event_user1Press
 
     private void user3Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user3Press
         // TODO add your handling code here:
         setColor1(user3);
-        chatPerson.setText(friends.get(2).getFullname());
+        chatPerson.setText(friends.get(2).getUsername());
         setColor(user2);        
         setColor(user1);
         setColor(user4);
         setColor(user5);
         setColor(user6);
+        
+        String username = friends.get(2).getUsername();
+        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(friends.get(2).getUsername());
+        area.setText("");
+        for (MessageEntity i : historyUser){
+            if (i.getsenderId().endsWith(File.readFromFile())) {
+                String appendtxt = "@YOU: " + i.getMessage() + "\n";
+                area.append(appendtxt);
+            } else {
+                String appendtxt = "@" + username + ": " + i.getMessage() + "\n";
+                area.append(appendtxt);
+            }
+        }
     }//GEN-LAST:event_user3Press
 
     private void user4Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user4Press
         // TODO add your handling code here:
         setColor1(user4);
-        chatPerson.setText(friends.get(3).getFullname());
+        chatPerson.setText(friends.get(3).getUsername());
         setColor(user2);        
         setColor(user1);
         setColor(user3);
         setColor(user5);
         setColor(user6);       
+        
+                
+        String username = friends.get(3).getUsername();
+        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(friends.get(3).getUsername());
+        area.setText("");
+        for (MessageEntity i : historyUser){
+            if (i.getsenderId().endsWith(File.readFromFile())) {
+                String appendtxt = "@YOU: " + i.getMessage() + "\n";
+                area.append(appendtxt);
+            } else {
+                String appendtxt = "@" + username + ": " + i.getMessage() + "\n";
+                area.append(appendtxt);
+            }
+        }
     }//GEN-LAST:event_user4Press
 
     private void sendMessageToServer(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sendMessageToServer
         // TODO add your handling code here:
-        String mess = getMessage();
         String getMess = sendMessage.getText();
-        String sender = "Bao Pham";
+        String sender = "You";
+        String recipient = chatPerson.getText();
         sendMessage.setText("");
-        String appendtxt = "@" + sender.toLowerCase() + ": " + getMess + "\n";
+        String appendtxt = "@" + sender + ": " + getMess + "\n";
         area.append(appendtxt);
         sendMessage.setText("");
-        System.out.println(mess);
+     
+        SocketThread.sendMessage("msg to user", recipient, getMess);
+
     }//GEN-LAST:event_sendMessageToServer
 
+    
+    public static void appendTextToBoxChat(String recipient, String message){
+        String currentRecipient = chatPerson.getText();
+        
+        if (recipient.equals(currentRecipient)){
+            System.out.println("vooooooooooooooooooooooooos");
+            area.append("@" + recipient + ": " + message);
+        } else {
+            for (int i = 0; i <= friends.size(); i++){
+                if (recipient.equals(friends.get(i).getUsername())) {
+                    switch (i) {
+                        case 0: {
+                            message1.setText(message);
+                        }
+                        
+                        case 1: {
+                            message2.setText(message);
+                        }
+                                 
+                        case 2: {
+                            message3.setText(message);
+                        }
+
+                        case 3: {
+                            message4.setText(message);
+                        }                        
+                        
+                        case 4: {
+                            message5.setText(message);
+                        }                        
+                        
+                        case 5: {
+                            message6.setText(message);
+                        }                        
+                        
+                    }
+                }
+            }
+        }
+        
+        
+    }
+    
     private void searchMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMousePressed
         // TODO add your handling code here:
         fullname4.setText("Edward Pham Hong Gia Bao");
         user1.setVisible(false);        
         user2.setVisible(false);
         user3.setVisible(false);
-        
-        
-
-
     }//GEN-LAST:event_searchMousePressed
 
     private void user5Click(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user5Click
@@ -1216,12 +1331,25 @@ public class chatbox extends javax.swing.JFrame {
     private void user5Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user5Press
         // TODO add your handling code here:
         setColor1(user5);
-        chatPerson.setText(friends.get(4).getFullname());
+        chatPerson.setText(friends.get(4).getUsername());
         setColor(user2);        
         setColor(user1);
         setColor(user3);
         setColor(user4);
         setColor(user6); 
+                
+        String username = friends.get(4).getUsername();
+        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(friends.get(4).getUsername());
+        area.setText("");
+        for (MessageEntity i : historyUser){
+            if (i.getsenderId().endsWith(File.readFromFile())) {
+                String appendtxt = "@YOU: " + i.getMessage() + "\n";
+                area.append(appendtxt);
+            } else {
+                String appendtxt = "@" + username + ": " + i.getMessage() + "\n";
+                area.append(appendtxt);
+            }
+        }
     }//GEN-LAST:event_user5Press
 
     private void user6Click(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user6Click
@@ -1239,12 +1367,25 @@ public class chatbox extends javax.swing.JFrame {
     private void user6Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user6Press
         // TODO add your handling code here:
         setColor1(user6);
-        chatPerson.setText(friends.get(5).getFullname());
+        chatPerson.setText(friends.get(5).getUsername());
         setColor(user2);        
         setColor(user1);
         setColor(user3);
         setColor(user5);
         setColor(user4); 
+        
+        String username = friends.get(5).getUsername();
+        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(friends.get(5).getUsername());
+        area.setText("");
+        for (MessageEntity i : historyUser){
+            if (i.getsenderId().endsWith(File.readFromFile())) {
+                String appendtxt = "@You: " + i.getMessage() + "\n";
+                area.append(appendtxt);
+            } else {
+                String appendtxt = "@" + username + ": " + i.getMessage() + "\n";
+                area.append(appendtxt);
+            }
+        }
     }//GEN-LAST:event_user6Press
     
     private static String colorString(String text) {
@@ -1280,7 +1421,7 @@ public class chatbox extends javax.swing.JFrame {
     
     
     final void initUser(){
-        //ArrayList<Friend> friends = friendList.apiFriendList();
+        //ArrayList<Friend> friends = friendController.apiFriendList();
 
         int lengFriend = friends.size();
         switch (lengFriend){
@@ -1296,7 +1437,7 @@ public class chatbox extends javax.swing.JFrame {
   
             case 1:{
                 fullname1.setText(friends.get(0).getFullname());
-                chatPerson.setText(friends.get(0).getFullname());
+                chatPerson.setText(friends.get(0).getUsername());
                 user2.setVisible(false);
                 user3.setVisible(false);
                 user4.setVisible(false);
@@ -1307,7 +1448,7 @@ public class chatbox extends javax.swing.JFrame {
                         
             case 2:{
                 fullname1.setText(friends.get(0).getFullname());
-                chatPerson.setText(friends.get(0).getFullname());
+                chatPerson.setText(friends.get(0).getUsername());
                 fullname2.setText(friends.get(1).getFullname());
                 user3.setVisible(false);
                 user4.setVisible(false);
@@ -1318,7 +1459,7 @@ public class chatbox extends javax.swing.JFrame {
                         
             case 3:{
                 fullname1.setText(friends.get(0).getFullname());
-                chatPerson.setText(friends.get(0).getFullname());
+                chatPerson.setText(friends.get(0).getUsername());
                 fullname2.setText(friends.get(1).getFullname());                
                 fullname3.setText(friends.get(2).getFullname());
                 user4.setVisible(false);
@@ -1329,7 +1470,7 @@ public class chatbox extends javax.swing.JFrame {
                         
             case 4:{
                 fullname1.setText(friends.get(0).getFullname());
-                chatPerson.setText(friends.get(0).getFullname());
+                chatPerson.setText(friends.get(0).getUsername());
                 fullname2.setText(friends.get(1).getFullname());
                 fullname3.setText(friends.get(2).getFullname());
                 fullname4.setText(friends.get(3).getFullname());
@@ -1340,7 +1481,7 @@ public class chatbox extends javax.swing.JFrame {
                         
             case 5:{
                 fullname1.setText(friends.get(0).getFullname());
-                chatPerson.setText(friends.get(0).getFullname());
+                chatPerson.setText(friends.get(0).getUsername());
                 fullname2.setText(friends.get(1).getFullname());
                 fullname3.setText(friends.get(2).getFullname());
                 fullname4.setText(friends.get(3).getFullname());
@@ -1351,7 +1492,7 @@ public class chatbox extends javax.swing.JFrame {
                         
             case 6:{
                 fullname1.setText(friends.get(0).getFullname());
-                chatPerson.setText(friends.get(0).getFullname());
+                chatPerson.setText(friends.get(0).getUsername());
                 fullname2.setText(friends.get(1).getFullname());
                 fullname3.setText(friends.get(2).getFullname());
                 fullname4.setText(friends.get(3).getFullname());                
@@ -1412,7 +1553,7 @@ public class chatbox extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea area;
+    private static javax.swing.JTextArea area;
     private javax.swing.JLabel avatar1;
     private javax.swing.JLabel avatar2;
     private javax.swing.JLabel avatar3;
@@ -1426,7 +1567,7 @@ public class chatbox extends javax.swing.JFrame {
     private javax.swing.JLabel chatLabel7;
     private javax.swing.JLabel chatLabel8;
     private javax.swing.JLabel chatLabel9;
-    private javax.swing.JLabel chatPerson;
+    private static javax.swing.JLabel chatPerson;
     private javax.swing.JPanel chatbtn;
     private javax.swing.JPanel favouritebtn;
     private javax.swing.JPanel friendChat;
@@ -1455,12 +1596,12 @@ public class chatbox extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel logoutbtn;
-    private javax.swing.JLabel message1;
-    private javax.swing.JLabel message2;
-    private javax.swing.JLabel message3;
-    private javax.swing.JLabel message4;
-    private javax.swing.JLabel message5;
-    private javax.swing.JLabel message6;
+    private static javax.swing.JLabel message1;
+    private static javax.swing.JLabel message2;
+    private static javax.swing.JLabel message3;
+    private static javax.swing.JLabel message4;
+    private static javax.swing.JLabel message5;
+    private static javax.swing.JLabel message6;
     private javax.swing.JPanel otherbtn;
     private javax.swing.JPanel send;
     private javax.swing.JTextField sendMessage;

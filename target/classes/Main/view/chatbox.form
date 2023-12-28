@@ -219,6 +219,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="New message"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
+                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="fullname1">
                   <Properties>
@@ -291,6 +294,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="New message"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
+                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="fullname2">
                   <Properties>
@@ -363,6 +369,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="New message"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
+                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="fullname3">
                   <Properties>
@@ -435,6 +444,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="New message"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
+                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="fullname4">
                   <Properties>
@@ -507,6 +519,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="New message"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
+                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="fullname5">
                   <Properties>
@@ -579,6 +594,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="New message"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
+                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="fullname6">
                   <Properties>
@@ -678,6 +696,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Bao Pham Hong Gia"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
+                  </AuxValues>
                 </Component>
                 <Container class="javax.swing.JPanel" name="block">
                   <Properties>
@@ -850,6 +871,9 @@
                     </Property>
                     <Property name="rows" type="int" value="5"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>

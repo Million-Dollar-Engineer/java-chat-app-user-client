@@ -9,12 +9,12 @@ package Main.entity;
  * @author HP-PC
  */
 public class MessageEntity {
-    public String senderId;
-    public String senderName;
-    public String receiverId;
-    public String receiverName;
-    public String message;
-    public String createdAt;
+    private final String senderId;
+    private final String senderName;
+    private final String receiverId;
+    private final String receiverName;
+    private final String message;
+    private final String createdAt;
     
     public MessageEntity(String a, String b, String c, String d, String e, String f){
         senderId = a;

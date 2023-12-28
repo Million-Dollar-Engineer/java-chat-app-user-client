@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package main.controller;
+package Main.controller;
 import Main.file.File;
 import Main.shareEnv.*;
 
@@ -26,7 +26,7 @@ public class AuthController {
     public static boolean apiLogin(String username, String password) {
         try {
             // Create a URL object with the API endpoint
-            URL url = new URL("http://13.215.176.178:8881/user/login");
+            URL url = new URL(Share.apiURL +"/user/login");
 
             // Open a connection to the URL
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -90,7 +90,7 @@ public class AuthController {
        
             try {
             // Create a URL object with the API endpoint
-            URL url = new URL("http://10.126.4.82:8881/user/login");
+            URL url = new URL(Share.apiURL +"/user/signup");
 
             // Open a connection to the URL
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -103,10 +103,8 @@ public class AuthController {
             connection.setRequestProperty("Content-Type", "application/json");
 
             // Create the request body
-            String requestBody = "{\"username\":\"ptan21\",\"password\":\"12323456\"}";
 
-            
-//            String requestBody = String.format("{\"username\":\"%s\",\"password\":\"%s\"}", username, password);
+            String requestBody = String.format("{\"username\":\"%s\",\"password\":\"%s\",\"fullname\":\"%s\",\"address\":\"%s\",\"dateOfBirth\":\"%s\",\"email\":\"%s\",\"sex\":\"%s\"}", username, pass, fullname, address, dob, email, gender);
 
             try ( // Write the request body to the output stream
                     DataOutputStream outputStream = new DataOutputStream(connection.getOutputStream())) {
@@ -132,12 +130,13 @@ public class AuthController {
 
             // Access the properties in the response body
             String message = jsonResponse.getString("message");
-            String id = jsonResponse.getString("id");
 
             //Print the response
             System.out.println("Response Code: " + responseCode);
             System.out.println("Message: " + message);
-            System.out.println("ID: " + id);
+            if (responseCode == 200){
+                return true;
+            }
 
             // Close the connection
             connection.disconnect();
@@ -146,4 +145,14 @@ public class AuthController {
         }
         return false;
     }
+    
+//    public static void main(String[] args){
+//        boolean x = apiRegister( "Pham Hong Gia Bao", "baopham", "123", "phgbao@gmail.com", "2003-8-3", "TP HCM", "male");
+//        if (x){
+//            System.out.println("Scueesss");
+//        }
+//        else{
+//            System.out.println("falseeeeeeeeeeeee");
+//        }
+//    }
 }

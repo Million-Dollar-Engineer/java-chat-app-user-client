@@ -12,7 +12,6 @@ import Main.entity.MessageEntity;
 import Main.file.File;
 import Main.shareEnv.Share;
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -20,7 +19,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONException;
-
 import org.json.JSONObject;
 
 public class MessageController {
@@ -36,7 +34,7 @@ public class MessageController {
         try {
             // Specify the URL
             String idUser = File.readFromFile();
-            String apiUrl = Share.apiURL +  "/message/personal-history?senderId=eed9a04a-2b72-4706-88ee-3269a8842fe6&receiverUsername=Bao22";
+            String apiUrl = Share.apiURL +  "/message/personal-history?senderId=" + idUser +  "&receiverUsername=" + receiverUsername;
             // Create a URL object
             URL url = new URL(apiUrl);
 
@@ -78,12 +76,6 @@ public class MessageController {
                     MessageEntity tmp = new MessageEntity(senderId, senderName, receiverId, receiverName, message, createdAt);
                     historyMessage.add(tmp);
                     
-                    System.out.println(senderId);                    
-                    System.out.println(senderName);
-                    System.out.println(receiverId);
-                    System.out.println(receiverName);
-                    System.out.println(message);
-                    System.out.println(createdAt);
 
                 }
             } else {

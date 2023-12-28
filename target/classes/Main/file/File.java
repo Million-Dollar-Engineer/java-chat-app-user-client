@@ -8,11 +8,8 @@ package Main.file;
  *
  * @author HP-PC
  */
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import Main.shareEnv.Share;
+
 
 public class File {
     
@@ -21,30 +18,13 @@ public class File {
 
     // Method to write to a file using java.io
     public static void writeToFile(String content) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
-            // Write to the file
-            writer.write(content);
-
-            System.out.println("Content written to the file successfully!");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Share.userId = content;
     }
 
     // Method to read from a file using java.io
     public static String readFromFile() {
-        String idUser  = "";
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-            // Read from the file
-            String line;
-            while ((line = reader.readLine()) != null) {
-                idUser = line;
-                System.out.println(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return idUser;
+        
+        return Share.userId;
     }
     
     public static void main(String[] args) {

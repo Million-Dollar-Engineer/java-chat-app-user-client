@@ -1107,6 +1107,9 @@ public class groupchat extends javax.swing.JFrame {
         setColor(group1);        
         setColor(group3);
         setColor(group4);
+        setColor(group5);
+        setColor(group6);
+
 
     }//GEN-LAST:event_group2Press
 
@@ -1115,7 +1118,9 @@ public class groupchat extends javax.swing.JFrame {
         setColor1(group1);
         setColor(group2);        
         setColor(group3);
-        setColor(group4);
+        setColor(group4); 
+        setColor(group5);
+        setColor(group6);
     }//GEN-LAST:event_group1Press
 
     private void group3Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group3Press
@@ -1123,7 +1128,10 @@ public class groupchat extends javax.swing.JFrame {
         setColor1(group3);
         setColor(group2);        
         setColor(group1);
-        setColor(group4);
+        setColor(group4);   
+        setColor(group5);
+        setColor(group6);
+        
     }//GEN-LAST:event_group3Press
 
     private void group4Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group4Press
@@ -1132,6 +1140,8 @@ public class groupchat extends javax.swing.JFrame {
         setColor(group2);        
         setColor(group1);
         setColor(group3);
+        setColor(group5);
+        setColor(group6);
     }//GEN-LAST:event_group4Press
 
     private void chatMoousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatMoousePressed

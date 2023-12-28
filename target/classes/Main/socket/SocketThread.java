@@ -9,12 +9,15 @@ package main.socket;
  * @author HP-PC
  */
 import main.entity.ConnectionEntity;
-
+import Main.view.chatbox;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 public class SocketThread extends Thread {
-    ConnectionEntity connectionEntity;
+    static ConnectionEntity connectionEntity;
 
     public SocketThread(String host, int port) throws IOException {
         try {
@@ -27,10 +30,10 @@ public class SocketThread extends Thread {
         }
     }
 
-    public void sendUserName(String username) {
-        connectionEntity.writer.println(username);
+    public static void sendIdUser(String id) {
+        connectionEntity.writer.println(id);
     }
-    public void sendMessage(String type, String recipient, String message) {
+    public static void sendMessage(String type, String recipient, String message) {
         connectionEntity.writer.println(type); // personal or group
         connectionEntity.writer.println(recipient); // username or group id
         connectionEntity.writer.println(message);
@@ -38,21 +41,37 @@ public class SocketThread extends Thread {
 
     @Override
     public void run() {
-        try {
-            while (true) {
-                String sender = connectionEntity.reader.readLine();
+        do {
+            try {
+                    String header = connectionEntity.reader.readLine();
+                    switch (header){
+                        case "msg to user" ->  {
+                            String recipient = connectionEntity.reader.readLine();
+                            String message = connectionEntity.reader.readLine();
+                            chatbox.appendTextToBoxChat(recipient, message);
+                        }
 
-                if (sender == null) {
-                    System.out.println("Server closed connection");
-                    this.connectionEntity.socket.close();
-                    break;
+                        case "msg to group" ->  {
+                            String groupId = connectionEntity.reader.readLine();
+                            String message = connectionEntity.reader.readLine();
+                        }
+
                 }
-
-                String message = connectionEntity.reader.readLine();
-                // Append the message to the chat window
+            } catch (Exception e) {
+                System.out.println("Error reading message from server: " + e.getMessage());
             }
-        } catch (Exception e) {
-            System.out.println("Error reading message from server: " + e.getMessage());
+        } while (true);
+    }
+    
+    public static void startSocket(String host, int port) {
+      
+        SocketThread mysocket;
+        try {
+            mysocket = new SocketThread(host, port);
+            mysocket.start();
+        } catch (IOException ex) {
+            Logger.getLogger(SocketThread.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
 }

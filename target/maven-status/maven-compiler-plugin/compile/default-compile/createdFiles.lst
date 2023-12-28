@@ -1,3 +1,4 @@
+Main\view\findUser$3.class
 Main\view\homeScreen$3.class
 Main\view\chatbox$22.class
 Main\view\otherScreen$12.class
@@ -9,6 +10,7 @@ Main\view\testChatApp$18.class
 Main\view\groupchat$16.class
 Main\view\groupchat$23.class
 Main\view\homeScreen$9.class
+Main\controller\FindUserController.class
 Main\view\otherScreen$8.class
 Main\view\loginForm$7.class
 Main\view\friendScreen$1.class
@@ -18,6 +20,7 @@ Main\view\testChatApp$8.class
 Main\view\friendScreen$7.class
 Main\view\otherScreen$2.class
 Main\view\chatbox$14.class
+Main\socket\ConnectionEntity.class
 Main\view\groupchat$11.class
 Main\view\chatbox$6.class
 Main\view\friendScreen$12.class
@@ -40,7 +43,9 @@ Main\view\testChatApp$11.class
 Main\view\groupchat$22.class
 Main\view\groupchat$17.class
 Main\controller\AuthController.class
+Main\view\registerForm$5.class
 Main\view\testChatApp$7.class
+Main\view\friendScreen$17.class
 Main\view\chatbox$7.class
 Main\view\friendScreen$3.class
 Main\view\friendScreen$14.class
@@ -52,6 +57,8 @@ Main\view\homeScreen$7.class
 Main\view\testChatApp$16.class
 Main\view\groupchat$15.class
 Main\view\chatbox$10.class
+Main\controller\friendController.class
+Main\view\findUser$7.class
 Main\view\chatbox$13.class
 Main\view\homeScreen$8.class
 Main\view\registerForm$3.class
@@ -64,7 +71,6 @@ Main\view\otherScreen.class
 Main\view\homeScreen$11.class
 Main\view\testChatApp$9.class
 Main\view\testChatApp$14.class
-Main\controller\friendList.class
 Main\view\friendScreen$6.class
 Main\view\otherScreen$1.class
 Main\view\chatbox$8.class
@@ -77,7 +83,9 @@ Main\view\homeScreen$10.class
 Main\view\homeScreen$6.class
 Main\entity\ConnectionEntity.class
 Main\view\forgotPasswordScreen$3.class
+Main\socket\Client.class
 Main\view\friendScreen.class
+Main\view\findUser$6.class
 Main\view\chatbox$12.class
 Main\view\groupchat$13.class
 Main\view\testChatApp$6.class
@@ -108,6 +116,7 @@ Main\view\forgotPasswordScreen$2.class
 Main\controller\MessageController.class
 Main\view\friendScreen$9.class
 Main\view\homeScreen$5.class
+Main\view\findUser$5.class
 Main\view\chatbox$20.class
 Main\view\chatbox$19.class
 Main\view\chatbox$16.class
@@ -119,8 +128,10 @@ Main\view\otherScreen$9.class
 Main\file\File.class
 Main\view\otherScreen$6.class
 Main\view\loginForm$6.class
+Main\view\findUser$4.class
 Main\view\chatbox$21.class
 Main\view\groupchat$24.class
+Main\view\findUser.class
 Main\view\testChatApp$2.class
 Main\view\otherScreen$13.class
 Main\view\groupchat$3.class
@@ -128,6 +139,7 @@ Main\view\testChatApp$5.class
 Main\view\chatbox.class
 Main\view\homeScreen$1.class
 Main\view\otherScreen$10.class
+Main\view\findUser$1.class
 Main\view\chatbox$17.class
 Main\view\chatbox$2.class
 Main\view\groupchat$4.class
@@ -141,3 +153,4 @@ Main\view\friendScreen$10.class
 Main\view\otherScreen$7.class
 Main\view\chatbox$18.class
 Main\view\chatbox$23.class
+Main\view\findUser$2.class

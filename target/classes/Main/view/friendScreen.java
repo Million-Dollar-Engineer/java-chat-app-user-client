@@ -4,7 +4,7 @@
  */
 package Main.view;
 import Main.entity.Friend;
-import Main.controller.friendList;
+import Main.controller.friendController;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.*;
@@ -21,7 +21,7 @@ public class friendScreen extends javax.swing.JFrame {
      */
     public friendScreen() {
         initComponents();
-        ArrayList<Friend> listFriend = friendList.apiFriendList();
+        ArrayList<Friend> listFriend = friendController.apiFriendList();
         DefaultTableModel model = (DefaultTableModel) friendListTable.getModel();
         model.setRowCount(0);
         int i = 0;
@@ -49,7 +49,7 @@ public class friendScreen extends javax.swing.JFrame {
         friendListTable = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        addFriendBtn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -124,19 +124,19 @@ public class friendScreen extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Friend List");
 
-        jButton2.setBackground(new java.awt.Color(128, 190, 183));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-add-user-male-30.png"))); // NOI18N
-        jButton2.setText("Add Friend");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        addFriendBtn.setBackground(new java.awt.Color(128, 190, 183));
+        addFriendBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        addFriendBtn.setForeground(new java.awt.Color(255, 255, 255));
+        addFriendBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-add-user-male-30.png"))); // NOI18N
+        addFriendBtn.setText("Add Friend");
+        addFriendBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jButton2onlyFriendMousePress(evt);
+                addFriendBtnMousePress(evt);
             }
         });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        addFriendBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                addFriendBtnActionPerformed(evt);
             }
         });
 
@@ -153,7 +153,7 @@ public class friendScreen extends javax.swing.JFrame {
                             .addGroup(homeLayout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2)))
+                                .addComponent(addFriendBtn)))
                         .addGap(29, 29, 29))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homeLayout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 718, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -167,7 +167,7 @@ public class friendScreen extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(addFriendBtn))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(52, Short.MAX_VALUE))
@@ -501,7 +501,7 @@ public class friendScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutMousePressed
 
     private void onlyFriendMousePress(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_onlyFriendMousePress
-        ArrayList<Friend> listFriend = friendList.apiFriendListOnline();
+        ArrayList<Friend> listFriend = friendController.apiFriendListOnline();
         DefaultTableModel model = (DefaultTableModel) friendListTable.getModel();
         model.setRowCount(0);
         int i = 0;
@@ -512,13 +512,20 @@ public class friendScreen extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_onlyFriendMousePress
 
-    private void jButton2onlyFriendMousePress(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2onlyFriendMousePress
+    private void addFriendBtnMousePress(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addFriendBtnMousePress
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2onlyFriendMousePress
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new findUser().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_addFriendBtnMousePress
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void addFriendBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addFriendBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_addFriendBtnActionPerformed
 
 
     void setColor(JPanel label) {
@@ -542,6 +549,7 @@ public class friendScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addFriendBtn;
     private javax.swing.JLabel chatLabel10;
     private javax.swing.JLabel chatLabel11;
     private javax.swing.JLabel chatLabel3;
@@ -551,7 +559,6 @@ public class friendScreen extends javax.swing.JFrame {
     public javax.swing.JTable friendListTable;
     private javax.swing.JPanel home;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
