@@ -5,7 +5,7 @@
 package Main.controller;
 
 import Main.shareEnv.Share;
-import Main.view.findUser;
+import Main.view.addFriendScreen;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -63,7 +63,7 @@ public class FindUserController {
             System.out.println("Message: " + name);
 
             if (responseCode == 200){
-                findUser.appendUserToLabel(name);
+                addFriendScreen.appendUserToLabel(name);
             }
 
             // Close the connection
@@ -112,15 +112,15 @@ public class FindUserController {
             System.out.println("Response Code: " + responseCode);
 
             if (responseCode == 200){
-                findUser.addFriendNoti("Add friend successfully");
+                addFriendScreen.addFriendNoti("Add friend successfully");
             } else {
-                findUser.addFriendNoti("Add friend failed");
+                addFriendScreen.addFriendNoti("Add friend failed");
             }
 
             // Close the connection
             connection.disconnect();
         } catch (IOException | JSONException e) {
-            findUser.addFriendNoti("Add friend failed");
+            addFriendScreen.addFriendNoti("Add friend failed");
             e.printStackTrace();
         }
     }

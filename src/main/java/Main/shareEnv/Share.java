@@ -9,7 +9,8 @@ package Main.shareEnv;
  * @author HP-PC
  */
 public class Share {
-    public static String apiURL = "http://10.123.1.225:8881";    
+    public static String apiURL = "http://10.123.1.225:8881";  
+    public static String api = "http://13.215.176.178:8881";
 
     public static String socketHost = "10.123.1.225";
     public static int socketPort = 7000;

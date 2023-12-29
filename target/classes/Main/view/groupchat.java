@@ -33,44 +33,9 @@ public class groupchat extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         home = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        jPanel10 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        group1 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        message1 = new javax.swing.JLabel();
-        groupname1 = new javax.swing.JLabel();
-        group2 = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
-        message2 = new javax.swing.JLabel();
-        groupname2 = new javax.swing.JLabel();
-        group3 = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
-        message3 = new javax.swing.JLabel();
-        groupname3 = new javax.swing.JLabel();
-        group4 = new javax.swing.JPanel();
-        jLabel21 = new javax.swing.JLabel();
-        message4 = new javax.swing.JLabel();
-        groupname4 = new javax.swing.JLabel();
-        group5 = new javax.swing.JPanel();
-        jLabel24 = new javax.swing.JLabel();
-        message5 = new javax.swing.JLabel();
-        groupname5 = new javax.swing.JLabel();
-        group6 = new javax.swing.JPanel();
-        jLabel27 = new javax.swing.JLabel();
-        message6 = new javax.swing.JLabel();
-        groupname6 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        menuFriend = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jPanel13 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
-        send = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
+        myGroup = new javax.swing.JButton();
+        createGroup = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -97,519 +62,54 @@ public class groupchat extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Chat Screen");
 
-        home.setBackground(new java.awt.Color(255, 255, 255));
+        home.setBackground(new java.awt.Color(128, 161, 183));
 
-        jPanel8.setBackground(new java.awt.Color(128, 161, 183));
-
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField1.setText("Seach here");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/Main.icon.png"))); // NOI18N
+        jLabel2.setText("Group Chat");
 
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jTextField1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
-                .addContainerGap())
-        );
-
-        group1.setBackground(new java.awt.Color(128, 206, 202));
-        group1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                group1Click(evt);
-            }
+        myGroup.setBackground(new java.awt.Color(128, 190, 183));
+        myGroup.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        myGroup.setForeground(new java.awt.Color(255, 255, 255));
+        myGroup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-group-task-30.png"))); // NOI18N
+        myGroup.setText("My Group");
+        myGroup.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                group1Press(evt);
+                myGroupMousePressed(evt);
             }
         });
 
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-group-30.png"))); // NOI18N
-
-        message1.setText("New message");
-
-        groupname1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        groupname1.setForeground(new java.awt.Color(255, 255, 255));
-        groupname1.setText("IOT");
-
-        javax.swing.GroupLayout group1Layout = new javax.swing.GroupLayout(group1);
-        group1.setLayout(group1Layout);
-        group1Layout.setHorizontalGroup(
-            group1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(group1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(group1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(message1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(groupname1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(53, Short.MAX_VALUE))
-        );
-        group1Layout.setVerticalGroup(
-            group1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(group1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(group1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(group1Layout.createSequentialGroup()
-                        .addComponent(groupname1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                        .addComponent(message1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-
-        group2.setBackground(new java.awt.Color(128, 161, 183));
-        group2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                group2MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                group2Enter(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                group2Exit(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                group2Press(evt);
-            }
-        });
-
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-group-30.png"))); // NOI18N
-
-        message2.setText("New message");
-
-        groupname2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        groupname2.setForeground(new java.awt.Color(255, 255, 255));
-        groupname2.setText("Java Group");
-
-        javax.swing.GroupLayout group2Layout = new javax.swing.GroupLayout(group2);
-        group2.setLayout(group2Layout);
-        group2Layout.setHorizontalGroup(
-            group2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(group2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(group2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(message2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(groupname2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(53, Short.MAX_VALUE))
-        );
-        group2Layout.setVerticalGroup(
-            group2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(group2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(group2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(group2Layout.createSequentialGroup()
-                        .addComponent(groupname2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                        .addComponent(message2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-
-        group3.setBackground(new java.awt.Color(128, 161, 183));
-        group3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                group3MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                group3Enter(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                group3Exit(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                group3Press(evt);
-            }
-        });
-
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-group-30.png"))); // NOI18N
-
-        message3.setText("New message");
-
-        groupname3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        groupname3.setForeground(new java.awt.Color(255, 255, 255));
-        groupname3.setText("Ae chung ta");
-
-        javax.swing.GroupLayout group3Layout = new javax.swing.GroupLayout(group3);
-        group3.setLayout(group3Layout);
-        group3Layout.setHorizontalGroup(
-            group3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(group3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(group3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(message3, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(groupname3, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(53, Short.MAX_VALUE))
-        );
-        group3Layout.setVerticalGroup(
-            group3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(group3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(group3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(group3Layout.createSequentialGroup()
-                        .addComponent(groupname3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                        .addComponent(message3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-
-        group4.setBackground(new java.awt.Color(128, 161, 183));
-        group4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                group4Click(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                group4Enter(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                group4Exit(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                group4Press(evt);
-            }
-        });
-
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-group-30.png"))); // NOI18N
-
-        message4.setText("New message");
-
-        groupname4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        groupname4.setForeground(new java.awt.Color(255, 255, 255));
-        groupname4.setText("Hoi Hoa Hoc");
-
-        javax.swing.GroupLayout group4Layout = new javax.swing.GroupLayout(group4);
-        group4.setLayout(group4Layout);
-        group4Layout.setHorizontalGroup(
-            group4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(group4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(group4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(message4, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(groupname4, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(53, Short.MAX_VALUE))
-        );
-        group4Layout.setVerticalGroup(
-            group4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(group4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(group4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(group4Layout.createSequentialGroup()
-                        .addComponent(groupname4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                        .addComponent(message4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-
-        group5.setBackground(new java.awt.Color(128, 161, 183));
-        group5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                group5MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                group5Enter(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                group5Exit(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                group5Press(evt);
-            }
-        });
-
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-group-30.png"))); // NOI18N
-
-        message5.setText("New message");
-
-        groupname5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        groupname5.setForeground(new java.awt.Color(255, 255, 255));
-        groupname5.setText("Ae1");
-
-        javax.swing.GroupLayout group5Layout = new javax.swing.GroupLayout(group5);
-        group5.setLayout(group5Layout);
-        group5Layout.setHorizontalGroup(
-            group5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(group5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel24)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(group5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(message5, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(groupname5, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(53, Short.MAX_VALUE))
-        );
-        group5Layout.setVerticalGroup(
-            group5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(group5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(group5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(group5Layout.createSequentialGroup()
-                        .addComponent(groupname5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                        .addComponent(message5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-
-        group6.setBackground(new java.awt.Color(128, 161, 183));
-        group6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                group6MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                group6Enter(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                group6Exit(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                group6Press(evt);
-            }
-        });
-
-        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-group-30.png"))); // NOI18N
-
-        message6.setText("New message");
-
-        groupname6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        groupname6.setForeground(new java.awt.Color(255, 255, 255));
-        groupname6.setText("Ae chung ta");
-
-        javax.swing.GroupLayout group6Layout = new javax.swing.GroupLayout(group6);
-        group6.setLayout(group6Layout);
-        group6Layout.setHorizontalGroup(
-            group6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(group6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel27)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(group6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(message6, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(groupname6, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(53, Short.MAX_VALUE))
-        );
-        group6Layout.setVerticalGroup(
-            group6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(group6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(group6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(group6Layout.createSequentialGroup()
-                        .addComponent(groupname6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                        .addComponent(message6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(group1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(group2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(group3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(group4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(group5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(group6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(group1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(group2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(group3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(group4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(group5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(group6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        jPanel12.setBackground(new java.awt.Color(128, 161, 183));
-
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-female-user-30.png"))); // NOI18N
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Bao Pham Hong Gia");
-
-        menuFriend.setBackground(new java.awt.Color(128, 161, 183));
-
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-menu-30 (1).png"))); // NOI18N
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                menuFriendMouseEnter(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                MenuFriendExit(evt);
-            }
-        });
-
-        javax.swing.GroupLayout menuFriendLayout = new javax.swing.GroupLayout(menuFriend);
-        menuFriend.setLayout(menuFriendLayout);
-        menuFriendLayout.setHorizontalGroup(
-            menuFriendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuFriendLayout.createSequentialGroup()
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
-        );
-        menuFriendLayout.setVerticalGroup(
-            menuFriendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
-                .addComponent(menuFriend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addComponent(menuFriend, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jPanel13.setBackground(new java.awt.Color(128, 190, 183));
-
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-
-        send.setBackground(new java.awt.Color(128, 190, 183));
-
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-send-30 (1).png"))); // NOI18N
-        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                sendMouseEnter(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                sendMouseExit(evt);
-            }
-        });
-
-        javax.swing.GroupLayout sendLayout = new javax.swing.GroupLayout(send);
-        send.setLayout(sendLayout);
-        sendLayout.setHorizontalGroup(
-            sendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sendLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel13)
-                .addContainerGap())
-        );
-        sendLayout.setVerticalGroup(
-            sendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sendLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel13)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTextField2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(send, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTextField2)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(send, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 444, Short.MAX_VALUE)
-                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        createGroup.setBackground(new java.awt.Color(128, 190, 183));
+        createGroup.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        createGroup.setForeground(new java.awt.Color(255, 255, 255));
+        createGroup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-create-30.png"))); // NOI18N
+        createGroup.setText("Create Group");
 
         javax.swing.GroupLayout homeLayout = new javax.swing.GroupLayout(home);
         home.setLayout(homeLayout);
         homeLayout.setHorizontalGroup(
             homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(homeLayout.createSequentialGroup()
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addGroup(homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(homeLayout.createSequentialGroup()
+                        .addComponent(myGroup)
+                        .addGap(18, 18, 18)
+                        .addComponent(createGroup))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 726, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         homeLayout.setVerticalGroup(
             homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(homeLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addGroup(homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(myGroup)
+                    .addComponent(createGroup))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(128, 190, 183));
@@ -791,9 +291,7 @@ public class groupchat extends javax.swing.JFrame {
         otherbtn.setLayout(otherbtnLayout);
         otherbtnLayout.setHorizontalGroup(
             otherbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, otherbtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(chatLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(chatLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         otherbtnLayout.setVerticalGroup(
             otherbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -969,31 +467,10 @@ public class groupchat extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_logoutMousePressed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
     private void sendMouseEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sendMouseEnter
         // TODO add your handling code here:
-        setColor(send);
+        
     }//GEN-LAST:event_sendMouseEnter
-
-    private void sendMouseExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sendMouseExit
-        resetColor(send);    }//GEN-LAST:event_sendMouseExit
-
-    private void menuFriendMouseEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuFriendMouseEnter
-        // TODO add your handling code here:
-        //resetColor(menuFriend);
-    }//GEN-LAST:event_menuFriendMouseEnter
-
-    private void MenuFriendExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuFriendExit
-        // TODO add your handling code here:
-        //setColor(menuFriend);
-    }//GEN-LAST:event_MenuFriendExit
 
     private void homeEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeEnter
         // TODO add your handling code here:
@@ -1051,99 +528,6 @@ public class groupchat extends javax.swing.JFrame {
        // resetColor(chatbtn);
     }//GEN-LAST:event_chatExit
 
-    private void group2Enter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group2Enter
-        // TODO add your handling code here:
-        //setColor1(user2);
-    }//GEN-LAST:event_group2Enter
-
-    private void group2Exit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group2Exit
-        // TODO add your handling code here:
-        //setColor(user2);
-    }//GEN-LAST:event_group2Exit
-
-    private void group3Enter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group3Enter
-        // TODO add your handling code here:
-        //setColor1(user3);
-    }//GEN-LAST:event_group3Enter
-
-    private void group3Exit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group3Exit
-        // TODO add your handling code here:
-        //setColor(user3);
-    }//GEN-LAST:event_group3Exit
-
-    private void group4Enter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group4Enter
-        // TODO add your handling code here:
-       // setColor1(user4);
-    }//GEN-LAST:event_group4Enter
-
-    private void group4Exit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group4Exit
-        // TODO add your handling code here:
-        //setColor(user4);
-    }//GEN-LAST:event_group4Exit
-
-    private void group4Click(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group4Click
-        // TODO add your handling code here:
-        //setColor1(user4);
-    }//GEN-LAST:event_group4Click
-
-    private void group1Click(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group1Click
-        // TODO add your handling code here:
-        //setColor1(user1);
-    }//GEN-LAST:event_group1Click
-
-    private void group2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group2MouseClicked
-        // TODO add your handling code here:
-        //setColor1(user2);
-    }//GEN-LAST:event_group2MouseClicked
-
-    private void group3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group3MouseClicked
-        // TODO add your handling code here:
-       // setColor1(user3);
-    }//GEN-LAST:event_group3MouseClicked
-
-    private void group2Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group2Press
-        // TODO add your handling code here:
-        setColor1(group2);
-        setColor(group1);        
-        setColor(group3);
-        setColor(group4);
-        setColor(group5);
-        setColor(group6);
-
-
-    }//GEN-LAST:event_group2Press
-
-    private void group1Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group1Press
-        // TODO add your handling code here:
-        setColor1(group1);
-        setColor(group2);        
-        setColor(group3);
-        setColor(group4); 
-        setColor(group5);
-        setColor(group6);
-    }//GEN-LAST:event_group1Press
-
-    private void group3Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group3Press
-        // TODO add your handling code here:
-        setColor1(group3);
-        setColor(group2);        
-        setColor(group1);
-        setColor(group4);   
-        setColor(group5);
-        setColor(group6);
-        
-    }//GEN-LAST:event_group3Press
-
-    private void group4Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group4Press
-        // TODO add your handling code here:
-        setColor1(group4);
-        setColor(group2);        
-        setColor(group1);
-        setColor(group3);
-        setColor(group5);
-        setColor(group6);
-    }//GEN-LAST:event_group4Press
-
     private void chatMoousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatMoousePressed
         // TODO add your handling code here:
         dispose();
@@ -1155,37 +539,17 @@ public class groupchat extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_chatMoousePressed
 
-    private void group5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group5MouseClicked
+    private void myGroupMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myGroupMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_group5MouseClicked
-
-    private void group5Enter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group5Enter
-        // TODO add your handling code here:
-    }//GEN-LAST:event_group5Enter
-
-    private void group5Exit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group5Exit
-        // TODO add your handling code here:
-    }//GEN-LAST:event_group5Exit
-
-    private void group5Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group5Press
-        // TODO add your handling code here:
-    }//GEN-LAST:event_group5Press
-
-    private void group6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group6MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_group6MouseClicked
-
-    private void group6Enter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group6Enter
-        // TODO add your handling code here:
-    }//GEN-LAST:event_group6Enter
-
-    private void group6Exit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group6Exit
-        // TODO add your handling code here:
-    }//GEN-LAST:event_group6Exit
-
-    private void group6Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group6Press
-        // TODO add your handling code here:
-    }//GEN-LAST:event_group6Press
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable(){
+            @Override
+            public void run(){
+                new chatboxGroup().setVisible(true);
+            }
+        });
+        
+    }//GEN-LAST:event_myGroupMousePressed
 
 
     void setColor(JPanel label) {
@@ -1260,55 +624,20 @@ public class groupchat extends javax.swing.JFrame {
     private javax.swing.JLabel chatLabel8;
     private javax.swing.JLabel chatLabel9;
     private javax.swing.JPanel chatbtn;
+    private javax.swing.JButton createGroup;
     private javax.swing.JPanel favouritebtn;
-    private javax.swing.JPanel group1;
-    private javax.swing.JPanel group2;
-    private javax.swing.JPanel group3;
-    private javax.swing.JPanel group4;
-    private javax.swing.JPanel group5;
-    private javax.swing.JPanel group6;
     private javax.swing.JPanel groupbtn;
-    private javax.swing.JLabel groupname1;
-    private javax.swing.JLabel groupname2;
-    private javax.swing.JLabel groupname3;
-    private javax.swing.JLabel groupname4;
-    private javax.swing.JLabel groupname5;
-    private javax.swing.JLabel groupname6;
     private javax.swing.JPanel home;
     private javax.swing.JPanel homebtn;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JPanel logoutbtn;
-    private javax.swing.JPanel menuFriend;
-    private javax.swing.JLabel message1;
-    private javax.swing.JLabel message2;
-    private javax.swing.JLabel message3;
-    private javax.swing.JLabel message4;
-    private javax.swing.JLabel message5;
-    private javax.swing.JLabel message6;
+    private javax.swing.JButton myGroup;
     private javax.swing.JPanel otherbtn;
-    private javax.swing.JPanel send;
     // End of variables declaration//GEN-END:variables
 }
