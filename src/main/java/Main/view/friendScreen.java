@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Main.view;
+
 import Main.entity.Friend;
 import Main.controller.FriendController;
 import java.awt.Color;
@@ -11,17 +12,20 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *Z
+ * Z
+ *
  * @author HP-PC
  */
 public class friendScreen extends javax.swing.JFrame {
+
+    ArrayList<Friend> listFriend;
 
     /**
      * Creates new form boxChat
      */
     public friendScreen() {
         initComponents();
-        ArrayList<Friend> listFriend = FriendController.apiFriendList();
+        listFriend = FriendController.apiFriendList();
         DefaultTableModel model = (DefaultTableModel) friendListTable.getModel();
         model.setRowCount(0);
         int i = 0;
@@ -107,6 +111,11 @@ public class friendScreen extends javax.swing.JFrame {
         friendListTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         friendListTable.setShowGrid(true);
         friendListTable.setUpdateSelectionOnSort(false);
+        friendListTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                friendListTableMousePressed(evt);
+            }
+        });
         jScrollPane2.setViewportView(friendListTable);
 
         jButton1.setBackground(new java.awt.Color(128, 190, 183));
@@ -443,7 +452,7 @@ public class friendScreen extends javax.swing.JFrame {
 
     private void homeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMousePressed
         // TODO add your handling code here:
-                dispose();
+        dispose();
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -545,21 +554,21 @@ public class friendScreen extends javax.swing.JFrame {
 
     private void addFriendBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addFriendBtnActionPerformed
         // TODO add your handling code here:
-        dispose();        
+        dispose();
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
                 new friendRequestScreen().setVisible(true);
             }
         });
-        
-        
+
+
     }//GEN-LAST:event_addFriendBtnActionPerformed
 
     private void friendRequestMousePress(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_friendRequestMousePress
         // TODO add your handling code here:
-                
-        dispose();        
+
+        dispose();
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -572,6 +581,43 @@ public class friendScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_friendRequestActionPerformed
 
+    private void friendListTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_friendListTableMousePressed
+        // TODO add your handling code here:
+
+        int selectedRow = friendListTable.getSelectedRow();
+        String usernameSelected = listFriend.get(selectedRow).getUsername();
+        // Display the selected row number
+        int choice = JOptionPane.showOptionDialog(this,
+                "Unfriend to " + listFriend.get(selectedRow).getFullname() + "?",
+                "Unfriend Request",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                new Object[]{"Yes", "Cancel"},
+                "Yes");
+
+        // Process the user's choice
+        if (choice == JOptionPane.YES_OPTION) {
+            boolean isAccepted = FriendController.apiUnfriend(usernameSelected);
+            if (isAccepted) {
+                JOptionPane.showMessageDialog(null, "Unfriend successfully to " + usernameSelected + "!",
+                        "Message", JOptionPane.OK_OPTION);
+                dispose();
+                java.awt.EventQueue.invokeLater(new Runnable() {
+                    public void run() {
+                        new friendScreen().setVisible(true);
+                    }
+                });
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Cannot unfriend to " + usernameSelected + " as Admin role!",
+                        "Message", JOptionPane.OK_OPTION);
+            }
+
+        } else {
+            System.out.println("Cancel");
+        }
+    }//GEN-LAST:event_friendListTableMousePressed
 
     void setColor(JPanel label) {
         label.setBackground(new Color(128, 161, 183));

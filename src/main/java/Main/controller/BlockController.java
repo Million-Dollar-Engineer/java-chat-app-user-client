@@ -42,12 +42,11 @@ public class BlockController {
                 return true;
             } else {
                 System.out.println("GET request failed. Response Code: " + responseCode);
+                return false;
             }
-            connection.disconnect();
         } catch (IOException | JSONException e) {
-            e.printStackTrace();
+            return false;
         }
-        return false;
     }
     
     public static String isBlocked(String username){
@@ -96,7 +95,6 @@ public class BlockController {
                 return "";
             }
         } catch (IOException | JSONException e) {
-            e.printStackTrace();
             return "";
         }
     } 

@@ -18,22 +18,21 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import main.socket.SocketThread;
 import Main.shareEnv.*;
-
+import java.awt.Font;
 
 /**
  *
  * @author HP-PC
  */
 public class chatbox extends javax.swing.JFrame {
-    static ArrayList<Friend> friends = new ArrayList<>();    
+
+    static ArrayList<Friend> friends = new ArrayList<>();
     ArrayList<MessageEntity> historyMessage = new ArrayList<>();
-    
-    
+
     static {
         SocketThread.startSocket(Share.socketHost, Share.socketPort);
     }
-            
-            
+
     /**
      * Creates new form boxChat
      */
@@ -174,7 +173,7 @@ public class chatbox extends javax.swing.JFrame {
         avatar1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         avatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-user-30 (1).png"))); // NOI18N
 
-        message1.setText("New message");
+        message1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         fullname1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         fullname1.setForeground(new java.awt.Color(255, 255, 255));
@@ -225,7 +224,7 @@ public class chatbox extends javax.swing.JFrame {
         avatar2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         avatar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-user-30 (1).png"))); // NOI18N
 
-        message2.setText("New message");
+        message2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         fullname2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         fullname2.setForeground(new java.awt.Color(255, 255, 255));
@@ -276,7 +275,7 @@ public class chatbox extends javax.swing.JFrame {
         avatar3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         avatar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-user-30 (1).png"))); // NOI18N
 
-        message3.setText("New message");
+        message3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         fullname3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         fullname3.setForeground(new java.awt.Color(255, 255, 255));
@@ -327,7 +326,7 @@ public class chatbox extends javax.swing.JFrame {
         avatar4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         avatar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-user-30 (1).png"))); // NOI18N
 
-        message4.setText("New message");
+        message4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         fullname4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         fullname4.setForeground(new java.awt.Color(255, 255, 255));
@@ -378,7 +377,7 @@ public class chatbox extends javax.swing.JFrame {
         avatar5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         avatar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-user-30 (1).png"))); // NOI18N
 
-        message5.setText("New message");
+        message5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         fullname5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         fullname5.setForeground(new java.awt.Color(255, 255, 255));
@@ -429,7 +428,7 @@ public class chatbox extends javax.swing.JFrame {
         avatar6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         avatar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-user-30 (1).png"))); // NOI18N
 
-        message6.setText("New message");
+        message6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         fullname6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         fullname6.setForeground(new java.awt.Color(255, 255, 255));
@@ -967,7 +966,7 @@ public class chatbox extends javax.swing.JFrame {
                 new homeScreen().setVisible(true);
             }
         });
-        
+
     }//GEN-LAST:event_homeScreenMousePressed
 
     private void chatLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel7MouseClicked
@@ -986,10 +985,10 @@ public class chatbox extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
         java.awt.EventQueue.invokeLater(new Runnable() {
-           @Override 
-           public void run() {
-               new groupchat().setVisible(true);
-           }
+            @Override
+            public void run() {
+                new groupchat().setVisible(true);
+            }
         });
     }//GEN-LAST:event_groupScreenMousePressed
 
@@ -1001,10 +1000,10 @@ public class chatbox extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
         java.awt.EventQueue.invokeLater(new Runnable() {
-           @Override 
-           public void run() {
-               new friendScreen().setVisible(true);
-           }
+            @Override
+            public void run() {
+                new friendScreen().setVisible(true);
+            }
         });
     }//GEN-LAST:event_favouriteScreenMousePressed
 
@@ -1017,7 +1016,7 @@ public class chatbox extends javax.swing.JFrame {
         dispose();
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
-            public void run(){
+            public void run() {
                 new otherScreen().setVisible(true);
             }
         });
@@ -1032,7 +1031,7 @@ public class chatbox extends javax.swing.JFrame {
         dispose();
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
-            public void run(){
+            public void run() {
                 new loginForm().setVisible(true);
             }
         });
@@ -1132,7 +1131,7 @@ public class chatbox extends javax.swing.JFrame {
 
     private void user4Enter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user4Enter
         // TODO add your handling code here:
-       // setColor1(user4);
+        // setColor1(user4);
     }//GEN-LAST:event_user4Enter
 
     private void user4Exit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user4Exit
@@ -1157,25 +1156,27 @@ public class chatbox extends javax.swing.JFrame {
 
     private void user3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user3MouseClicked
         // TODO add your handling code here:
-       // setColor1(user3);
+        // setColor1(user3);
     }//GEN-LAST:event_user3MouseClicked
 
     private void user2Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user2Press
         // TODO add your handling code here:
         chatPerson.setText(friends.get(1).getUsername());
         setColor1(user2);
-        setColor(user1);        
+        setColor(user1);
         setColor(user3);
         setColor(user4);
         setColor(user5);
         setColor(user6);
-        
+        message2.setForeground(Color.BLACK);
+        Font normalFont = new Font(message2.getFont().getName(), Font.PLAIN, message2.getFont().getSize());
+        message2.setFont(normalFont);
+
         String username = friends.get(1).getUsername();
         ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(username);
-
-
+        message2.setText(historyUser.get(historyUser.size() - 1).getMessage());
         area.setText("");
-        for (MessageEntity i : historyUser){
+        for (MessageEntity i : historyUser) {
             if (i.getsenderId().endsWith(File.readFromFile())) {
                 String appendtxt = "@YOU: " + i.getMessage() + "\n";
                 area.append(appendtxt);
@@ -1184,12 +1185,12 @@ public class chatbox extends javax.swing.JFrame {
                 area.append(appendtxt);
             }
         }
-        
-        send.setVisible(true);    
+
+        send.setVisible(true);
         sendMessage.setVisible(true);
-        
+
         String isBlockedUser = BlockController.isBlocked(username);
-        if (isBlockedUser.equals("")){
+        if (isBlockedUser.equals("")) {
             System.out.println("ok");
         } else {
             area.append(isBlockedUser);
@@ -1201,19 +1202,23 @@ public class chatbox extends javax.swing.JFrame {
 
     private void user1Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user1Press
         // TODO add your handling code here:
-        
+
         setColor1(user1);
         chatPerson.setText(friends.get(0).getUsername());
-        setColor(user2);        
+        setColor(user2);
         setColor(user3);
-        setColor(user4);        
+        setColor(user4);
         setColor(user5);
         setColor(user6);
-        
+        message1.setForeground(Color.BLACK);
+        Font normalFont = new Font(message1.getFont().getName(), Font.PLAIN, message1.getFont().getSize());
+        message1.setFont(normalFont);
+
         String username = friends.get(0).getUsername();
         ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(friends.get(0).getUsername());
         area.setText("");
-        for (MessageEntity i : historyUser){
+        message1.setText(historyUser.get(historyUser.size() - 1).getMessage());
+        for (MessageEntity i : historyUser) {
             if (i.getsenderId().endsWith(File.readFromFile())) {
                 String appendtxt = "@YOU: " + i.getMessage() + "\n";
                 area.append(appendtxt);
@@ -1222,35 +1227,39 @@ public class chatbox extends javax.swing.JFrame {
                 area.append(appendtxt);
             }
         }
-        
-        send.setVisible(true);    
+
+        send.setVisible(true);
         sendMessage.setVisible(true);
         String isBlockedUser = BlockController.isBlocked(username);
-        if (isBlockedUser.equals("")){
-                        System.out.println("ok");
+        if (isBlockedUser.equals("")) {
+            System.out.println("ok");
 
         } else {
             area.append(isBlockedUser);
             send.setVisible(false);
             sendMessage.setVisible(false);
         }
-      
+
     }//GEN-LAST:event_user1Press
 
     private void user3Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user3Press
         // TODO add your handling code here:
         setColor1(user3);
         chatPerson.setText(friends.get(2).getUsername());
-        setColor(user2);        
+        setColor(user2);
         setColor(user1);
         setColor(user4);
         setColor(user5);
         setColor(user6);
-        
+        message3.setForeground(Color.BLACK);
+        Font normalFont = new Font(message3.getFont().getName(), Font.PLAIN, message3.getFont().getSize());
+        message3.setFont(normalFont);
+
         String username = friends.get(2).getUsername();
         ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(friends.get(2).getUsername());
+        message3.setText(historyUser.get(historyUser.size() - 1).getMessage());
         area.setText("");
-        for (MessageEntity i : historyUser){
+        for (MessageEntity i : historyUser) {
             if (i.getsenderId().endsWith(File.readFromFile())) {
                 String appendtxt = "@YOU: " + i.getMessage() + "\n";
                 area.append(appendtxt);
@@ -1259,13 +1268,13 @@ public class chatbox extends javax.swing.JFrame {
                 area.append(appendtxt);
             }
         }
-         
-        send.setVisible(true);    
+
+        send.setVisible(true);
         sendMessage.setVisible(true);
         String isBlockedUser = BlockController.isBlocked(username);
-        if (isBlockedUser.equals("")){
-                    System.out.println("ok");
-} else {
+        if (isBlockedUser.equals("")) {
+            System.out.println("ok");
+        } else {
             area.append(isBlockedUser);
             send.setVisible(false);
             sendMessage.setVisible(false);
@@ -1276,17 +1285,20 @@ public class chatbox extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor1(user4);
         chatPerson.setText(friends.get(3).getUsername());
-        setColor(user2);        
+        setColor(user2);
         setColor(user1);
         setColor(user3);
         setColor(user5);
-        setColor(user6);       
-        
-                
+        setColor(user6);
+        message4.setForeground(Color.BLACK);
+        Font normalFont = new Font(message4.getFont().getName(), Font.PLAIN, message4.getFont().getSize());
+        message4.setFont(normalFont);
+
         String username = friends.get(3).getUsername();
         ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(friends.get(3).getUsername());
+        message4.setText(historyUser.get(historyUser.size() - 1).getMessage());
         area.setText("");
-        for (MessageEntity i : historyUser){
+        for (MessageEntity i : historyUser) {
             if (i.getsenderId().endsWith(File.readFromFile())) {
                 String appendtxt = "@YOU: " + i.getMessage() + "\n";
                 area.append(appendtxt);
@@ -1295,13 +1307,12 @@ public class chatbox extends javax.swing.JFrame {
                 area.append(appendtxt);
             }
         }
-        
-         
-        send.setVisible(true);    
+
+        send.setVisible(true);
         sendMessage.setVisible(true);
         String isBlockedUser = BlockController.isBlocked(username);
-        if (isBlockedUser.equals("")){
-                    System.out.println("ok");
+        if (isBlockedUser.equals("")) {
+            System.out.println("ok");
 
         } else {
             area.append(isBlockedUser);
@@ -1319,58 +1330,104 @@ public class chatbox extends javax.swing.JFrame {
         String appendtxt = "@" + sender + ": " + getMess + "\n";
         area.append(appendtxt);
         sendMessage.setText("");
-     
+
         SocketThread.sendMessage("msg to user", recipient, getMess);
 
     }//GEN-LAST:event_sendMessageToServer
 
-    
-    public static void appendTextToBoxChat(String recipient, String message){
+    public static void appendTextToBoxChat(String recipient, String message) {
         String currentRecipient = chatPerson.getText();
-        
-        if (recipient.equals(currentRecipient)){
+
+        if (recipient.equals(currentRecipient)) {
             System.out.println("vooooooooooooooooooooooooos");
             area.append("@" + recipient + ": " + message);
-        } else {
-            for (int i = 0; i <= friends.size(); i++){
+            for (int i = 0; i <= friends.size(); i++) {
                 if (recipient.equals(friends.get(i).getUsername())) {
                     switch (i) {
-                        case 0: {
+                        case 0 -> {
                             message1.setText(message);
                         }
-                        
-                        case 1: {
+
+                        case 1 -> {
                             message2.setText(message);
                         }
-                                 
-                        case 2: {
+
+                        case 2 -> {
                             message3.setText(message);
                         }
 
-                        case 3: {
+                        case 3 -> {
                             message4.setText(message);
-                        }                        
-                        
-                        case 4: {
+                        }
+
+                        case 4 -> {
                             message5.setText(message);
-                        }                        
-                        
-                        case 5: {
+                        }
+
+                        case 5 -> {
                             message6.setText(message);
-                        }                        
-                        
+                        }
+
+                    }
+                }
+            }
+        } else {
+            for (int i = 0; i <= friends.size(); i++) {
+                if (recipient.equals(friends.get(i).getUsername())) {
+                    switch (i) {
+                        case 0 -> {
+                            message1.setText(message);
+                            message1.setForeground(Color.RED);
+                            Font boldFont = new Font(message1.getFont().getName(), Font.BOLD, message1.getFont().getSize());
+                            message1.setFont(boldFont);
+                        }
+
+                        case 1 -> {
+                            message2.setText(message);
+                            Font boldFont = new Font(message2.getFont().getName(), Font.BOLD, message2.getFont().getSize());
+                            message2.setForeground(Color.RED);
+                            message2.setFont(boldFont);
+                        }
+
+                        case 2 -> {
+                            message3.setText(message);
+                            message3.setForeground(Color.RED);
+                            Font boldFont = new Font(message3.getFont().getName(), Font.BOLD, message3.getFont().getSize());
+                            message3.setFont(boldFont);
+                        }
+
+                        case 3 -> {
+                            message4.setText(message);
+                            message4.setForeground(Color.RED);
+                            Font boldFont = new Font(message4.getFont().getName(), Font.BOLD, message4.getFont().getSize());
+                            message4.setFont(boldFont);
+                        }
+
+                        case 4 -> {
+                            message5.setText(message);
+                            message5.setForeground(Color.RED);
+                            Font boldFont = new Font(message5.getFont().getName(), Font.BOLD, message5.getFont().getSize());
+                            message5.setFont(boldFont);
+                        }
+
+                        case 5 -> {
+                            message6.setText(message);
+                            message6.setForeground(Color.RED);
+                            Font boldFont = new Font(message6.getFont().getName(), Font.BOLD, message6.getFont().getSize());
+                            message6.setFont(boldFont);
+                        }
+
                     }
                 }
             }
         }
-        
-        
+
     }
-    
+
     private void searchMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMousePressed
         // TODO add your handling code here:
         fullname4.setText("Edward Pham Hong Gia Bao");
-        user1.setVisible(false);        
+        user1.setVisible(false);
         user2.setVisible(false);
         user3.setVisible(false);
     }//GEN-LAST:event_searchMousePressed
@@ -1391,16 +1448,20 @@ public class chatbox extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor1(user5);
         chatPerson.setText(friends.get(4).getUsername());
-        setColor(user2);        
+        setColor(user2);
         setColor(user1);
         setColor(user3);
         setColor(user4);
-        setColor(user6); 
-                
+        setColor(user6);
+        message5.setForeground(Color.BLACK);
+        Font normalFont = new Font(message5.getFont().getName(), Font.PLAIN, message5.getFont().getSize());
+        message5.setFont(normalFont);
+
         String username = friends.get(4).getUsername();
         ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(friends.get(4).getUsername());
+        message5.setText(historyUser.get(historyUser.size() - 1).getMessage());
         area.setText("");
-        for (MessageEntity i : historyUser){
+        for (MessageEntity i : historyUser) {
             if (i.getsenderId().endsWith(File.readFromFile())) {
                 String appendtxt = "@YOU: " + i.getMessage() + "\n";
                 area.append(appendtxt);
@@ -1409,19 +1470,19 @@ public class chatbox extends javax.swing.JFrame {
                 area.append(appendtxt);
             }
         }
-        
-        send.setVisible(true);    
+
+        send.setVisible(true);
         sendMessage.setVisible(true);
         String isBlockedUser = BlockController.isBlocked(username);
-        if (isBlockedUser.equals("")){
-                        System.out.println("ok");
+        if (isBlockedUser.equals("")) {
+            System.out.println("ok");
 
         } else {
             area.append(isBlockedUser);
             send.setVisible(false);
             sendMessage.setVisible(false);
         }
-        
+
     }//GEN-LAST:event_user5Press
 
     private void user6Click(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user6Click
@@ -1440,16 +1501,22 @@ public class chatbox extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor1(user6);
         chatPerson.setText(friends.get(5).getUsername());
-        setColor(user2);        
+        setColor(user2);
         setColor(user1);
         setColor(user3);
         setColor(user5);
-        setColor(user4); 
-        
+        setColor(user4);
+        message6.setForeground(Color.BLACK);
+        Font normalFont = new Font(message6.getFont().getName(), Font.PLAIN, message6.getFont().getSize());
+        message6.setFont(normalFont);
+
         String username = friends.get(5).getUsername();
         ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(friends.get(5).getUsername());
+        message6.setText(historyUser.get(historyUser.size() - 1).getMessage());
         area.setText("");
-        for (MessageEntity i : historyUser){
+        message6.setText(historyUser.get(historyUser.size() - 1).getMessage());
+
+        for (MessageEntity i : historyUser) {
             if (i.getsenderId().endsWith(File.readFromFile())) {
                 String appendtxt = "@You: " + i.getMessage() + "\n";
                 area.append(appendtxt);
@@ -1458,19 +1525,19 @@ public class chatbox extends javax.swing.JFrame {
                 area.append(appendtxt);
             }
         }
-         
-        send.setVisible(true);    
+
+        send.setVisible(true);
         sendMessage.setVisible(true);
         String isBlockedUser = BlockController.isBlocked(username);
-        if (isBlockedUser.equals("")){
-                        System.out.println("ok");
+        if (isBlockedUser.equals("")) {
+            System.out.println("ok");
 
         } else {
             area.append(isBlockedUser);
             send.setVisible(false);
             sendMessage.setVisible(false);
         }
-        
+
     }//GEN-LAST:event_user6Press
 
     private void blockedMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_blockedMousePressed
@@ -1478,11 +1545,11 @@ public class chatbox extends javax.swing.JFrame {
         boolean blockUser = BlockController.blockedFriend(chatPerson.getText());
         if (blockUser) {
             JOptionPane.showMessageDialog(this,
-                "You blocked " + chatPerson.getText() + " successfully!",
-                "Block User",
-                JOptionPane.INFORMATION_MESSAGE);
+                    "You blocked " + chatPerson.getText() + " successfully!",
+                    "Block User",
+                    JOptionPane.INFORMATION_MESSAGE);
         }
-                 
+
     }//GEN-LAST:event_blockedMousePressed
 
     private void spamMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_spamMousePressed
@@ -1490,13 +1557,13 @@ public class chatbox extends javax.swing.JFrame {
         boolean spamUser = BlockController.spamUser(chatPerson.getText());
         if (spamUser) {
             JOptionPane.showMessageDialog(this,
-                "You spam " + chatPerson.getText() + " successfully!",
-                "Block User",
-                JOptionPane.INFORMATION_MESSAGE);
+                    "You spam " + chatPerson.getText() + " successfully!",
+                    "Block User",
+                    JOptionPane.INFORMATION_MESSAGE);
         }
-        
+
     }//GEN-LAST:event_spamMousePressed
-    
+
     private static String colorString(String text) {
         StringBuilder coloredText = new StringBuilder("<html>");
         for (char c : text.toCharArray()) {
@@ -1509,116 +1576,97 @@ public class chatbox extends javax.swing.JFrame {
     private static Color getRandomColor() {
         return new Color((int) (Math.random() * 256), (int) (Math.random() * 256), (int) (Math.random() * 256));
     }
-    
-    String getMessage(){
+
+    String getMessage() {
         String getMess = sendMessage.getText();
         return getMess;
     }
-    
-    
 
     void setColor(JPanel label) {
         label.setBackground(new Color(128, 161, 183));
-        
+
     }
-    
+
     void setColor1(JPanel label) {
-        label.setBackground(new Color(128,206,202));
+        label.setBackground(new Color(128, 206, 202));
     }
-    
+
     void resetColor(JPanel label) {
         label.setBackground(new Color(128, 190, 183));
     }
-    
-    
-    final void initUser(){
-        //ArrayList<Friend> friends = FriendController.apiFriendList();
 
+    final void initUser() {
+        //ArrayList<Friend> friends = FriendController.apiFriendList();
+        chatPerson.setText("");
         int lengFriend = friends.size();
-        switch (lengFriend){
-            case 0: {
+        switch (lengFriend) {
+            case 0 -> {
                 user1.setVisible(false);
                 user2.setVisible(false);
                 user3.setVisible(false);
                 user4.setVisible(false);
                 user5.setVisible(false);
                 user6.setVisible(false);
-                break;
             }
-  
-            case 1:{
+
+            case 1 -> {
                 fullname1.setText(friends.get(0).getFullname());
-                chatPerson.setText(friends.get(0).getUsername());
                 user2.setVisible(false);
                 user3.setVisible(false);
                 user4.setVisible(false);
                 user5.setVisible(false);
                 user6.setVisible(false);
-                break;
             }
-                        
-            case 2:{
+
+            case 2 -> {
                 fullname1.setText(friends.get(0).getFullname());
-                chatPerson.setText(friends.get(0).getUsername());
                 fullname2.setText(friends.get(1).getFullname());
                 user3.setVisible(false);
                 user4.setVisible(false);
                 user5.setVisible(false);
                 user6.setVisible(false);
-                break;
             }
-                        
-            case 3:{
+
+            case 3 -> {
                 fullname1.setText(friends.get(0).getFullname());
-                chatPerson.setText(friends.get(0).getUsername());
-                fullname2.setText(friends.get(1).getFullname());                
+                fullname2.setText(friends.get(1).getFullname());
                 fullname3.setText(friends.get(2).getFullname());
                 user4.setVisible(false);
                 user5.setVisible(false);
                 user6.setVisible(false);
-                break;
             }
-                        
-            case 4:{
+
+            case 4 -> {
                 fullname1.setText(friends.get(0).getFullname());
-                chatPerson.setText(friends.get(0).getUsername());
                 fullname2.setText(friends.get(1).getFullname());
                 fullname3.setText(friends.get(2).getFullname());
                 fullname4.setText(friends.get(3).getFullname());
                 user5.setVisible(false);
                 user6.setVisible(false);
-                break;
             }
-                        
-            case 5:{
+
+            case 5 -> {
                 fullname1.setText(friends.get(0).getFullname());
-                chatPerson.setText(friends.get(0).getUsername());
                 fullname2.setText(friends.get(1).getFullname());
                 fullname3.setText(friends.get(2).getFullname());
                 fullname4.setText(friends.get(3).getFullname());
                 fullname5.setText(friends.get(4).getFullname());
                 user6.setVisible(false);
-                break;
             }
-                        
-            case 6:{
+
+            case 6 -> {
                 fullname1.setText(friends.get(0).getFullname());
-                chatPerson.setText(friends.get(0).getUsername());
+
                 fullname2.setText(friends.get(1).getFullname());
                 fullname3.setText(friends.get(2).getFullname());
-                fullname4.setText(friends.get(3).getFullname());                
+                fullname4.setText(friends.get(3).getFullname());
                 fullname5.setText(friends.get(4).getFullname());
                 fullname6.setText(friends.get(5).getFullname());
 
-                break;
             }
-            
+
         }
     }
-    
-    
-    
-    
 
     /**
      * @param args the command line arguments

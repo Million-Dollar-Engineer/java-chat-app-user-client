@@ -10,6 +10,7 @@ import Main.entity.GroupMember;
 import Main.file.File;
 import Main.shareEnv.Share;
 import Main.view.addFriendScreen;
+import Main.view.addMemberNewGroup;
 import Main.view.addMemberScreen;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -25,14 +26,13 @@ import org.json.JSONObject;
  *
  * @author HP-PC
  */
-
 public class GroupController {
-    public static ArrayList<Group> apiGroupList(){
-        ArrayList<Group> groupList = new ArrayList<>(); 
+    public static ArrayList<Group> apiGroupList() {
+        ArrayList<Group> groupList = new ArrayList<>();
         try {
             // Specify the URL
             String idUser = File.readFromFile();
-            String apiUrl = Share.apiURL +  "/user/list-my-group?user_id=" + idUser;
+            String apiUrl = Share.apiURL + "/user/list-my-group?user_id=" + idUser;
             System.out.println(apiUrl);
             // Create a URL object
             URL url = new URL(apiUrl);
@@ -70,7 +70,7 @@ public class GroupController {
 
                     Group tmp = new Group(id, name);
                     groupList.add(tmp);
-                  
+
                     // Now you have the values for each object
                     System.out.println("Id: " + id);
                     System.out.println(": " + name);
@@ -86,14 +86,13 @@ public class GroupController {
         }
         return groupList;
     }
-    
-    
-    public static ArrayList<GroupMember> apiGroupMemberList(String idGroup){
-        ArrayList<GroupMember> groupList = new ArrayList<>(); 
+
+    public static ArrayList<GroupMember> apiGroupMemberList(String idGroup) {
+        ArrayList<GroupMember> groupList = new ArrayList<>();
         try {
             // Specify the URL
             String idUser = File.readFromFile();
-            String apiUrl = Share.apiURL +  "/user/list-group-member?group_id=" + idGroup;
+            String apiUrl = Share.apiURL + "/user/list-group-member?group_id=" + idGroup;
             System.out.println(apiUrl);
             // Create a URL object
             URL url = new URL(apiUrl);
@@ -129,12 +128,12 @@ public class GroupController {
                     String name = jsonObject.getString("name");
                     String username = jsonObject.getString("userName");
                     String role = jsonObject.getString("role");
-                    
+
                     GroupMember tmp = new GroupMember(name, username, role);
                     groupList.add(tmp);
-                  
+
                     // Now you have the values for each object
-                    System.out.println(name + " " + username + " "  + role );
+                    System.out.println(name + " " + username + " " + role);
                     System.out.println("-----");
                 }
             } else {
@@ -147,13 +146,12 @@ public class GroupController {
         }
         return groupList;
     }
-    
-        
-    public static boolean apiAddMemberToGroup(String username, String groupId){
+
+    public static boolean apiAddMemberToGroup(String username, String groupId) {
         try {
             // Specify the URL
             String idUser = File.readFromFile();
-            String apiUrl = Share.apiURL +  "/user/add-user-to-group?user_id=" + idUser + "&group_id=" + groupId +  "&user_name=" +  username;
+            String apiUrl = Share.apiURL + "/user/add-user-to-group?user_id=" + idUser + "&group_id=" + groupId + "&user_name=" + username;
             System.out.println(apiUrl);
             // Create a URL object
             URL url = new URL(apiUrl);
@@ -178,13 +176,13 @@ public class GroupController {
             e.printStackTrace();
         }
         return false;
-    } 
-    
-    public static boolean apiRemoveGroupMember(String username, String groupId){
+    }
+
+    public static boolean apiRemoveGroupMember(String username, String groupId) {
         try {
             // Specify the URL
             String idUser = File.readFromFile();
-            String apiUrl = Share.apiURL +  "/user/remove-user-from-group?user_id=" + idUser + "&group_id=" + groupId +  "&user_name=" +  username;
+            String apiUrl = Share.apiURL + "/user/remove-user-from-group?user_id=" + idUser + "&group_id=" + groupId + "&user_name=" + username;
             System.out.println(apiUrl);
             // Create a URL object
             URL url = new URL(apiUrl);
@@ -209,13 +207,13 @@ public class GroupController {
             e.printStackTrace();
         }
         return false;
-    } 
-    
-    public static boolean apiRenameGroup(String groupName, String groupId){
+    }
+
+    public static boolean apiRenameGroup(String groupName, String groupId) {
         try {
             // Specify the URL
             String idUser = File.readFromFile();
-            String apiUrl = Share.apiURL +  "/user/rename-group?user_id=" + idUser + "&group_id=" + groupId +  "&group_name=" +  groupName;
+            String apiUrl = Share.apiURL + "/user/rename-group?user_id=" + idUser + "&group_id=" + groupId + "&group_name=" + groupName;
             System.out.println(apiUrl);
             // Create a URL object
             URL url = new URL(apiUrl);
@@ -240,13 +238,13 @@ public class GroupController {
             e.printStackTrace();
         }
         return false;
-    } 
-    
-    public static boolean apiInviteAdmin(String groupId, String username){
+    }
+
+    public static boolean apiInviteAdmin(String groupId, String username) {
         try {
             // Specify the URL
             String idUser = File.readFromFile();
-            String apiUrl = Share.apiURL +  "/user/give-admin-role?user_id=" + idUser + "&group_id=" + groupId +  "&user_name=" +  username;
+            String apiUrl = Share.apiURL + "/user/give-admin-role?user_id=" + idUser + "&group_id=" + groupId + "&user_name=" + username;
             System.out.println(apiUrl);
             // Create a URL object
             URL url = new URL(apiUrl);
@@ -271,13 +269,12 @@ public class GroupController {
             e.printStackTrace();
         }
         return false;
-    } 
-    
-    
-    public static void apiFindUser(String user){
+    }
+
+    public static void apiFindUser(String user) {
         try {
             // Create a URL object with the API endpoint
-            URL url = new URL(Share.apiURL +"/user/list?username=" + user);
+            URL url = new URL(Share.apiURL + "/user/list?username=" + user);
 
             // Open a connection to the URL
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -289,7 +286,6 @@ public class GroupController {
             connection.setDoOutput(true);
             connection.setRequestProperty("Content-Type", "application/json");
 
-            
             // Get the response code
             int responseCode = connection.getResponseCode();
 
@@ -307,16 +303,15 @@ public class GroupController {
             JSONObject jsonResponse = new JSONObject(response.toString());
 
             // Access the properties in the response body
-            String username = jsonResponse.getString("userName");      
+            String username = jsonResponse.getString("userName");
             String name = jsonResponse.getString("name");
-
 
             //Print the response
             System.out.println("Response Code: " + responseCode);
-            System.out.println("Message: " + username);     
+            System.out.println("Message: " + username);
             System.out.println("Message: " + name);
 
-            if (responseCode == 200){               
+            if (responseCode == 200) {
                 addMemberScreen.appendUserToLabel(name);
             }
 
@@ -326,5 +321,108 @@ public class GroupController {
             e.printStackTrace();
         }
     }
+    
+    public static void apiAddMemberNewGroup(String user) {
+        try {
+            // Create a URL object with the API endpoint
+            URL url = new URL(Share.apiURL + "/user/list?username=" + user);
+
+            // Open a connection to the URL
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            // Set the request method to POST
+            connection.setRequestMethod("GET");
+
+            // Enable output and set the content type
+            connection.setDoOutput(true);
+            connection.setRequestProperty("Content-Type", "application/json");
+
+            // Get the response code
+            int responseCode = connection.getResponseCode();
+
+            StringBuilder response;
+            try ( // Read the response from the API
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+                String line;
+                response = new StringBuilder();
+                while ((line = reader.readLine()) != null) {
+                    response.append(line);
+                }
+            }
+
+            // Parse the response as JSON
+            JSONObject jsonResponse = new JSONObject(response.toString());
+
+            // Access the properties in the response body
+            String username = jsonResponse.getString("userName");
+            String name = jsonResponse.getString("name");
+
+            //Print the response
+            System.out.println("Response Code: " + responseCode);
+            System.out.println("Message: " + username);
+            System.out.println("Message: " + name);
+
+            if (responseCode == 200) {
+                addMemberNewGroup.appendUserToLabel(name);
+            }
+
+            // Close the connection
+            connection.disconnect();
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public static String apiCreateNewGroup(String groupname) {
+        String message = "";
+        try {
+            // Create a URL object with the API endpoint
+            URL url = new URL(Share.apiURL + "/user/create-group?user_id=" + File.readFromFile() + "&group_name="  + groupname);
+
+            // Open a connection to the URL
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            // Set the request method to POST
+            connection.setRequestMethod("GET");
+
+            // Enable output and set the content type
+            connection.setDoOutput(true);
+            connection.setRequestProperty("Content-Type", "application/json");
+
+            // Get the response code
+            int responseCode = connection.getResponseCode();
+
+            StringBuilder response;
+            try ( // Read the response from the API
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+                String line;
+                response = new StringBuilder();
+                while ((line = reader.readLine()) != null) {
+                    response.append(line);
+                }
+            }
+
+            // Parse the response as JSON
+            JSONObject jsonResponse = new JSONObject(response.toString());
+
+            // Access the properties in the response body\
+            message = jsonResponse.getString("message");
+
+            //Print the response
+            System.out.println("Response Code: " + responseCode);
+            System.out.println("Message: " + message);
+
+            if (responseCode == 200) {
+                return message;
+            }
+
+            // Close the connection
+            connection.disconnect();
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
+        return message;
+    }
+    
     
 }

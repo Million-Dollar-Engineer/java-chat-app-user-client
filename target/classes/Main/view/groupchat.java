@@ -4,6 +4,7 @@
  */
 package Main.view;
 
+import Main.controller.GroupController;
 import java.awt.Color;
 import javax.swing.*;
 
@@ -85,6 +86,11 @@ public class groupchat extends javax.swing.JFrame {
         createGroup.setForeground(new java.awt.Color(255, 255, 255));
         createGroup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-create-30.png"))); // NOI18N
         createGroup.setText("Create Group");
+        createGroup.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                createGroupMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout homeLayout = new javax.swing.GroupLayout(home);
         home.setLayout(homeLayout);
@@ -411,7 +417,7 @@ public class groupchat extends javax.swing.JFrame {
                 new chatbox().setVisible(true);
             }
         });
-        
+
     }//GEN-LAST:event_chatboxMousePressed
 
     private void chatLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel8MouseClicked
@@ -443,7 +449,7 @@ public class groupchat extends javax.swing.JFrame {
 
     private void otherScreenMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_otherScreenMousePressed
         // TODO add your handling code here:
-                dispose();
+        dispose();
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -469,7 +475,7 @@ public class groupchat extends javax.swing.JFrame {
 
     private void sendMouseEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sendMouseEnter
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_sendMouseEnter
 
     private void homeEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeEnter
@@ -479,17 +485,17 @@ public class groupchat extends javax.swing.JFrame {
 
     private void homeExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeExit
         // TODO add your handling code here:
-       // resetColor(homebtn);
+        // resetColor(homebtn);
     }//GEN-LAST:event_homeExit
 
     private void groupExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_groupExit
         // TODO add your handling code here:
-       // resetColor(groupbtn);
+        // resetColor(groupbtn);
     }//GEN-LAST:event_groupExit
 
     private void favouriteEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favouriteEnter
         // TODO add your handling code here:
-       // setColor(favouritebtn);
+        // setColor(favouritebtn);
     }//GEN-LAST:event_favouriteEnter
 
     private void favoutiteExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favoutiteExit
@@ -499,18 +505,18 @@ public class groupchat extends javax.swing.JFrame {
 
     private void otherEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_otherEnter
         // TODO add your handling code here:
-       // setColor(otherbtn);
+        // setColor(otherbtn);
 
     }//GEN-LAST:event_otherEnter
 
     private void otherExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_otherExit
-      //  // TODO add your handling code here:
-       // resetColor(otherbtn);
+        //  // TODO add your handling code here:
+        // resetColor(otherbtn);
     }//GEN-LAST:event_otherExit
 
     private void logoutEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutEnter
         // TODO add your handling code here:
-      //  setColor(logoutbtn);
+        //  setColor(logoutbtn);
     }//GEN-LAST:event_logoutEnter
 
     private void logoutExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutExit
@@ -520,12 +526,12 @@ public class groupchat extends javax.swing.JFrame {
 
     private void chatEnter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatEnter
         // TODO add your handling code here:
-       // setColor(chatbtn);
+        // setColor(chatbtn);
     }//GEN-LAST:event_chatEnter
 
     private void chatExit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatExit
         // TODO add your handling code here:
-       // resetColor(chatbtn);
+        // resetColor(chatbtn);
     }//GEN-LAST:event_chatExit
 
     private void chatMoousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatMoousePressed
@@ -542,25 +548,59 @@ public class groupchat extends javax.swing.JFrame {
     private void myGroupMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myGroupMousePressed
         // TODO add your handling code here:
         dispose();
-        java.awt.EventQueue.invokeLater(new Runnable(){
+        java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
-            public void run(){
+            public void run() {
                 new chatboxGroup().setVisible(true);
             }
         });
-        
+
     }//GEN-LAST:event_myGroupMousePressed
 
+    private void createGroupMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createGroupMousePressed
+        // TODO add your handling code here:
+        JPanel panel = new JPanel();
+        JLabel label = new JLabel("Enter Group Name: ");
+        JTextField textField = new JTextField(20);
+        panel.add(label);
+        panel.add(textField);
+        int result = JOptionPane.showConfirmDialog(
+                null,
+                panel,
+                "Create new Group",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE
+        );
+
+        // Check if the user clicked "OK"
+        if (result == JOptionPane.OK_OPTION) {
+            String groupName = textField.getText();
+            if (!groupName.trim().isEmpty()) {
+                // Display a message with the entered name
+                dispose();
+                java.awt.EventQueue.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        new addMemberNewGroup(groupName).setVisible(true);
+                    }
+                });
+
+            } else {
+                // Display an error message if the user entered an empty name
+                JOptionPane.showMessageDialog(null, "You didn't enter a valid name.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_createGroupMousePressed
 
     void setColor(JPanel label) {
         label.setBackground(new Color(128, 161, 183));
-        
+
     }
-    
+
     void setColor1(JPanel label) {
-        label.setBackground(new Color(128,206,202));
+        label.setBackground(new Color(128, 206, 202));
     }
-    
+
     void resetColor(JPanel label) {
         label.setBackground(new Color(128, 190, 183));
     }

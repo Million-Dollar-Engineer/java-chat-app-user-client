@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Main.controller;
+
 import Main.file.File;
 import Main.shareEnv.*;
 
@@ -19,15 +20,13 @@ import org.json.JSONObject;
  *
  * @author HP-PC
  */
-
-
 public class AuthController {
 
     public static boolean apiLogin(String username, String password) {
         try {
             Share.username = username;
             // Create a URL object with the API endpoint
-            URL url = new URL(Share.apiURL +"/user/login");
+            URL url = new URL(Share.apiURL + "/user/login");
 
             // Open a connection to the URL
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -74,11 +73,11 @@ public class AuthController {
             System.out.println("ID: " + id);
 
             File.writeToFile(id);
-            
-            if (responseCode == 200){
+
+            if (responseCode == 200) {
                 return true;
             }
-            
+
             // Close the connection
             connection.disconnect();
         } catch (IOException | JSONException e) {
@@ -86,12 +85,12 @@ public class AuthController {
         }
         return false;
     }
-    
-    public static boolean apiRegister(String fullname, String username, String pass, String email, String dob, String address, String gender ){
-       
-            try {
+
+    public static boolean apiRegister(String fullname, String username, String pass, String email, String dob, String address, String gender) {
+
+        try {
             // Create a URL object with the API endpoint
-            URL url = new URL(Share.apiURL +"/user/signup");
+            URL url = new URL(Share.apiURL + "/user/signup");
 
             // Open a connection to the URL
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -104,7 +103,6 @@ public class AuthController {
             connection.setRequestProperty("Content-Type", "application/json");
 
             // Create the request body
-
             String requestBody = String.format("{\"username\":\"%s\",\"password\":\"%s\",\"fullname\":\"%s\",\"address\":\"%s\",\"dateOfBirth\":\"%s\",\"email\":\"%s\",\"sex\":\"%s\"}", username, pass, fullname, address, dob, email, gender);
 
             try ( // Write the request body to the output stream
@@ -135,7 +133,7 @@ public class AuthController {
             //Print the response
             System.out.println("Response Code: " + responseCode);
             System.out.println("Message: " + message);
-            if (responseCode == 200){
+            if (responseCode == 200) {
                 return true;
             }
 
@@ -146,14 +144,45 @@ public class AuthController {
         }
         return false;
     }
-    
-//    public static void main(String[] args){
-//        boolean x = apiRegister( "Pham Hong Gia Bao", "baopham", "123", "phgbao@gmail.com", "2003-8-3", "TP HCM", "male");
-//        if (x){
-//            System.out.println("Scueesss");
-//        }
-//        else{
-//            System.out.println("falseeeeeeeeeeeee");
-//        }
-//    }
+
+    public static boolean apiResetPassword(String username) {
+        try {
+            Share.username = username;
+            // Create a URL object with the API endpoint
+            URL url = new URL(Share.apiURL + "/user/reset-password");
+
+            // Open a connection to the URL
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            // Set the request method to POST
+            connection.setRequestMethod("POST");
+
+            // Enable output and set the content type
+            connection.setDoOutput(true);
+            connection.setRequestProperty("Content-Type", "application/json");
+
+            // Create the request body
+            String requestBody = String.format("{\"username\":\"%s\"}", username);
+
+            try ( // Write the request body to the output stream
+                    DataOutputStream outputStream = new DataOutputStream(connection.getOutputStream())) {
+                outputStream.writeBytes(requestBody);
+                outputStream.flush();
+            }
+
+            // Get the response code
+            int responseCode = connection.getResponseCode();
+
+
+            if (responseCode == 200) {
+                return true;
+            }
+
+            // Close the connection
+            connection.disconnect();
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

@@ -236,4 +236,36 @@ public class FriendController {
         }
         return false;
     } 
+    
+    public static boolean apiUnfriend(String username){
+        try {
+            // Specify the URL
+            String idUser = File.readFromFile();
+            String apiUrl = Share.apiURL +  "/user/unfriend?user_id=" + idUser + "&friend_user_name=" + username;
+            System.out.println(apiUrl);
+            // Create a URL object
+            URL url = new URL(apiUrl);
+
+            // Open a connection
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            // Set the request method
+            connection.setRequestMethod("GET");
+
+            // Get the response code
+            int responseCode = connection.getResponseCode();
+            System.out.println("Response code : " + responseCode);
+
+            if (responseCode == 200) {
+                System.out.println("Accept Friend Successfully");
+                return true;
+            } else {
+                System.out.println("GET request failed. Response Code: " + responseCode);
+            }
+            connection.disconnect();
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
+        return false;
+    } 
 }

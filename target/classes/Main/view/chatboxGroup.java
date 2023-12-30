@@ -19,22 +19,22 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import main.socket.SocketThread;
 import Main.shareEnv.*;
-
+import static Main.view.chatbox.friends;
+import java.awt.Font;
 
 /**
  *
  * @author HP-PC
  */
 public class chatboxGroup extends javax.swing.JFrame {
-    static ArrayList<Group> groups = new ArrayList<>();    
+
+    static ArrayList<Group> groups = new ArrayList<>();
     ArrayList<MessageEntity> historyMessage = new ArrayList<>();
-    
-    
+
     static {
         SocketThread.startSocket(Share.socketHost, Share.socketPort);
     }
-            
-            
+
     /**
      * Creates new form boxChat
      */
@@ -174,7 +174,7 @@ public class chatboxGroup extends javax.swing.JFrame {
         avatar1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         avatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-group-30.png"))); // NOI18N
 
-        message1.setText("New message");
+        message1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         groupname1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         groupname1.setForeground(new java.awt.Color(255, 255, 255));
@@ -225,7 +225,7 @@ public class chatboxGroup extends javax.swing.JFrame {
         avatar2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         avatar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-group-30.png"))); // NOI18N
 
-        message2.setText("New message");
+        message2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         groupname2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         groupname2.setForeground(new java.awt.Color(255, 255, 255));
@@ -276,7 +276,7 @@ public class chatboxGroup extends javax.swing.JFrame {
         avatar3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         avatar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-group-30.png"))); // NOI18N
 
-        message3.setText("New message");
+        message3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         groupname3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         groupname3.setForeground(new java.awt.Color(255, 255, 255));
@@ -327,7 +327,7 @@ public class chatboxGroup extends javax.swing.JFrame {
         avatar4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         avatar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-group-30.png"))); // NOI18N
 
-        message4.setText("New message");
+        message4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         groupname4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         groupname4.setForeground(new java.awt.Color(255, 255, 255));
@@ -378,7 +378,7 @@ public class chatboxGroup extends javax.swing.JFrame {
         avatar5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         avatar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-group-30.png"))); // NOI18N
 
-        message5.setText("New message");
+        message5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         groupname5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         groupname5.setForeground(new java.awt.Color(255, 255, 255));
@@ -429,7 +429,7 @@ public class chatboxGroup extends javax.swing.JFrame {
         avatar6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         avatar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-group-30.png"))); // NOI18N
 
-        message6.setText("New message");
+        message6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         groupname6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         groupname6.setForeground(new java.awt.Color(255, 255, 255));
@@ -934,7 +934,7 @@ public class chatboxGroup extends javax.swing.JFrame {
                 new homeScreen().setVisible(true);
             }
         });
-        
+
     }//GEN-LAST:event_homeScreenMousePressed
 
     private void chatLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatLabel7MouseClicked
@@ -953,10 +953,10 @@ public class chatboxGroup extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
         java.awt.EventQueue.invokeLater(new Runnable() {
-           @Override 
-           public void run() {
-               new groupchat().setVisible(true);
-           }
+            @Override
+            public void run() {
+                new groupchat().setVisible(true);
+            }
         });
     }//GEN-LAST:event_groupScreenMousePressed
 
@@ -968,10 +968,10 @@ public class chatboxGroup extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
         java.awt.EventQueue.invokeLater(new Runnable() {
-           @Override 
-           public void run() {
-               new friendScreen().setVisible(true);
-           }
+            @Override
+            public void run() {
+                new friendScreen().setVisible(true);
+            }
         });
     }//GEN-LAST:event_favouriteScreenMousePressed
 
@@ -984,7 +984,7 @@ public class chatboxGroup extends javax.swing.JFrame {
         dispose();
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
-            public void run(){
+            public void run() {
                 new otherScreen().setVisible(true);
             }
         });
@@ -999,7 +999,7 @@ public class chatboxGroup extends javax.swing.JFrame {
         dispose();
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
-            public void run(){
+            public void run() {
                 new loginForm().setVisible(true);
             }
         });
@@ -1099,7 +1099,7 @@ public class chatboxGroup extends javax.swing.JFrame {
 
     private void group4Enter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group4Enter
         // TODO add your handling code here:
-       // setColor1(user4);
+        // setColor1(user4);
     }//GEN-LAST:event_group4Enter
 
     private void group4Exit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group4Exit
@@ -1124,30 +1124,33 @@ public class chatboxGroup extends javax.swing.JFrame {
 
     private void group3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group3MouseClicked
         // TODO add your handling code here:
-       // setColor1(user3);
+        // setColor1(user3);
     }//GEN-LAST:event_group3MouseClicked
 
     private void group2Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group2Press
         // TODO add your handling code here:
         chatPerson.setText(groups.get(1).getUsername());
         setColor1(group2);
-        setColor(group1);        
+        setColor(group1);
         setColor(group3);
         setColor(group4);
         setColor(group5);
         setColor(group6);
-        
-        String username2 = groups.get(1).getUsername();
-        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(username2);
+        message2.setForeground(Color.BLACK);
+        Font normalFont = new Font(message2.getFont().getName(), Font.PLAIN, message2.getFont().getSize());
+        message2.setFont(normalFont);
 
+        String username = groups.get(1).getUsername();
+        ArrayList<MessageEntity> historyUser = MessageController.getGroupMessage(username);
+        message2.setText(historyUser.get(historyUser.size() - 1).getMessage());
 
         area.setText("");
-        for (MessageEntity i : historyUser){
+        for (MessageEntity i : historyUser) {
             if (i.getsenderId().endsWith(File.readFromFile())) {
                 String appendtxt = "@YOU: " + i.getMessage() + "\n";
                 area.append(appendtxt);
             } else {
-                String appendtxt = "@" + username2 + ": " + i.getMessage() + "\n";
+                String appendtxt = "@" + username + ": " + i.getMessage() + "\n";
                 area.append(appendtxt);
             }
         }
@@ -1156,24 +1159,28 @@ public class chatboxGroup extends javax.swing.JFrame {
 
     private void group1Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group1Press
         // TODO add your handling code here:
-        
+
         setColor1(group1);
         chatPerson.setText(groups.get(0).getUsername());
-        setColor(group2);        
+        setColor(group2);
         setColor(group3);
-        setColor(group4);        
+        setColor(group4);
         setColor(group5);
         setColor(group6);
-        
+        message1.setForeground(Color.BLACK);
+        Font normalFont = new Font(message1.getFont().getName(), Font.PLAIN, message1.getFont().getSize());
+        message1.setFont(normalFont);
+
         String username = groups.get(0).getUsername();
-        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(groups.get(0).getUsername());
+        ArrayList<MessageEntity> historyUser = MessageController.getGroupMessage(groups.get(0).getUsername());
+        message1.setText(historyUser.get(historyUser.size() - 1).getMessage());
         area.setText("");
-        for (MessageEntity i : historyUser){
+        for (MessageEntity i : historyUser) {
             if (i.getsenderId().endsWith(File.readFromFile())) {
                 String appendtxt = "@YOU: " + i.getMessage() + "\n";
                 area.append(appendtxt);
             } else {
-                String appendtxt = "@" + username + ": " + i.getMessage() + "\n";
+                String appendtxt = "@" + i.getsenderName() + ": " + i.getMessage() + "\n";
                 area.append(appendtxt);
             }
         }
@@ -1184,16 +1191,20 @@ public class chatboxGroup extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor1(group3);
         chatPerson.setText(groups.get(2).getUsername());
-        setColor(group2);        
+        setColor(group2);
         setColor(group1);
         setColor(group4);
         setColor(group5);
         setColor(group6);
-        
+        message3.setForeground(Color.BLACK);
+        Font normalFont = new Font(message3.getFont().getName(), Font.PLAIN, message3.getFont().getSize());
+        message3.setFont(normalFont);
+
         String username = groups.get(2).getUsername();
-        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(groups.get(2).getUsername());
+        ArrayList<MessageEntity> historyUser = MessageController.getGroupMessage(groups.get(2).getUsername());
+        message3.setText(historyUser.get(historyUser.size() - 1).getMessage());
         area.setText("");
-        for (MessageEntity i : historyUser){
+        for (MessageEntity i : historyUser) {
             if (i.getsenderId().endsWith(File.readFromFile())) {
                 String appendtxt = "@YOU: " + i.getMessage() + "\n";
                 area.append(appendtxt);
@@ -1208,17 +1219,20 @@ public class chatboxGroup extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor1(group4);
         chatPerson.setText(groups.get(3).getUsername());
-        setColor(group2);        
+        setColor(group2);
         setColor(group1);
         setColor(group3);
         setColor(group5);
-        setColor(group6);       
-        
-                
+        setColor(group6);
+        message4.setForeground(Color.BLACK);
+        Font normalFont = new Font(message4.getFont().getName(), Font.PLAIN, message4.getFont().getSize());
+        message4.setFont(normalFont);
+
         String username = groups.get(3).getUsername();
-        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(groups.get(3).getUsername());
+        ArrayList<MessageEntity> historyUser = MessageController.getGroupMessage(groups.get(3).getUsername());
+        message4.setText(historyUser.get(historyUser.size() - 1).getMessage());
         area.setText("");
-        for (MessageEntity i : historyUser){
+        for (MessageEntity i : historyUser) {
             if (i.getsenderId().endsWith(File.readFromFile())) {
                 String appendtxt = "@YOU: " + i.getMessage() + "\n";
                 area.append(appendtxt);
@@ -1236,100 +1250,159 @@ public class chatboxGroup extends javax.swing.JFrame {
         String recipient = chatPerson.getText();
         sendMessage.setText("");
         String appendtxt = "@" + sender + ": " + getMess + "\n";
-        
+
         sendMessage.setText("");
         SocketThread.sendMessage("msg to group", recipient, getMess);
 
     }//GEN-LAST:event_sendMessageToServer
 
-    public static void appenfTextToGroupChat(String id, String sender, String message){
+    public static void appenfTextToGroupChat(String id, String sender, String message) {
         String currentId = chatPerson.getText();
-        
-        if (currentId.equals(id)){
+
+        if (currentId.equals(id)) {
             if (sender.equals(Share.username)) {
                 area.append("@You" + ": " + message + "\n");
             } else {
                 area.append("@" + sender + ": " + message + "\n");
             }
+            for (int i = 0; i <= friends.size(); i++) {
+                if (id.equals(friends.get(i).getUsername())) {
+                    switch (i) {
+                        case 0 -> {
+                            message1.setText(message);
+                            break;
+                        }
+
+                        case 1 -> {
+                            message2.setText(message);
+                            break;
+                        }
+
+                        case 2 -> {
+                            message3.setText(message);
+                            break;
+                        }
+
+                        case 3 -> {
+                            message4.setText(message);
+                            break;
+                        }
+
+                        case 4 -> {
+                            message5.setText(message);
+                            break;
+                        }
+
+                        case 5 -> {
+                            message6.setText(message);
+                            break;
+                        }
+
+                    }
+                }
+            }
         } else {
-            for (int i = 0; i <= groups.size(); i++){
+            for (int i = 0; i <= groups.size(); i++) {
                 if (id.equals(groups.get(i).getUsername())) {
                     switch (i) {
                         case 0: {
                             message1.setText(message);
+                            message1.setForeground(Color.RED);
+                            Font boldFont = new Font(message1.getFont().getName(), Font.BOLD, message1.getFont().getSize());
+                            message1.setFont(boldFont);
+                            break;
                         }
-                        
+
                         case 1: {
                             message2.setText(message);
+                            Font boldFont = new Font(message2.getFont().getName(), Font.BOLD, message2.getFont().getSize());
+                            message2.setForeground(Color.RED);
+                            message2.setFont(boldFont);
+                            break;
                         }
-                                 
+
                         case 2: {
                             message3.setText(message);
+                            message3.setForeground(Color.RED);
+                            Font boldFont = new Font(message3.getFont().getName(), Font.BOLD, message3.getFont().getSize());
+                            message3.setFont(boldFont);
+                            break;
                         }
 
                         case 3: {
                             message4.setText(message);
-                        }                        
-                        
+                            message4.setForeground(Color.RED);
+                            Font boldFont = new Font(message4.getFont().getName(), Font.BOLD, message4.getFont().getSize());
+                            message4.setFont(boldFont);
+                            break;
+                        }
+
                         case 4: {
                             message5.setText(message);
-                        }                        
-                        
+                            message5.setForeground(Color.RED);
+                            Font boldFont = new Font(message5.getFont().getName(), Font.BOLD, message5.getFont().getSize());
+                            message5.setFont(boldFont);
+                            break;
+                        }
+
                         case 5: {
                             message6.setText(message);
-                        }                        
-                        
+                            message6.setForeground(Color.RED);
+                            Font boldFont = new Font(message6.getFont().getName(), Font.BOLD, message6.getFont().getSize());
+                            message6.setFont(boldFont);
+                            break;
+                        }
+
                     }
                 }
             }
         }
     }
-    
-    public static void appendTextToBoxChat(String recipient, String message){
+
+    public static void appendTextToBoxChat(String recipient, String message) {
         String currentRecipient = chatPerson.getText();
-        
-        if (recipient.equals(currentRecipient)){
+
+        if (recipient.equals(currentRecipient)) {
             area.append("@" + recipient + ": " + message);
         } else {
-            for (int i = 0; i <= groups.size(); i++){
+            for (int i = 0; i <= groups.size(); i++) {
                 if (recipient.equals(groups.get(i).getUsername())) {
                     switch (i) {
                         case 0: {
                             message1.setText(message);
                         }
-                        
+
                         case 1: {
                             message2.setText(message);
                         }
-                                 
+
                         case 2: {
                             message3.setText(message);
                         }
 
                         case 3: {
                             message4.setText(message);
-                        }                        
-                        
+                        }
+
                         case 4: {
                             message5.setText(message);
-                        }                        
-                        
+                        }
+
                         case 5: {
                             message6.setText(message);
-                        }                        
-                        
+                        }
+
                     }
                 }
             }
         }
-        
-        
+
     }
-    
+
     private void searchMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMousePressed
         // TODO add your handling code here:
         groupname4.setText("Edward Pham Hong Gia Bao");
-        group1.setVisible(false);        
+        group1.setVisible(false);
         group2.setVisible(false);
         group3.setVisible(false);
     }//GEN-LAST:event_searchMousePressed
@@ -1350,16 +1423,20 @@ public class chatboxGroup extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor1(group5);
         chatPerson.setText(groups.get(4).getUsername());
-        setColor(group2);        
+        setColor(group2);
         setColor(group1);
         setColor(group3);
         setColor(group4);
-        setColor(group6); 
-                
+        setColor(group6);
+        message5.setForeground(Color.BLACK);
+        Font normalFont = new Font(message5.getFont().getName(), Font.PLAIN, message5.getFont().getSize());
+        message5.setFont(normalFont);
+
         String username = groups.get(4).getUsername();
-        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(groups.get(4).getUsername());
+        ArrayList<MessageEntity> historyUser = MessageController.getGroupMessage(groups.get(4).getUsername());
+        message5.setText(historyUser.get(historyUser.size() - 1).getMessage());
         area.setText("");
-        for (MessageEntity i : historyUser){
+        for (MessageEntity i : historyUser) {
             if (i.getsenderId().endsWith(File.readFromFile())) {
                 String appendtxt = "@YOU: " + i.getMessage() + "\n";
                 area.append(appendtxt);
@@ -1386,21 +1463,26 @@ public class chatboxGroup extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor1(group6);
         chatPerson.setText(groups.get(5).getUsername());
-        setColor(group2);        
+        setColor(group2);
         setColor(group1);
         setColor(group3);
         setColor(group5);
-        setColor(group4); 
-        
+        setColor(group4);
+        message6.setForeground(Color.BLACK);
+        Font normalFont = new Font(message6.getFont().getName(), Font.PLAIN, message6.getFont().getSize());
+        message6.setFont(normalFont);
+
         String username = groups.get(5).getUsername();
-        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(groups.get(5).getUsername());
+        ArrayList<MessageEntity> historyUser = MessageController.getGroupMessage(groups.get(5).getUsername());
         area.setText("");
-        for (MessageEntity i : historyUser){
+        message6.setText(historyUser.get(historyUser.size() - 1).getMessage());
+
+        for (MessageEntity i : historyUser) {
             if (i.getsenderId().endsWith(File.readFromFile())) {
                 String appendtxt = "@You: " + i.getMessage() + "\n";
                 area.append(appendtxt);
             } else {
-                String appendtxt = "@" + username + ": " + i.getMessage() + "\n";
+                String appendtxt = "@" + i.getsenderName() + ": " + i.getMessage() + "\n";
                 area.append(appendtxt);
             }
         }
@@ -1415,10 +1497,10 @@ public class chatboxGroup extends javax.swing.JFrame {
                 new groupMemberList(chatPerson.getText()).setVisible(true);
             }
         });
-        
-        
+
+
     }//GEN-LAST:event_moreMousePressed
-    
+
     private static String colorString(String text) {
         StringBuilder coloredText = new StringBuilder("<html>");
         for (char c : text.toCharArray()) {
@@ -1431,31 +1513,30 @@ public class chatboxGroup extends javax.swing.JFrame {
     private static Color getRandomColor() {
         return new Color((int) (Math.random() * 256), (int) (Math.random() * 256), (int) (Math.random() * 256));
     }
-    
-    String getMessage(){
+
+    String getMessage() {
         String getMess = sendMessage.getText();
         return getMess;
     }
 
     void setColor(JPanel label) {
         label.setBackground(new Color(128, 161, 183));
-        
+
     }
-    
+
     void setColor1(JPanel label) {
-        label.setBackground(new Color(128,206,202));
+        label.setBackground(new Color(128, 206, 202));
     }
-    
+
     void resetColor(JPanel label) {
         label.setBackground(new Color(128, 190, 183));
     }
-    
-    
-    final void initUser(){
+
+    final void initUser() {
         //ArrayList<Friend> friends = FriendController.apiFriendList();
 
         int lengFriend = groups.size();
-        switch (lengFriend){
+        switch (lengFriend) {
             case 0: {
                 group1.setVisible(false);
                 group2.setVisible(false);
@@ -1465,8 +1546,8 @@ public class chatboxGroup extends javax.swing.JFrame {
                 group6.setVisible(false);
                 break;
             }
-  
-            case 1:{
+
+            case 1: {
                 groupname1.setText(groups.get(0).getFullname());
                 chatPerson.setText(groups.get(0).getUsername());
                 group2.setVisible(false);
@@ -1476,8 +1557,8 @@ public class chatboxGroup extends javax.swing.JFrame {
                 group6.setVisible(false);
                 break;
             }
-                        
-            case 2:{
+
+            case 2: {
                 groupname1.setText(groups.get(0).getFullname());
                 chatPerson.setText(groups.get(0).getUsername());
                 groupname2.setText(groups.get(1).getFullname());
@@ -1487,19 +1568,19 @@ public class chatboxGroup extends javax.swing.JFrame {
                 group6.setVisible(false);
                 break;
             }
-                        
-            case 3:{
+
+            case 3: {
                 groupname1.setText(groups.get(0).getFullname());
                 chatPerson.setText(groups.get(0).getUsername());
-                groupname2.setText(groups.get(1).getFullname());                
+                groupname2.setText(groups.get(1).getFullname());
                 groupname3.setText(groups.get(2).getFullname());
                 group4.setVisible(false);
                 group5.setVisible(false);
                 group6.setVisible(false);
                 break;
             }
-                        
-            case 4:{
+
+            case 4: {
                 groupname1.setText(groups.get(0).getFullname());
                 chatPerson.setText(groups.get(0).getUsername());
                 groupname2.setText(groups.get(1).getFullname());
@@ -1509,8 +1590,8 @@ public class chatboxGroup extends javax.swing.JFrame {
                 group6.setVisible(false);
                 break;
             }
-                        
-            case 5:{
+
+            case 5: {
                 groupname1.setText(groups.get(0).getFullname());
                 chatPerson.setText(groups.get(0).getUsername());
                 groupname2.setText(groups.get(1).getFullname());
@@ -1520,25 +1601,21 @@ public class chatboxGroup extends javax.swing.JFrame {
                 group6.setVisible(false);
                 break;
             }
-                        
-            case 6:{
+
+            case 6: {
                 groupname1.setText(groups.get(0).getFullname());
                 chatPerson.setText(groups.get(0).getUsername());
                 groupname2.setText(groups.get(1).getFullname());
                 groupname3.setText(groups.get(2).getFullname());
-                groupname4.setText(groups.get(3).getFullname());                
+                groupname4.setText(groups.get(3).getFullname());
                 groupname5.setText(groups.get(4).getFullname());
                 groupname6.setText(groups.get(5).getFullname());
 
                 break;
             }
-            
+
         }
     }
-    
-    
-    
-    
 
     /**
      * @param args the command line arguments

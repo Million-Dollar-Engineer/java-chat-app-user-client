@@ -1,6 +1,8 @@
 package Main.view;
 
 import Main.controller.AuthController;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -32,9 +34,9 @@ public class forgotPasswordScreen extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        email = new javax.swing.JTextField();
+        usernameReset = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        login = new javax.swing.JButton();
+        resetPassword = new javax.swing.JButton();
         loginbtn = new javax.swing.JLabel();
         register = new javax.swing.JLabel();
 
@@ -51,27 +53,27 @@ public class forgotPasswordScreen extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Please enter your login email, we'll send a new random password to your inbox.");
+        jLabel2.setText("Please enter your login username, we'll send a new random password to your inbox.");
 
-        email.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(128, 161, 183)));
+        usernameReset.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(128, 161, 183)));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setText("Email");
+        jLabel3.setText("Username");
 
-        login.setBackground(new java.awt.Color(128, 161, 183));
-        login.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        login.setForeground(new java.awt.Color(255, 255, 255));
-        login.setText("Send me new password");
-        login.setToolTipText("");
-        login.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        login.addMouseListener(new java.awt.event.MouseAdapter() {
+        resetPassword.setBackground(new java.awt.Color(128, 161, 183));
+        resetPassword.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        resetPassword.setForeground(new java.awt.Color(255, 255, 255));
+        resetPassword.setText("Send me new password");
+        resetPassword.setToolTipText("");
+        resetPassword.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        resetPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                loginMousePressed(evt);
+                resetPasswordMousePressed(evt);
             }
         });
-        login.addActionListener(new java.awt.event.ActionListener() {
+        resetPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginActionPerformed(evt);
+                resetPasswordActionPerformed(evt);
             }
         });
 
@@ -105,8 +107,8 @@ public class forgotPasswordScreen extends javax.swing.JFrame {
                         .addComponent(loginbtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(register))
-                    .addComponent(email)
-                    .addComponent(login, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE))
+                    .addComponent(usernameReset)
+                    .addComponent(resetPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
@@ -125,13 +127,13 @@ public class forgotPasswordScreen extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(usernameReset, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(loginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(register, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(resetPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(55, Short.MAX_VALUE))
         );
 
@@ -166,9 +168,18 @@ public class forgotPasswordScreen extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMousePressed
+    private void resetPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resetPasswordMousePressed
 
-    }//GEN-LAST:event_loginMousePressed
+        String username = usernameReset.getText();
+        boolean isReset = AuthController.apiResetPassword(username);
+        if (isReset) {
+            JOptionPane.showMessageDialog(null, "Your new password has been sent to your email address!",
+                    "Message", JOptionPane.OK_OPTION);
+        } else {
+            JOptionPane.showMessageDialog(null, "Cannotreset your password!",
+                    "Message", JOptionPane.OK_OPTION);
+        }
+    }//GEN-LAST:event_resetPasswordMousePressed
 
     private void registerPageMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerPageMousePressed
         // TODO add your handling code here:
@@ -180,9 +191,9 @@ public class forgotPasswordScreen extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_registerPageMousePressed
 
-    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+    private void resetPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_loginActionPerformed
+    }//GEN-LAST:event_resetPasswordActionPerformed
 
     private void loginbtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginbtnMousePressed
         // TODO add your handling code here:
@@ -237,14 +248,14 @@ public class forgotPasswordScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField email;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JButton login;
     private javax.swing.JLabel loginbtn;
     private javax.swing.JLabel register;
+    private javax.swing.JButton resetPassword;
+    private javax.swing.JTextField usernameReset;
     // End of variables declaration//GEN-END:variables
 }

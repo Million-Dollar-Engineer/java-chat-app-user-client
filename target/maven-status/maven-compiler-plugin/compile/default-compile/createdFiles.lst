@@ -21,7 +21,6 @@ Main\view\chatboxGroup$21.class
 Main\view\loginForm$7.class
 Main\view\friendRequestScreen$1.class
 Main\view\friendScreen$1.class
-Main\view\homeScreen$12.class
 Main\view\testChatApp$12.class
 Main\view\friendScreen$18.class
 Main\view\groupMemberList$3.class
@@ -37,9 +36,11 @@ Main\view\chatboxGroup$1.class
 Main\view\groupchat$11.class
 Main\view\addFriendScreen$6.class
 Main\view\chatbox$6.class
+Main\view\addMemberNewGroup$8.class
 Main\view\friendScreen$12.class
 Main\view\chatboxGroup$15.class
 Main\view\groupMemberList$2.class
+ChatApp\Main$1.class
 Main\view\friendScreen$19.class
 Main\view\friendScreen$8.class
 Main\view\forgotPasswordScreen$1.class
@@ -57,11 +58,14 @@ Main\view\groupchat.class
 Main\view\chatbox$15.class
 Main\view\testChatApp$17.class
 Main\view\friendScreen$2.class
+Main\view\addMemberNewGroup$3.class
 Main\view\friendScreen$13.class
 Main\entity\Friend.class
 Main\view\testChatApp$11.class
+Main\view\groupchat$17.class
 Main\controller\AuthController.class
 Main\view\chatboxGroup$6.class
+ChatApp\Main.class
 Main\view\groupMemberList$4.class
 Main\view\registerForm$5.class
 Main\view\chatboxGroup$10.class
@@ -72,6 +76,7 @@ Main\view\addFriendScreen$1.class
 Main\view\friendScreen$17.class
 Main\view\addFriendScreen$4.class
 Main\view\chatbox$7.class
+Main\view\addMemberNewGroup$2.class
 Main\view\friendScreen$3.class
 Main\view\friendScreen$14.class
 Main\view\friendRequestScreen.class
@@ -90,6 +95,7 @@ Main\view\addMemberScreen$7.class
 Main\controller\BlockController.class
 Main\view\homeScreen$8.class
 Main\view\chatboxGroup$12.class
+Main\view\addMemberNewGroup$1.class
 Main\view\registerForm$3.class
 Main\view\testChatApp$13.class
 Main\view\chatbox$9.class
@@ -98,8 +104,8 @@ Main\view\friendScreen$16.class
 Main\view\chatbox$11.class
 Main\view\groupMemberList$10.class
 Main\view\chatboxGroup$4.class
+Main\view\friendScreen$22.class
 Main\view\otherScreen.class
-Main\view\homeScreen$11.class
 Main\view\testChatApp$9.class
 Main\view\testChatApp$14.class
 Main\view\groupMemberList$5.class
@@ -134,13 +140,16 @@ Main\view\chatbox$25.class
 Main\view\forgotPasswordScreen.class
 Main\view\loginForm$4.class
 Main\view\otherScreen$5.class
+Main\controller\NotiController.class
 Main\view\addFriendScreen$3.class
 Main\view\chatbox$3.class
 Main\view\chatboxGroup$5.class
+Main\view\friendScreen$23.class
 Main\view\groupMemberList$6.class
 Main\view\registerForm.class
 Main\shareEnv\Share.class
 Main\view\groupchat$8.class
+Main\view\groupchat$18.class
 Main\view\addMemberScreen$6.class
 Main\view\otherScreen$4.class
 Main\view\groupchat$1.class
@@ -174,8 +183,11 @@ Main\view\chatboxGroup$20.class
 Main\view\otherScreen$6.class
 Main\view\chatboxGroup$9.class
 Main\view\loginForm$6.class
+Main\view\addMemberNewGroup.class
+Main\view\addMemberNewGroup$7.class
 Main\view\addFriendScreen$7.class
 Main\view\chatbox$21.class
+Main\view\addMemberNewGroup$4.class
 Main\view\groupMemberList$9.class
 Main\view\chatboxGroup$16.class
 Main\view\testChatApp$2.class
@@ -194,6 +206,7 @@ Main\view\chatbox$17.class
 Main\view\chatbox$2.class
 Main\view\groupchat$4.class
 Main\view\addMemberScreen$3.class
+Main\view\addMemberNewGroup$5.class
 Main\view\friendRequestScreen$6.class
 Main\view\testChatApp$4.class
 Main\view\addMemberScreen$2.class
@@ -206,5 +219,6 @@ Main\view\chatbox$1.class
 Main\view\chatboxGroup$23.class
 Main\view\friendScreen$10.class
 Main\view\otherScreen$7.class
+Main\view\addMemberNewGroup$6.class
 Main\view\chatbox$18.class
 Main\view\chatbox$23.class

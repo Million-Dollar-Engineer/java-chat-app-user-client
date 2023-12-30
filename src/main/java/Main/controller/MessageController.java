@@ -88,4 +88,62 @@ public class MessageController {
         }
         return historyMessage;
     }
+    
+    public static ArrayList<MessageEntity> getGroupMessage(String groupId){
+        ArrayList<MessageEntity> historyMessage = new ArrayList<>(); 
+        try {
+            // Specify the URL
+            String idUser = File.readFromFile();
+            String apiUrl = Share.apiURL +  "/message/group-history?id=" + groupId;
+            // Create a URL object
+            URL url = new URL(apiUrl);
+
+            // Open a connection
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            // Set the request method
+            connection.setRequestMethod("GET");
+
+            // Get the response code
+            int responseCode = connection.getResponseCode();
+            System.out.println("Response code : " + responseCode);
+
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                // Read the response
+                BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String inputLine;
+                StringBuilder response = new StringBuilder();
+
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+
+                in.close();
+
+                // Parse JSON response using org.json
+                JSONArray jsonArray = new JSONArray(response.toString());
+
+                System.out.println("Group List Message ");
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    String senderId = jsonObject.getString("senderId");
+                    String senderName = jsonObject.getString("senderName");
+                    String receiverId = jsonObject.getString("senderName");
+                    String receiverName = jsonObject.getString("senderName");
+                    String message = jsonObject.getString("message");
+                    String createdAt = jsonObject.getString("createdAt");
+                    
+                    MessageEntity tmp = new MessageEntity(senderId, senderName, receiverId, receiverName, message, createdAt);
+                    historyMessage.add(tmp);
+                }
+            } else {
+                System.out.println("GET request failed. Response Code: " + responseCode);
+            }
+            // Close the connection
+            connection.disconnect();
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
+        return historyMessage;
+    }
 }
