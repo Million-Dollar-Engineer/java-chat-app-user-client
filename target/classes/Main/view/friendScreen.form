@@ -78,7 +78,7 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="addFriendBtn" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="addFriendBtn1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="friendRequest" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
@@ -100,7 +100,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="addFriendBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="addFriendBtn1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="friendRequest" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jScrollPane2" min="-2" pref="365" max="-2" attributes="0"/>
@@ -220,7 +220,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addFriendBtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="addFriendBtn1">
+        <Component class="javax.swing.JButton" name="friendRequest">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="b7" green="be" red="80" type="rgb"/>
@@ -237,8 +237,8 @@
             <Property name="text" type="java.lang.String" value="Friend Requests"/>
           </Properties>
           <Events>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="addFriendBtn1MousePress"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addFriendBtn1ActionPerformed"/>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="friendRequestMousePress"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="friendRequestActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

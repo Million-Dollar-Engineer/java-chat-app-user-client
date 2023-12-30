@@ -83,12 +83,12 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel10" max="32767" attributes="0"/>
-                  <Component id="user1" alignment="0" max="32767" attributes="0"/>
-                  <Component id="user2" alignment="0" max="32767" attributes="0"/>
-                  <Component id="user3" alignment="1" max="32767" attributes="0"/>
-                  <Component id="user4" alignment="1" max="32767" attributes="0"/>
-                  <Component id="user5" alignment="0" max="32767" attributes="0"/>
-                  <Component id="user6" alignment="0" max="32767" attributes="0"/>
+                  <Component id="group1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="group2" alignment="0" max="32767" attributes="0"/>
+                  <Component id="group3" alignment="1" max="32767" attributes="0"/>
+                  <Component id="group4" alignment="1" max="32767" attributes="0"/>
+                  <Component id="group5" alignment="0" max="32767" attributes="0"/>
+                  <Component id="group6" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -96,17 +96,17 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="user1" min="-2" max="-2" attributes="0"/>
+                      <Component id="group1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="user2" min="-2" max="-2" attributes="0"/>
+                      <Component id="group2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="user3" min="-2" max="-2" attributes="0"/>
+                      <Component id="group3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="user4" min="-2" max="-2" attributes="0"/>
+                      <Component id="group4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="user5" min="-2" max="-2" attributes="0"/>
+                      <Component id="group5" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="user6" min="-2" max="-2" attributes="0"/>
+                      <Component id="group6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -163,15 +163,15 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="user1">
+            <Container class="javax.swing.JPanel" name="group1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ca" green="ce" red="80" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user1Click"/>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user1Press"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group1Click"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group1Press"/>
               </Events>
 
               <Layout>
@@ -183,7 +183,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="message1" min="-2" pref="205" max="-2" attributes="0"/>
-                              <Component id="fullname1" min="-2" pref="205" max="-2" attributes="0"/>
+                              <Component id="groupname1" min="-2" pref="205" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="53" max="32767" attributes="0"/>
                       </Group>
@@ -196,7 +196,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="avatar1" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
-                                  <Component id="fullname1" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="groupname1" min="-2" pref="25" max="-2" attributes="0"/>
                                   <EmptySpace pref="8" max="32767" attributes="0"/>
                                   <Component id="message1" min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
@@ -211,7 +211,7 @@
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Main/icon/icons8-user-30 (1).png"/>
+                      <Image iconType="3" name="/Main/icon/icons8-group-30.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -223,7 +223,7 @@
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JLabel" name="fullname1">
+                <Component class="javax.swing.JLabel" name="groupname1">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
@@ -231,22 +231,22 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Bao Pham Hong Gia"/>
+                    <Property name="text" type="java.lang.String" value="Nhom"/>
                   </Properties>
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="user2">
+            <Container class="javax.swing.JPanel" name="group2">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="b7" green="a1" red="80" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user2MouseClicked"/>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user2Enter"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user2Exit"/>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user2Press"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group2MouseClicked"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group2Enter"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group2Exit"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group2Press"/>
               </Events>
 
               <Layout>
@@ -258,7 +258,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="message2" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
-                              <Component id="fullname2" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
+                              <Component id="groupname2" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="53" max="32767" attributes="0"/>
                       </Group>
@@ -271,7 +271,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="avatar2" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="fullname2" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="groupname2" min="-2" pref="25" max="-2" attributes="0"/>
                                   <EmptySpace pref="8" max="32767" attributes="0"/>
                                   <Component id="message2" min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
@@ -286,7 +286,7 @@
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Main/icon/icons8-user-30 (1).png"/>
+                      <Image iconType="3" name="/Main/icon/icons8-group-30.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -298,7 +298,7 @@
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JLabel" name="fullname2">
+                <Component class="javax.swing.JLabel" name="groupname2">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
@@ -311,17 +311,17 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="user3">
+            <Container class="javax.swing.JPanel" name="group3">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="b7" green="a1" red="80" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user3MouseClicked"/>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user3Enter"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user3Exit"/>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user3Press"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group3MouseClicked"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group3Enter"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group3Exit"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group3Press"/>
               </Events>
 
               <Layout>
@@ -333,7 +333,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="message3" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
-                              <Component id="fullname3" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
+                              <Component id="groupname3" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="53" max="32767" attributes="0"/>
                       </Group>
@@ -346,7 +346,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="avatar3" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="fullname3" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="groupname3" min="-2" pref="25" max="-2" attributes="0"/>
                                   <EmptySpace pref="8" max="32767" attributes="0"/>
                                   <Component id="message3" min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
@@ -361,7 +361,7 @@
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Main/icon/icons8-user-30 (1).png"/>
+                      <Image iconType="3" name="/Main/icon/icons8-group-30.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -373,7 +373,7 @@
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JLabel" name="fullname3">
+                <Component class="javax.swing.JLabel" name="groupname3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
@@ -386,17 +386,17 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="user4">
+            <Container class="javax.swing.JPanel" name="group4">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="b7" green="a1" red="80" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user4Click"/>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user4Enter"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user4Exit"/>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user4Press"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group4Click"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group4Enter"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group4Exit"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group4Press"/>
               </Events>
 
               <Layout>
@@ -408,7 +408,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="message4" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
-                              <Component id="fullname4" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
+                              <Component id="groupname4" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="53" max="32767" attributes="0"/>
                       </Group>
@@ -421,7 +421,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="avatar4" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="fullname4" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="groupname4" min="-2" pref="25" max="-2" attributes="0"/>
                                   <EmptySpace pref="8" max="32767" attributes="0"/>
                                   <Component id="message4" min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
@@ -436,7 +436,7 @@
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Main/icon/icons8-user-30 (1).png"/>
+                      <Image iconType="3" name="/Main/icon/icons8-group-30.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -448,7 +448,7 @@
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JLabel" name="fullname4">
+                <Component class="javax.swing.JLabel" name="groupname4">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
@@ -461,17 +461,17 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="user5">
+            <Container class="javax.swing.JPanel" name="group5">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="b7" green="a1" red="80" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user5Click"/>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user5Enter"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user5Exit"/>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user5Press"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group5Click"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group5Enter"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group5Exit"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group5Press"/>
               </Events>
 
               <Layout>
@@ -483,7 +483,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="message5" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
-                              <Component id="fullname5" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
+                              <Component id="groupname5" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="53" max="32767" attributes="0"/>
                       </Group>
@@ -496,7 +496,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="avatar5" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="fullname5" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="groupname5" min="-2" pref="25" max="-2" attributes="0"/>
                                   <EmptySpace pref="8" max="32767" attributes="0"/>
                                   <Component id="message5" min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
@@ -511,7 +511,7 @@
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Main/icon/icons8-user-30 (1).png"/>
+                      <Image iconType="3" name="/Main/icon/icons8-group-30.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -523,7 +523,7 @@
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JLabel" name="fullname5">
+                <Component class="javax.swing.JLabel" name="groupname5">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
@@ -536,17 +536,17 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="user6">
+            <Container class="javax.swing.JPanel" name="group6">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="b7" green="a1" red="80" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user6Click"/>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user6Enter"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user6Exit"/>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="user6Press"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group6Click"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group6Enter"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group6Exit"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="group6Press"/>
               </Events>
 
               <Layout>
@@ -558,7 +558,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="message6" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
-                              <Component id="fullname6" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
+                              <Component id="groupname6" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="53" max="32767" attributes="0"/>
                       </Group>
@@ -571,7 +571,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="avatar6" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="fullname6" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="groupname6" min="-2" pref="25" max="-2" attributes="0"/>
                                   <EmptySpace pref="8" max="32767" attributes="0"/>
                                   <Component id="message6" min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
@@ -586,7 +586,7 @@
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Main/icon/icons8-user-30 (1).png"/>
+                      <Image iconType="3" name="/Main/icon/icons8-group-30.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -598,7 +598,7 @@
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JLabel" name="fullname6">
+                <Component class="javax.swing.JLabel" name="groupname6">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
@@ -652,9 +652,11 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="chatPerson" min="-2" pref="205" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="spam" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="block" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="more" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -664,13 +666,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel5" pref="41" max="32767" attributes="0"/>
+                              <Component id="jLabel3" max="32767" attributes="0"/>
                               <Component id="jLabel9" alignment="0" max="32767" attributes="0"/>
                               <Component id="chatPerson" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Component id="block" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                              <Component id="spam" max="32767" attributes="0"/>
+                              <Component id="more" alignment="0" pref="41" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -700,74 +700,33 @@
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
                   </AuxValues>
                 </Component>
-                <Container class="javax.swing.JPanel" name="block">
+                <Component class="javax.swing.JLabel" name="jLabel3">
                   <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="b7" green="a1" red="80" type="rgb"/>
+                    <Property name="horizontalAlignment" type="int" value="4"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Main/icon/icons8-spam-30.png"/>
                     </Property>
                   </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel5" alignment="0" pref="41" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                  <SubComponents>
-                    <Component class="javax.swing.JLabel" name="jLabel5">
-                      <Properties>
-                        <Property name="horizontalAlignment" type="int" value="4"/>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Main/icon/icons8-denied-30 (1).png"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                  </SubComponents>
-                </Container>
-                <Container class="javax.swing.JPanel" name="spam">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel5">
                   <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="b7" green="a1" red="80" type="rgb"/>
+                    <Property name="horizontalAlignment" type="int" value="4"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Main/icon/icons8-denied-30 (1).png"/>
                     </Property>
                   </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel3" alignment="1" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                  <SubComponents>
-                    <Component class="javax.swing.JLabel" name="jLabel3">
-                      <Properties>
-                        <Property name="horizontalAlignment" type="int" value="4"/>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Main/icon/icons8-spam-30.png"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                  </SubComponents>
-                </Container>
+                </Component>
+                <Component class="javax.swing.JLabel" name="more">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="4"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Main/icon/icons8-menu-30.png"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="moreMousePressed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel13">

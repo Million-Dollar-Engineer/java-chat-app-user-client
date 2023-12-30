@@ -4,10 +4,11 @@
  */
 package Main.view;
 
+import Main.controller.BlockController;
 import Main.controller.MessageController;
 import java.awt.Color;
 import javax.swing.*;
-import Main.controller.friendController;
+import Main.controller.FriendController;
 import Main.entity.Friend;
 import Main.entity.MessageEntity;
 import Main.file.File;
@@ -39,7 +40,7 @@ public class chatbox extends javax.swing.JFrame {
     public chatbox() {
         String userId = File.readFromFile();
         SocketThread.sendIdUser(userId);
-        friends = friendController.apiFriendList();
+        friends = FriendController.apiFriendList();
         initComponents();
         initUser();
     }
@@ -88,9 +89,9 @@ public class chatbox extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         chatPerson = new javax.swing.JLabel();
         block = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        spam = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        blocked = new javax.swing.JLabel();
+        spamPanel = new javax.swing.JPanel();
+        spam = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         sendMessage = new javax.swing.JTextField();
         send = new javax.swing.JPanel();
@@ -502,8 +503,13 @@ public class chatbox extends javax.swing.JFrame {
 
         block.setBackground(new java.awt.Color(128, 161, 183));
 
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-denied-30 (1).png"))); // NOI18N
+        blocked.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        blocked.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-denied-30 (1).png"))); // NOI18N
+        blocked.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                blockedMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout blockLayout = new javax.swing.GroupLayout(block);
         block.setLayout(blockLayout);
@@ -511,31 +517,36 @@ public class chatbox extends javax.swing.JFrame {
             blockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(blockLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5)
+                .addComponent(blocked)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         blockLayout.setVerticalGroup(
             blockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+            .addComponent(blocked, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
         );
 
-        spam.setBackground(new java.awt.Color(128, 161, 183));
+        spamPanel.setBackground(new java.awt.Color(128, 161, 183));
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-spam-30.png"))); // NOI18N
+        spam.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        spam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-spam-30.png"))); // NOI18N
+        spam.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                spamMousePressed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout spamLayout = new javax.swing.GroupLayout(spam);
-        spam.setLayout(spamLayout);
-        spamLayout.setHorizontalGroup(
-            spamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(spamLayout.createSequentialGroup()
+        javax.swing.GroupLayout spamPanelLayout = new javax.swing.GroupLayout(spamPanel);
+        spamPanel.setLayout(spamPanelLayout);
+        spamPanelLayout.setHorizontalGroup(
+            spamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(spamPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
+                .addComponent(spam)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        spamLayout.setVerticalGroup(
-            spamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        spamPanelLayout.setVerticalGroup(
+            spamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(spam, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -548,7 +559,7 @@ public class chatbox extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(chatPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(spam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(spamPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(block, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -563,7 +574,7 @@ public class chatbox extends javax.swing.JFrame {
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addComponent(block, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(spam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(spamPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -1159,8 +1170,8 @@ public class chatbox extends javax.swing.JFrame {
         setColor(user5);
         setColor(user6);
         
-        String username2 = friends.get(1).getUsername();
-        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(username2);
+        String username = friends.get(1).getUsername();
+        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(username);
 
 
         area.setText("");
@@ -1169,9 +1180,21 @@ public class chatbox extends javax.swing.JFrame {
                 String appendtxt = "@YOU: " + i.getMessage() + "\n";
                 area.append(appendtxt);
             } else {
-                String appendtxt = "@" + username2 + ": " + i.getMessage() + "\n";
+                String appendtxt = "@" + username + ": " + i.getMessage() + "\n";
                 area.append(appendtxt);
             }
+        }
+        
+        send.setVisible(true);    
+        sendMessage.setVisible(true);
+        
+        String isBlockedUser = BlockController.isBlocked(username);
+        if (isBlockedUser.equals("")){
+            System.out.println("ok");
+        } else {
+            area.append(isBlockedUser);
+            send.setVisible(false);
+            sendMessage.setVisible(false);
         }
 
     }//GEN-LAST:event_user2Press
@@ -1199,7 +1222,19 @@ public class chatbox extends javax.swing.JFrame {
                 area.append(appendtxt);
             }
         }
+        
+        send.setVisible(true);    
+        sendMessage.setVisible(true);
+        String isBlockedUser = BlockController.isBlocked(username);
+        if (isBlockedUser.equals("")){
+                        System.out.println("ok");
 
+        } else {
+            area.append(isBlockedUser);
+            send.setVisible(false);
+            sendMessage.setVisible(false);
+        }
+      
     }//GEN-LAST:event_user1Press
 
     private void user3Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user3Press
@@ -1223,6 +1258,17 @@ public class chatbox extends javax.swing.JFrame {
                 String appendtxt = "@" + username + ": " + i.getMessage() + "\n";
                 area.append(appendtxt);
             }
+        }
+         
+        send.setVisible(true);    
+        sendMessage.setVisible(true);
+        String isBlockedUser = BlockController.isBlocked(username);
+        if (isBlockedUser.equals("")){
+                    System.out.println("ok");
+} else {
+            area.append(isBlockedUser);
+            send.setVisible(false);
+            sendMessage.setVisible(false);
         }
     }//GEN-LAST:event_user3Press
 
@@ -1248,6 +1294,19 @@ public class chatbox extends javax.swing.JFrame {
                 String appendtxt = "@" + username + ": " + i.getMessage() + "\n";
                 area.append(appendtxt);
             }
+        }
+        
+         
+        send.setVisible(true);    
+        sendMessage.setVisible(true);
+        String isBlockedUser = BlockController.isBlocked(username);
+        if (isBlockedUser.equals("")){
+                    System.out.println("ok");
+
+        } else {
+            area.append(isBlockedUser);
+            send.setVisible(false);
+            sendMessage.setVisible(false);
         }
     }//GEN-LAST:event_user4Press
 
@@ -1350,6 +1409,19 @@ public class chatbox extends javax.swing.JFrame {
                 area.append(appendtxt);
             }
         }
+        
+        send.setVisible(true);    
+        sendMessage.setVisible(true);
+        String isBlockedUser = BlockController.isBlocked(username);
+        if (isBlockedUser.equals("")){
+                        System.out.println("ok");
+
+        } else {
+            area.append(isBlockedUser);
+            send.setVisible(false);
+            sendMessage.setVisible(false);
+        }
+        
     }//GEN-LAST:event_user5Press
 
     private void user6Click(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user6Click
@@ -1386,7 +1458,44 @@ public class chatbox extends javax.swing.JFrame {
                 area.append(appendtxt);
             }
         }
+         
+        send.setVisible(true);    
+        sendMessage.setVisible(true);
+        String isBlockedUser = BlockController.isBlocked(username);
+        if (isBlockedUser.equals("")){
+                        System.out.println("ok");
+
+        } else {
+            area.append(isBlockedUser);
+            send.setVisible(false);
+            sendMessage.setVisible(false);
+        }
+        
     }//GEN-LAST:event_user6Press
+
+    private void blockedMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_blockedMousePressed
+        // TODO add your handling code here:
+        boolean blockUser = BlockController.blockedFriend(chatPerson.getText());
+        if (blockUser) {
+            JOptionPane.showMessageDialog(this,
+                "You blocked " + chatPerson.getText() + " successfully!",
+                "Block User",
+                JOptionPane.INFORMATION_MESSAGE);
+        }
+                 
+    }//GEN-LAST:event_blockedMousePressed
+
+    private void spamMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_spamMousePressed
+        // TODO add your handling code here:
+        boolean spamUser = BlockController.spamUser(chatPerson.getText());
+        if (spamUser) {
+            JOptionPane.showMessageDialog(this,
+                "You spam " + chatPerson.getText() + " successfully!",
+                "Block User",
+                JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_spamMousePressed
     
     private static String colorString(String text) {
         StringBuilder coloredText = new StringBuilder("<html>");
@@ -1405,6 +1514,8 @@ public class chatbox extends javax.swing.JFrame {
         String getMess = sendMessage.getText();
         return getMess;
     }
+    
+    
 
     void setColor(JPanel label) {
         label.setBackground(new Color(128, 161, 183));
@@ -1421,7 +1532,7 @@ public class chatbox extends javax.swing.JFrame {
     
     
     final void initUser(){
-        //ArrayList<Friend> friends = friendController.apiFriendList();
+        //ArrayList<Friend> friends = FriendController.apiFriendList();
 
         int lengFriend = friends.size();
         switch (lengFriend){
@@ -1561,6 +1672,7 @@ public class chatbox extends javax.swing.JFrame {
     private javax.swing.JLabel avatar5;
     private javax.swing.JLabel avatar6;
     private javax.swing.JPanel block;
+    private javax.swing.JLabel blocked;
     private javax.swing.JLabel chatLabel10;
     private javax.swing.JLabel chatLabel11;
     private javax.swing.JLabel chatLabel3;
@@ -1584,9 +1696,7 @@ public class chatbox extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -1605,7 +1715,8 @@ public class chatbox extends javax.swing.JFrame {
     private javax.swing.JPanel otherbtn;
     private javax.swing.JPanel send;
     private javax.swing.JTextField sendMessage;
-    private javax.swing.JPanel spam;
+    private javax.swing.JLabel spam;
+    private javax.swing.JPanel spamPanel;
     private javax.swing.JPanel user1;
     private javax.swing.JPanel user2;
     private javax.swing.JPanel user3;

@@ -25,6 +25,7 @@ public class AuthController {
 
     public static boolean apiLogin(String username, String password) {
         try {
+            Share.username = username;
             // Create a URL object with the API endpoint
             URL url = new URL(Share.apiURL +"/user/login");
 

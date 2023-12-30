@@ -1,6 +1,7 @@
 package Main.view;
 
 import Main.controller.AuthController;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -169,11 +170,11 @@ public class loginForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         String usernameLogin = username.getText();
         String passwordLogin = new String(password.getPassword());
-        
+
         boolean isLogged = AuthController.apiLogin(usernameLogin, passwordLogin);
-        if (isLogged){
+        if (isLogged) {
             dispose();
-        // Open the new window
+            // Open the new window
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
                     new homeScreen().setVisible(true);

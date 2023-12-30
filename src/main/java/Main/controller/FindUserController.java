@@ -4,8 +4,10 @@
  */
 package Main.controller;
 
+import Main.file.File;
 import Main.shareEnv.Share;
 import Main.view.addFriendScreen;
+import Main.view.addMemberScreen;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -63,7 +65,8 @@ public class FindUserController {
             System.out.println("Message: " + name);
 
             if (responseCode == 200){
-                addFriendScreen.appendUserToLabel(name);
+                addFriendScreen.appendUserToLabel(name);  
+
             }
 
             // Close the connection
@@ -76,7 +79,7 @@ public class FindUserController {
     public static void apiAddFriend(String user){
         try {
             // Create a URL object with the API endpoint
-            URL url = new URL(Share.apiURL +"/user/add-friend?user_id=684530c0-c5c7-474d-ad32-2d407c3cd282&friend_user_name=" + user);
+            URL url = new URL(Share.apiURL +"/user/add-friend?user_id=" + File.readFromFile() + "&friend_user_name=" + user);
 
             // Open a connection to the URL
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();

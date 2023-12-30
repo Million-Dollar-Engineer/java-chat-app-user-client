@@ -7,8 +7,10 @@ package Main.view;
 import Main.controller.MessageController;
 import java.awt.Color;
 import javax.swing.*;
-import Main.controller.friendController;
+import Main.controller.FriendController;
+import Main.controller.GroupController;
 import Main.entity.Friend;
+import Main.entity.Group;
 import Main.entity.MessageEntity;
 import Main.file.File;
 import java.util.ArrayList;
@@ -24,7 +26,7 @@ import Main.shareEnv.*;
  * @author HP-PC
  */
 public class chatboxGroup extends javax.swing.JFrame {
-    static ArrayList<Friend> friends = new ArrayList<>();    
+    static ArrayList<Group> groups = new ArrayList<>();    
     ArrayList<MessageEntity> historyMessage = new ArrayList<>();
     
     
@@ -39,7 +41,7 @@ public class chatboxGroup extends javax.swing.JFrame {
     public chatboxGroup() {
         String userId = File.readFromFile();
         SocketThread.sendIdUser(userId);
-        friends = friendController.apiFriendList();
+        groups = GroupController.apiGroupList();
         initComponents();
         initUser();
     }
@@ -59,38 +61,37 @@ public class chatboxGroup extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        user1 = new javax.swing.JPanel();
+        group1 = new javax.swing.JPanel();
         avatar1 = new javax.swing.JLabel();
         message1 = new javax.swing.JLabel();
-        fullname1 = new javax.swing.JLabel();
-        user2 = new javax.swing.JPanel();
+        groupname1 = new javax.swing.JLabel();
+        group2 = new javax.swing.JPanel();
         avatar2 = new javax.swing.JLabel();
         message2 = new javax.swing.JLabel();
-        fullname2 = new javax.swing.JLabel();
-        user3 = new javax.swing.JPanel();
+        groupname2 = new javax.swing.JLabel();
+        group3 = new javax.swing.JPanel();
         avatar3 = new javax.swing.JLabel();
         message3 = new javax.swing.JLabel();
-        fullname3 = new javax.swing.JLabel();
-        user4 = new javax.swing.JPanel();
+        groupname3 = new javax.swing.JLabel();
+        group4 = new javax.swing.JPanel();
         avatar4 = new javax.swing.JLabel();
         message4 = new javax.swing.JLabel();
-        fullname4 = new javax.swing.JLabel();
-        user5 = new javax.swing.JPanel();
+        groupname4 = new javax.swing.JLabel();
+        group5 = new javax.swing.JPanel();
         avatar5 = new javax.swing.JLabel();
         message5 = new javax.swing.JLabel();
-        fullname5 = new javax.swing.JLabel();
-        user6 = new javax.swing.JPanel();
+        groupname5 = new javax.swing.JLabel();
+        group6 = new javax.swing.JPanel();
         avatar6 = new javax.swing.JLabel();
         message6 = new javax.swing.JLabel();
-        fullname6 = new javax.swing.JLabel();
+        groupname6 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         chatPerson = new javax.swing.JLabel();
-        block = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        spam = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        more = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         sendMessage = new javax.swing.JTextField();
         send = new javax.swing.JPanel();
@@ -160,301 +161,301 @@ public class chatboxGroup extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        user1.setBackground(new java.awt.Color(128, 206, 202));
-        user1.addMouseListener(new java.awt.event.MouseAdapter() {
+        group1.setBackground(new java.awt.Color(128, 206, 202));
+        group1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                user1Click(evt);
+                group1Click(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                user1Press(evt);
+                group1Press(evt);
             }
         });
 
         avatar1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        avatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-user-30 (1).png"))); // NOI18N
+        avatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-group-30.png"))); // NOI18N
 
         message1.setText("New message");
 
-        fullname1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        fullname1.setForeground(new java.awt.Color(255, 255, 255));
-        fullname1.setText("Bao Pham Hong Gia");
+        groupname1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        groupname1.setForeground(new java.awt.Color(255, 255, 255));
+        groupname1.setText("Nhom");
 
-        javax.swing.GroupLayout user1Layout = new javax.swing.GroupLayout(user1);
-        user1.setLayout(user1Layout);
-        user1Layout.setHorizontalGroup(
-            user1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(user1Layout.createSequentialGroup()
+        javax.swing.GroupLayout group1Layout = new javax.swing.GroupLayout(group1);
+        group1.setLayout(group1Layout);
+        group1Layout.setHorizontalGroup(
+            group1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(group1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(avatar1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(user1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(group1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(message1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fullname1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(groupname1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
-        user1Layout.setVerticalGroup(
-            user1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(user1Layout.createSequentialGroup()
+        group1Layout.setVerticalGroup(
+            group1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(group1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(user1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(group1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(avatar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(user1Layout.createSequentialGroup()
-                        .addComponent(fullname1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(group1Layout.createSequentialGroup()
+                        .addComponent(groupname1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                         .addComponent(message1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
-        user2.setBackground(new java.awt.Color(128, 161, 183));
-        user2.addMouseListener(new java.awt.event.MouseAdapter() {
+        group2.setBackground(new java.awt.Color(128, 161, 183));
+        group2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                user2MouseClicked(evt);
+                group2MouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                user2Enter(evt);
+                group2Enter(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                user2Exit(evt);
+                group2Exit(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                user2Press(evt);
+                group2Press(evt);
             }
         });
 
         avatar2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        avatar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-user-30 (1).png"))); // NOI18N
+        avatar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-group-30.png"))); // NOI18N
 
         message2.setText("New message");
 
-        fullname2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        fullname2.setForeground(new java.awt.Color(255, 255, 255));
-        fullname2.setText("Phan Thanh An");
+        groupname2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        groupname2.setForeground(new java.awt.Color(255, 255, 255));
+        groupname2.setText("Phan Thanh An");
 
-        javax.swing.GroupLayout user2Layout = new javax.swing.GroupLayout(user2);
-        user2.setLayout(user2Layout);
-        user2Layout.setHorizontalGroup(
-            user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(user2Layout.createSequentialGroup()
+        javax.swing.GroupLayout group2Layout = new javax.swing.GroupLayout(group2);
+        group2.setLayout(group2Layout);
+        group2Layout.setHorizontalGroup(
+            group2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(group2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(avatar2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(group2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(message2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fullname2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(groupname2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
-        user2Layout.setVerticalGroup(
-            user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(user2Layout.createSequentialGroup()
+        group2Layout.setVerticalGroup(
+            group2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(group2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(group2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(avatar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(user2Layout.createSequentialGroup()
-                        .addComponent(fullname2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(group2Layout.createSequentialGroup()
+                        .addComponent(groupname2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                         .addComponent(message2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
-        user3.setBackground(new java.awt.Color(128, 161, 183));
-        user3.addMouseListener(new java.awt.event.MouseAdapter() {
+        group3.setBackground(new java.awt.Color(128, 161, 183));
+        group3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                user3MouseClicked(evt);
+                group3MouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                user3Enter(evt);
+                group3Enter(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                user3Exit(evt);
+                group3Exit(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                user3Press(evt);
+                group3Press(evt);
             }
         });
 
         avatar3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        avatar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-user-30 (1).png"))); // NOI18N
+        avatar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-group-30.png"))); // NOI18N
 
         message3.setText("New message");
 
-        fullname3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        fullname3.setForeground(new java.awt.Color(255, 255, 255));
-        fullname3.setText("Le Nguyen Thai");
+        groupname3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        groupname3.setForeground(new java.awt.Color(255, 255, 255));
+        groupname3.setText("Le Nguyen Thai");
 
-        javax.swing.GroupLayout user3Layout = new javax.swing.GroupLayout(user3);
-        user3.setLayout(user3Layout);
-        user3Layout.setHorizontalGroup(
-            user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(user3Layout.createSequentialGroup()
+        javax.swing.GroupLayout group3Layout = new javax.swing.GroupLayout(group3);
+        group3.setLayout(group3Layout);
+        group3Layout.setHorizontalGroup(
+            group3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(group3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(avatar3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(group3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(message3, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fullname3, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(groupname3, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
-        user3Layout.setVerticalGroup(
-            user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(user3Layout.createSequentialGroup()
+        group3Layout.setVerticalGroup(
+            group3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(group3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(group3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(avatar3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(user3Layout.createSequentialGroup()
-                        .addComponent(fullname3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(group3Layout.createSequentialGroup()
+                        .addComponent(groupname3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                         .addComponent(message3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
-        user4.setBackground(new java.awt.Color(128, 161, 183));
-        user4.addMouseListener(new java.awt.event.MouseAdapter() {
+        group4.setBackground(new java.awt.Color(128, 161, 183));
+        group4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                user4Click(evt);
+                group4Click(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                user4Enter(evt);
+                group4Enter(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                user4Exit(evt);
+                group4Exit(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                user4Press(evt);
+                group4Press(evt);
             }
         });
 
         avatar4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        avatar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-user-30 (1).png"))); // NOI18N
+        avatar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-group-30.png"))); // NOI18N
 
         message4.setText("New message");
 
-        fullname4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        fullname4.setForeground(new java.awt.Color(255, 255, 255));
-        fullname4.setText("Nguyen Nhat Nam");
+        groupname4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        groupname4.setForeground(new java.awt.Color(255, 255, 255));
+        groupname4.setText("Nguyen Nhat Nam");
 
-        javax.swing.GroupLayout user4Layout = new javax.swing.GroupLayout(user4);
-        user4.setLayout(user4Layout);
-        user4Layout.setHorizontalGroup(
-            user4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(user4Layout.createSequentialGroup()
+        javax.swing.GroupLayout group4Layout = new javax.swing.GroupLayout(group4);
+        group4.setLayout(group4Layout);
+        group4Layout.setHorizontalGroup(
+            group4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(group4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(avatar4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(user4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(group4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(message4, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fullname4, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(groupname4, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
-        user4Layout.setVerticalGroup(
-            user4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(user4Layout.createSequentialGroup()
+        group4Layout.setVerticalGroup(
+            group4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(group4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(user4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(group4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(avatar4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(user4Layout.createSequentialGroup()
-                        .addComponent(fullname4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(group4Layout.createSequentialGroup()
+                        .addComponent(groupname4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                         .addComponent(message4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
-        user5.setBackground(new java.awt.Color(128, 161, 183));
-        user5.addMouseListener(new java.awt.event.MouseAdapter() {
+        group5.setBackground(new java.awt.Color(128, 161, 183));
+        group5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                user5Click(evt);
+                group5Click(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                user5Enter(evt);
+                group5Enter(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                user5Exit(evt);
+                group5Exit(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                user5Press(evt);
+                group5Press(evt);
             }
         });
 
         avatar5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        avatar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-user-30 (1).png"))); // NOI18N
+        avatar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-group-30.png"))); // NOI18N
 
         message5.setText("New message");
 
-        fullname5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        fullname5.setForeground(new java.awt.Color(255, 255, 255));
-        fullname5.setText("Nguyen Nhat Nam");
+        groupname5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        groupname5.setForeground(new java.awt.Color(255, 255, 255));
+        groupname5.setText("Nguyen Nhat Nam");
 
-        javax.swing.GroupLayout user5Layout = new javax.swing.GroupLayout(user5);
-        user5.setLayout(user5Layout);
-        user5Layout.setHorizontalGroup(
-            user5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(user5Layout.createSequentialGroup()
+        javax.swing.GroupLayout group5Layout = new javax.swing.GroupLayout(group5);
+        group5.setLayout(group5Layout);
+        group5Layout.setHorizontalGroup(
+            group5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(group5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(avatar5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(user5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(group5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(message5, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fullname5, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(groupname5, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
-        user5Layout.setVerticalGroup(
-            user5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(user5Layout.createSequentialGroup()
+        group5Layout.setVerticalGroup(
+            group5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(group5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(user5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(group5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(avatar5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(user5Layout.createSequentialGroup()
-                        .addComponent(fullname5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(group5Layout.createSequentialGroup()
+                        .addComponent(groupname5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                         .addComponent(message5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
-        user6.setBackground(new java.awt.Color(128, 161, 183));
-        user6.addMouseListener(new java.awt.event.MouseAdapter() {
+        group6.setBackground(new java.awt.Color(128, 161, 183));
+        group6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                user6Click(evt);
+                group6Click(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                user6Enter(evt);
+                group6Enter(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                user6Exit(evt);
+                group6Exit(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                user6Press(evt);
+                group6Press(evt);
             }
         });
 
         avatar6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        avatar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-user-30 (1).png"))); // NOI18N
+        avatar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-group-30.png"))); // NOI18N
 
         message6.setText("New message");
 
-        fullname6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        fullname6.setForeground(new java.awt.Color(255, 255, 255));
-        fullname6.setText("Nguyen Nhat Nam");
+        groupname6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        groupname6.setForeground(new java.awt.Color(255, 255, 255));
+        groupname6.setText("Nguyen Nhat Nam");
 
-        javax.swing.GroupLayout user6Layout = new javax.swing.GroupLayout(user6);
-        user6.setLayout(user6Layout);
-        user6Layout.setHorizontalGroup(
-            user6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(user6Layout.createSequentialGroup()
+        javax.swing.GroupLayout group6Layout = new javax.swing.GroupLayout(group6);
+        group6.setLayout(group6Layout);
+        group6Layout.setHorizontalGroup(
+            group6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(group6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(avatar6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(user6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(group6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(message6, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fullname6, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(groupname6, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
-        user6Layout.setVerticalGroup(
-            user6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(user6Layout.createSequentialGroup()
+        group6Layout.setVerticalGroup(
+            group6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(group6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(user6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(group6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(avatar6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(user6Layout.createSequentialGroup()
-                        .addComponent(fullname6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(group6Layout.createSequentialGroup()
+                        .addComponent(groupname6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                         .addComponent(message6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -465,29 +466,29 @@ public class chatboxGroup extends javax.swing.JFrame {
         friendChatLayout.setHorizontalGroup(
             friendChatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(user1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(user2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(user3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(user4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(user5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(user6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(group1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(group2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(group3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(group4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(group5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(group6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         friendChatLayout.setVerticalGroup(
             friendChatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(friendChatLayout.createSequentialGroup()
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(user1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(group1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(user2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(group2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(user3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(group3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(user4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(group4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(user5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(group5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(user6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(group6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -500,43 +501,19 @@ public class chatboxGroup extends javax.swing.JFrame {
         chatPerson.setForeground(new java.awt.Color(255, 255, 255));
         chatPerson.setText("Bao Pham Hong Gia");
 
-        block.setBackground(new java.awt.Color(128, 161, 183));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-spam-30.png"))); // NOI18N
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-denied-30 (1).png"))); // NOI18N
 
-        javax.swing.GroupLayout blockLayout = new javax.swing.GroupLayout(block);
-        block.setLayout(blockLayout);
-        blockLayout.setHorizontalGroup(
-            blockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(blockLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        blockLayout.setVerticalGroup(
-            blockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-        );
-
-        spam.setBackground(new java.awt.Color(128, 161, 183));
-
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-spam-30.png"))); // NOI18N
-
-        javax.swing.GroupLayout spamLayout = new javax.swing.GroupLayout(spam);
-        spam.setLayout(spamLayout);
-        spamLayout.setHorizontalGroup(
-            spamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(spamLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        spamLayout.setVerticalGroup(
-            spamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        more.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        more.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/icon/icons8-menu-30.png"))); // NOI18N
+        more.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                moreMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -548,9 +525,11 @@ public class chatboxGroup extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(chatPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(spam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(block, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(more)
                 .addContainerGap())
         );
         jPanel12Layout.setVerticalGroup(
@@ -558,12 +537,11 @@ public class chatboxGroup extends javax.swing.JFrame {
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(chatPerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addComponent(block, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(spam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(more, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -1099,67 +1077,67 @@ public class chatboxGroup extends javax.swing.JFrame {
         //resetColor(chatbtn);
     }//GEN-LAST:event_chatExit
 
-    private void user2Enter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user2Enter
+    private void group2Enter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group2Enter
         // TODO add your handling code here:
         //setColor1(user2);
-    }//GEN-LAST:event_user2Enter
+    }//GEN-LAST:event_group2Enter
 
-    private void user2Exit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user2Exit
+    private void group2Exit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group2Exit
         // TODO add your handling code here:
         //setColor(user2);
-    }//GEN-LAST:event_user2Exit
+    }//GEN-LAST:event_group2Exit
 
-    private void user3Enter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user3Enter
+    private void group3Enter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group3Enter
         // TODO add your handling code here:
         //setColor1(user3);
-    }//GEN-LAST:event_user3Enter
+    }//GEN-LAST:event_group3Enter
 
-    private void user3Exit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user3Exit
+    private void group3Exit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group3Exit
         // TODO add your handling code here:
         //setColor(user3);
-    }//GEN-LAST:event_user3Exit
+    }//GEN-LAST:event_group3Exit
 
-    private void user4Enter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user4Enter
+    private void group4Enter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group4Enter
         // TODO add your handling code here:
        // setColor1(user4);
-    }//GEN-LAST:event_user4Enter
+    }//GEN-LAST:event_group4Enter
 
-    private void user4Exit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user4Exit
+    private void group4Exit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group4Exit
         // TODO add your handling code here:
         //setColor(user4);
-    }//GEN-LAST:event_user4Exit
+    }//GEN-LAST:event_group4Exit
 
-    private void user4Click(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user4Click
+    private void group4Click(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group4Click
         // TODO add your handling code here:
         //setColor1(user4);
-    }//GEN-LAST:event_user4Click
+    }//GEN-LAST:event_group4Click
 
-    private void user1Click(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user1Click
+    private void group1Click(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group1Click
         // TODO add your handling code here:
         //setColor1(user1);
-    }//GEN-LAST:event_user1Click
+    }//GEN-LAST:event_group1Click
 
-    private void user2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user2MouseClicked
+    private void group2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group2MouseClicked
         // TODO add your handling code here:
         //setColor1(user2);
-    }//GEN-LAST:event_user2MouseClicked
+    }//GEN-LAST:event_group2MouseClicked
 
-    private void user3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user3MouseClicked
+    private void group3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group3MouseClicked
         // TODO add your handling code here:
        // setColor1(user3);
-    }//GEN-LAST:event_user3MouseClicked
+    }//GEN-LAST:event_group3MouseClicked
 
-    private void user2Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user2Press
+    private void group2Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group2Press
         // TODO add your handling code here:
-        chatPerson.setText(friends.get(1).getUsername());
-        setColor1(user2);
-        setColor(user1);        
-        setColor(user3);
-        setColor(user4);
-        setColor(user5);
-        setColor(user6);
+        chatPerson.setText(groups.get(1).getUsername());
+        setColor1(group2);
+        setColor(group1);        
+        setColor(group3);
+        setColor(group4);
+        setColor(group5);
+        setColor(group6);
         
-        String username2 = friends.get(1).getUsername();
+        String username2 = groups.get(1).getUsername();
         ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(username2);
 
 
@@ -1174,21 +1152,21 @@ public class chatboxGroup extends javax.swing.JFrame {
             }
         }
 
-    }//GEN-LAST:event_user2Press
+    }//GEN-LAST:event_group2Press
 
-    private void user1Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user1Press
+    private void group1Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group1Press
         // TODO add your handling code here:
         
-        setColor1(user1);
-        chatPerson.setText(friends.get(0).getUsername());
-        setColor(user2);        
-        setColor(user3);
-        setColor(user4);        
-        setColor(user5);
-        setColor(user6);
+        setColor1(group1);
+        chatPerson.setText(groups.get(0).getUsername());
+        setColor(group2);        
+        setColor(group3);
+        setColor(group4);        
+        setColor(group5);
+        setColor(group6);
         
-        String username = friends.get(0).getUsername();
-        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(friends.get(0).getUsername());
+        String username = groups.get(0).getUsername();
+        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(groups.get(0).getUsername());
         area.setText("");
         for (MessageEntity i : historyUser){
             if (i.getsenderId().endsWith(File.readFromFile())) {
@@ -1200,20 +1178,20 @@ public class chatboxGroup extends javax.swing.JFrame {
             }
         }
 
-    }//GEN-LAST:event_user1Press
+    }//GEN-LAST:event_group1Press
 
-    private void user3Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user3Press
+    private void group3Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group3Press
         // TODO add your handling code here:
-        setColor1(user3);
-        chatPerson.setText(friends.get(2).getUsername());
-        setColor(user2);        
-        setColor(user1);
-        setColor(user4);
-        setColor(user5);
-        setColor(user6);
+        setColor1(group3);
+        chatPerson.setText(groups.get(2).getUsername());
+        setColor(group2);        
+        setColor(group1);
+        setColor(group4);
+        setColor(group5);
+        setColor(group6);
         
-        String username = friends.get(2).getUsername();
-        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(friends.get(2).getUsername());
+        String username = groups.get(2).getUsername();
+        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(groups.get(2).getUsername());
         area.setText("");
         for (MessageEntity i : historyUser){
             if (i.getsenderId().endsWith(File.readFromFile())) {
@@ -1224,21 +1202,21 @@ public class chatboxGroup extends javax.swing.JFrame {
                 area.append(appendtxt);
             }
         }
-    }//GEN-LAST:event_user3Press
+    }//GEN-LAST:event_group3Press
 
-    private void user4Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user4Press
+    private void group4Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group4Press
         // TODO add your handling code here:
-        setColor1(user4);
-        chatPerson.setText(friends.get(3).getUsername());
-        setColor(user2);        
-        setColor(user1);
-        setColor(user3);
-        setColor(user5);
-        setColor(user6);       
+        setColor1(group4);
+        chatPerson.setText(groups.get(3).getUsername());
+        setColor(group2);        
+        setColor(group1);
+        setColor(group3);
+        setColor(group5);
+        setColor(group6);       
         
                 
-        String username = friends.get(3).getUsername();
-        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(friends.get(3).getUsername());
+        String username = groups.get(3).getUsername();
+        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(groups.get(3).getUsername());
         area.setText("");
         for (MessageEntity i : historyUser){
             if (i.getsenderId().endsWith(File.readFromFile())) {
@@ -1249,7 +1227,7 @@ public class chatboxGroup extends javax.swing.JFrame {
                 area.append(appendtxt);
             }
         }
-    }//GEN-LAST:event_user4Press
+    }//GEN-LAST:event_group4Press
 
     private void sendMessageToServer(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sendMessageToServer
         // TODO add your handling code here:
@@ -1258,23 +1236,63 @@ public class chatboxGroup extends javax.swing.JFrame {
         String recipient = chatPerson.getText();
         sendMessage.setText("");
         String appendtxt = "@" + sender + ": " + getMess + "\n";
-        area.append(appendtxt);
+        
         sendMessage.setText("");
-     
-        SocketThread.sendMessage("msg to user", recipient, getMess);
+        SocketThread.sendMessage("msg to group", recipient, getMess);
 
     }//GEN-LAST:event_sendMessageToServer
 
+    public static void appenfTextToGroupChat(String id, String sender, String message){
+        String currentId = chatPerson.getText();
+        
+        if (currentId.equals(id)){
+            if (sender.equals(Share.username)) {
+                area.append("@You" + ": " + message + "\n");
+            } else {
+                area.append("@" + sender + ": " + message + "\n");
+            }
+        } else {
+            for (int i = 0; i <= groups.size(); i++){
+                if (id.equals(groups.get(i).getUsername())) {
+                    switch (i) {
+                        case 0: {
+                            message1.setText(message);
+                        }
+                        
+                        case 1: {
+                            message2.setText(message);
+                        }
+                                 
+                        case 2: {
+                            message3.setText(message);
+                        }
+
+                        case 3: {
+                            message4.setText(message);
+                        }                        
+                        
+                        case 4: {
+                            message5.setText(message);
+                        }                        
+                        
+                        case 5: {
+                            message6.setText(message);
+                        }                        
+                        
+                    }
+                }
+            }
+        }
+    }
     
     public static void appendTextToBoxChat(String recipient, String message){
         String currentRecipient = chatPerson.getText();
         
         if (recipient.equals(currentRecipient)){
-            System.out.println("vooooooooooooooooooooooooos");
             area.append("@" + recipient + ": " + message);
         } else {
-            for (int i = 0; i <= friends.size(); i++){
-                if (recipient.equals(friends.get(i).getUsername())) {
+            for (int i = 0; i <= groups.size(); i++){
+                if (recipient.equals(groups.get(i).getUsername())) {
                     switch (i) {
                         case 0: {
                             message1.setText(message);
@@ -1310,36 +1328,36 @@ public class chatboxGroup extends javax.swing.JFrame {
     
     private void searchMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMousePressed
         // TODO add your handling code here:
-        fullname4.setText("Edward Pham Hong Gia Bao");
-        user1.setVisible(false);        
-        user2.setVisible(false);
-        user3.setVisible(false);
+        groupname4.setText("Edward Pham Hong Gia Bao");
+        group1.setVisible(false);        
+        group2.setVisible(false);
+        group3.setVisible(false);
     }//GEN-LAST:event_searchMousePressed
 
-    private void user5Click(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user5Click
+    private void group5Click(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group5Click
         // TODO add your handling code here:
-    }//GEN-LAST:event_user5Click
+    }//GEN-LAST:event_group5Click
 
-    private void user5Enter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user5Enter
+    private void group5Enter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group5Enter
         // TODO add your handling code here:
-    }//GEN-LAST:event_user5Enter
+    }//GEN-LAST:event_group5Enter
 
-    private void user5Exit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user5Exit
+    private void group5Exit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group5Exit
         // TODO add your handling code here:
-    }//GEN-LAST:event_user5Exit
+    }//GEN-LAST:event_group5Exit
 
-    private void user5Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user5Press
+    private void group5Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group5Press
         // TODO add your handling code here:
-        setColor1(user5);
-        chatPerson.setText(friends.get(4).getUsername());
-        setColor(user2);        
-        setColor(user1);
-        setColor(user3);
-        setColor(user4);
-        setColor(user6); 
+        setColor1(group5);
+        chatPerson.setText(groups.get(4).getUsername());
+        setColor(group2);        
+        setColor(group1);
+        setColor(group3);
+        setColor(group4);
+        setColor(group6); 
                 
-        String username = friends.get(4).getUsername();
-        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(friends.get(4).getUsername());
+        String username = groups.get(4).getUsername();
+        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(groups.get(4).getUsername());
         area.setText("");
         for (MessageEntity i : historyUser){
             if (i.getsenderId().endsWith(File.readFromFile())) {
@@ -1350,32 +1368,32 @@ public class chatboxGroup extends javax.swing.JFrame {
                 area.append(appendtxt);
             }
         }
-    }//GEN-LAST:event_user5Press
+    }//GEN-LAST:event_group5Press
 
-    private void user6Click(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user6Click
+    private void group6Click(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group6Click
         // TODO add your handling code here:
-    }//GEN-LAST:event_user6Click
+    }//GEN-LAST:event_group6Click
 
-    private void user6Enter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user6Enter
+    private void group6Enter(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group6Enter
         // TODO add your handling code here:
-    }//GEN-LAST:event_user6Enter
+    }//GEN-LAST:event_group6Enter
 
-    private void user6Exit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user6Exit
+    private void group6Exit(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group6Exit
         // TODO add your handling code here:
-    }//GEN-LAST:event_user6Exit
+    }//GEN-LAST:event_group6Exit
 
-    private void user6Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user6Press
+    private void group6Press(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_group6Press
         // TODO add your handling code here:
-        setColor1(user6);
-        chatPerson.setText(friends.get(5).getUsername());
-        setColor(user2);        
-        setColor(user1);
-        setColor(user3);
-        setColor(user5);
-        setColor(user4); 
+        setColor1(group6);
+        chatPerson.setText(groups.get(5).getUsername());
+        setColor(group2);        
+        setColor(group1);
+        setColor(group3);
+        setColor(group5);
+        setColor(group4); 
         
-        String username = friends.get(5).getUsername();
-        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(friends.get(5).getUsername());
+        String username = groups.get(5).getUsername();
+        ArrayList<MessageEntity> historyUser = MessageController.getHistoryMessage(groups.get(5).getUsername());
         area.setText("");
         for (MessageEntity i : historyUser){
             if (i.getsenderId().endsWith(File.readFromFile())) {
@@ -1386,7 +1404,20 @@ public class chatboxGroup extends javax.swing.JFrame {
                 area.append(appendtxt);
             }
         }
-    }//GEN-LAST:event_user6Press
+    }//GEN-LAST:event_group6Press
+
+    private void moreMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moreMousePressed
+        // TODO add your handling code here:
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new groupMemberList(chatPerson.getText()).setVisible(true);
+            }
+        });
+        
+        
+    }//GEN-LAST:event_moreMousePressed
     
     private static String colorString(String text) {
         StringBuilder coloredText = new StringBuilder("<html>");
@@ -1421,83 +1452,83 @@ public class chatboxGroup extends javax.swing.JFrame {
     
     
     final void initUser(){
-        //ArrayList<Friend> friends = friendController.apiFriendList();
+        //ArrayList<Friend> friends = FriendController.apiFriendList();
 
-        int lengFriend = friends.size();
+        int lengFriend = groups.size();
         switch (lengFriend){
             case 0: {
-                user1.setVisible(false);
-                user2.setVisible(false);
-                user3.setVisible(false);
-                user4.setVisible(false);
-                user5.setVisible(false);
-                user6.setVisible(false);
+                group1.setVisible(false);
+                group2.setVisible(false);
+                group3.setVisible(false);
+                group4.setVisible(false);
+                group5.setVisible(false);
+                group6.setVisible(false);
                 break;
             }
   
             case 1:{
-                fullname1.setText(friends.get(0).getFullname());
-                chatPerson.setText(friends.get(0).getUsername());
-                user2.setVisible(false);
-                user3.setVisible(false);
-                user4.setVisible(false);
-                user5.setVisible(false);
-                user6.setVisible(false);
+                groupname1.setText(groups.get(0).getFullname());
+                chatPerson.setText(groups.get(0).getUsername());
+                group2.setVisible(false);
+                group3.setVisible(false);
+                group4.setVisible(false);
+                group5.setVisible(false);
+                group6.setVisible(false);
                 break;
             }
                         
             case 2:{
-                fullname1.setText(friends.get(0).getFullname());
-                chatPerson.setText(friends.get(0).getUsername());
-                fullname2.setText(friends.get(1).getFullname());
-                user3.setVisible(false);
-                user4.setVisible(false);
-                user5.setVisible(false);
-                user6.setVisible(false);
+                groupname1.setText(groups.get(0).getFullname());
+                chatPerson.setText(groups.get(0).getUsername());
+                groupname2.setText(groups.get(1).getFullname());
+                group3.setVisible(false);
+                group4.setVisible(false);
+                group5.setVisible(false);
+                group6.setVisible(false);
                 break;
             }
                         
             case 3:{
-                fullname1.setText(friends.get(0).getFullname());
-                chatPerson.setText(friends.get(0).getUsername());
-                fullname2.setText(friends.get(1).getFullname());                
-                fullname3.setText(friends.get(2).getFullname());
-                user4.setVisible(false);
-                user5.setVisible(false);
-                user6.setVisible(false);
+                groupname1.setText(groups.get(0).getFullname());
+                chatPerson.setText(groups.get(0).getUsername());
+                groupname2.setText(groups.get(1).getFullname());                
+                groupname3.setText(groups.get(2).getFullname());
+                group4.setVisible(false);
+                group5.setVisible(false);
+                group6.setVisible(false);
                 break;
             }
                         
             case 4:{
-                fullname1.setText(friends.get(0).getFullname());
-                chatPerson.setText(friends.get(0).getUsername());
-                fullname2.setText(friends.get(1).getFullname());
-                fullname3.setText(friends.get(2).getFullname());
-                fullname4.setText(friends.get(3).getFullname());
-                user5.setVisible(false);
-                user6.setVisible(false);
+                groupname1.setText(groups.get(0).getFullname());
+                chatPerson.setText(groups.get(0).getUsername());
+                groupname2.setText(groups.get(1).getFullname());
+                groupname3.setText(groups.get(2).getFullname());
+                groupname4.setText(groups.get(3).getFullname());
+                group5.setVisible(false);
+                group6.setVisible(false);
                 break;
             }
                         
             case 5:{
-                fullname1.setText(friends.get(0).getFullname());
-                chatPerson.setText(friends.get(0).getUsername());
-                fullname2.setText(friends.get(1).getFullname());
-                fullname3.setText(friends.get(2).getFullname());
-                fullname4.setText(friends.get(3).getFullname());
-                fullname5.setText(friends.get(4).getFullname());
-                user6.setVisible(false);
+                groupname1.setText(groups.get(0).getFullname());
+                chatPerson.setText(groups.get(0).getUsername());
+                groupname2.setText(groups.get(1).getFullname());
+                groupname3.setText(groups.get(2).getFullname());
+                groupname4.setText(groups.get(3).getFullname());
+                groupname5.setText(groups.get(4).getFullname());
+                group6.setVisible(false);
                 break;
             }
                         
             case 6:{
-                fullname1.setText(friends.get(0).getFullname());
-                chatPerson.setText(friends.get(0).getUsername());
-                fullname2.setText(friends.get(1).getFullname());
-                fullname3.setText(friends.get(2).getFullname());
-                fullname4.setText(friends.get(3).getFullname());                
-                fullname5.setText(friends.get(4).getFullname());
-                fullname6.setText(friends.get(5).getFullname());
+                groupname1.setText(groups.get(0).getFullname());
+                chatPerson.setText(groups.get(0).getUsername());
+                groupname2.setText(groups.get(1).getFullname());
+                groupname3.setText(groups.get(2).getFullname());
+                groupname4.setText(groups.get(3).getFullname());                
+                groupname5.setText(groups.get(4).getFullname());
+                groupname6.setText(groups.get(5).getFullname());
 
                 break;
             }
@@ -1568,7 +1599,6 @@ public class chatboxGroup extends javax.swing.JFrame {
     private javax.swing.JLabel avatar4;
     private javax.swing.JLabel avatar5;
     private javax.swing.JLabel avatar6;
-    private javax.swing.JPanel block;
     private javax.swing.JLabel chatLabel10;
     private javax.swing.JLabel chatLabel11;
     private javax.swing.JLabel chatLabel3;
@@ -1579,13 +1609,19 @@ public class chatboxGroup extends javax.swing.JFrame {
     private javax.swing.JPanel chatbtn;
     private javax.swing.JPanel favouritebtn;
     private javax.swing.JPanel friendChat;
-    private javax.swing.JLabel fullname1;
-    private javax.swing.JLabel fullname2;
-    private javax.swing.JLabel fullname3;
-    private javax.swing.JLabel fullname4;
-    private javax.swing.JLabel fullname5;
-    private javax.swing.JLabel fullname6;
+    private javax.swing.JPanel group1;
+    private javax.swing.JPanel group2;
+    private javax.swing.JPanel group3;
+    private javax.swing.JPanel group4;
+    private javax.swing.JPanel group5;
+    private javax.swing.JPanel group6;
     private javax.swing.JPanel groupbtn;
+    private javax.swing.JLabel groupname1;
+    private javax.swing.JLabel groupname2;
+    private javax.swing.JLabel groupname3;
+    private javax.swing.JLabel groupname4;
+    private javax.swing.JLabel groupname5;
+    private javax.swing.JLabel groupname6;
     private javax.swing.JPanel home;
     private javax.swing.JPanel homebtn;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
@@ -1610,15 +1646,9 @@ public class chatboxGroup extends javax.swing.JFrame {
     private static javax.swing.JLabel message4;
     private static javax.swing.JLabel message5;
     private static javax.swing.JLabel message6;
+    private javax.swing.JLabel more;
     private javax.swing.JPanel otherbtn;
     private javax.swing.JPanel send;
     private javax.swing.JTextField sendMessage;
-    private javax.swing.JPanel spam;
-    private javax.swing.JPanel user1;
-    private javax.swing.JPanel user2;
-    private javax.swing.JPanel user3;
-    private javax.swing.JPanel user4;
-    private javax.swing.JPanel user5;
-    private javax.swing.JPanel user6;
     // End of variables declaration//GEN-END:variables
 }

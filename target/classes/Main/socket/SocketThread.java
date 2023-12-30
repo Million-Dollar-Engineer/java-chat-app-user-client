@@ -10,6 +10,7 @@ package main.socket;
  */
 import main.entity.ConnectionEntity;
 import Main.view.chatbox;
+import Main.view.chatboxGroup;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.logging.Level;
@@ -53,7 +54,9 @@ public class SocketThread extends Thread {
 
                         case "msg to group" ->  {
                             String groupId = connectionEntity.reader.readLine();
+                            String sender = connectionEntity.reader.readLine();
                             String message = connectionEntity.reader.readLine();
+                            chatboxGroup.appenfTextToGroupChat(groupId, sender, message);
                         }
 
                 }
