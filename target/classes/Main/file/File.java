@@ -10,11 +10,9 @@ package Main.file;
  */
 import Main.shareEnv.Share;
 
-
 public class File {
-    
+
     private static String filePath = "idUser.txt";
-    
 
     // Method to write to a file using java.io
     public static void writeToFile(String content) {
@@ -23,13 +21,13 @@ public class File {
 
     // Method to read from a file using java.io
     public static String readFromFile() {
-        
+
         return Share.userId;
     }
-    
+
     public static void main(String[] args) {
         writeToFile("");
         System.out.println("Content : " + readFromFile());
-        
+
     }
 }

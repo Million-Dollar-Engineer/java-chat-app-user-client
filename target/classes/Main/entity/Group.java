@@ -9,21 +9,20 @@ package Main.entity;
  * @author HP-PC
  */
 public class Group {
+
     public String idGroup;
     public String nameGroup;
-    
-    
-    public Group(String a, String b){
+
+    public Group(String a, String b) {
         idGroup = a;
         nameGroup = b;
     }
-    
-      
-    public String getUsername(){
+
+    public String getUsername() {
         return idGroup;
     }
-    
-    public String getFullname(){
+
+    public String getFullname() {
         return nameGroup;
     }
 }

@@ -3,6 +3,7 @@ package Main.view;
 import Main.controller.AuthController;
 import Main.controller.FindUserController;
 import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -222,7 +223,7 @@ public class addFriendScreen extends javax.swing.JFrame {
 
     private void usernameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameMousePressed
 
-        
+
     }//GEN-LAST:event_usernameMousePressed
 
     private void searchMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMousePressed
@@ -245,11 +246,11 @@ public class addFriendScreen extends javax.swing.JFrame {
     public static void appendUserToLabel(String name) {
         fullname.setText(name);
     }
-    
-    public static void addFriendNoti(String noti){
+
+    public static void addFriendNoti(String noti) {
         JOptionPane.showMessageDialog(null, noti, "Information", JOptionPane.INFORMATION_MESSAGE);
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -276,38 +277,6 @@ public class addFriendScreen extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(addFriendScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

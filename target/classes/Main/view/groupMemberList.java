@@ -1,22 +1,14 @@
 package Main.view;
 
-import Main.controller.AuthController;
-import Main.controller.FindUserController;
-import Main.controller.FriendController;
 import Main.controller.GroupController;
-import Main.entity.Friend;
 import Main.entity.Group;
 import Main.entity.GroupMember;
 import Main.shareEnv.Share;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -285,7 +277,7 @@ public class groupMemberList extends javax.swing.JFrame {
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "You dont have permission!",
-                                "Message", JOptionPane.OK_OPTION);
+                            "Message", JOptionPane.OK_OPTION);
                 }
                 break;
             }

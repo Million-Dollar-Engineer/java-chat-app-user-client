@@ -4,7 +4,6 @@
  */
 package Main.view;
 
-import Main.controller.GroupController;
 import java.awt.Color;
 import javax.swing.*;
 

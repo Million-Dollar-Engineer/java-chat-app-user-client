@@ -8,7 +8,6 @@ package main.entity;
  *
  * @author HP-PC
  */
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,10 +15,10 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 public class ConnectionEntity {
+
     public Socket socket;
     public BufferedReader reader;
     public PrintWriter writer;
-
 
     public ConnectionEntity(Socket socket) throws IOException {
         this.socket = socket;

@@ -4,6 +4,7 @@ import Main.controller.AuthController;
 import Main.controller.FindUserController;
 import Main.controller.GroupController;
 import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -16,8 +17,10 @@ import javax.swing.JOptionPane;
 public class addMemberScreen extends javax.swing.JFrame {
 
     String groupId;
+
     /**
      * Creates new form loginForm
+     *
      * @param idGroup
      */
     public addMemberScreen(String idGroup) {
@@ -216,7 +219,7 @@ public class addMemberScreen extends javax.swing.JFrame {
     private void addToGroupMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addToGroupMousePressed
         String user = username.getText();
         boolean isAdded = GroupController.apiAddMemberToGroup(user, groupId);
-        if (isAdded){
+        if (isAdded) {
             JOptionPane.showMessageDialog(null, "Add member to group successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_addToGroupMousePressed
@@ -227,7 +230,7 @@ public class addMemberScreen extends javax.swing.JFrame {
 
     private void usernameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameMousePressed
 
-        
+
     }//GEN-LAST:event_usernameMousePressed
 
     private void searchMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMousePressed
@@ -250,11 +253,11 @@ public class addMemberScreen extends javax.swing.JFrame {
     public static void appendUserToLabel(String name) {
         fullname.setText(name);
     }
-    
-    public static void addFriendNoti(String noti){
+
+    public static void addFriendNoti(String noti) {
         JOptionPane.showMessageDialog(null, noti, "Information", JOptionPane.INFORMATION_MESSAGE);
     }
-    
+
     /**
      * @param args the command line arguments
      */

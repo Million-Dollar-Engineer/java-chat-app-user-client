@@ -9,14 +9,15 @@ package Main.entity;
  * @author HP-PC
  */
 public class MessageEntity {
+
     private final String senderId;
     private final String senderName;
     private final String receiverId;
     private final String receiverName;
     private final String message;
     private final String createdAt;
-    
-    public MessageEntity(String a, String b, String c, String d, String e, String f){
+
+    public MessageEntity(String a, String b, String c, String d, String e, String f) {
         senderId = a;
         senderName = b;
         receiverId = c;
@@ -24,30 +25,29 @@ public class MessageEntity {
         message = e;
         createdAt = f;
     }
-    
-    public String getsenderId(){
+
+    public String getsenderId() {
         return senderId;
     }
-        
-    public String getsenderName(){
+
+    public String getsenderName() {
         return senderName;
     }
-    
-    public String getReceiverId(){
+
+    public String getReceiverId() {
         return receiverId;
     }
-    
-    public String getReceiverName(){
+
+    public String getReceiverName() {
         return receiverName;
     }
-        
-    public String getMessage(){
+
+    public String getMessage() {
         return message;
     }
-    
-    public String getCreatedAt(){
+
+    public String getCreatedAt() {
         return createdAt;
     }
-        
-        
+
 }

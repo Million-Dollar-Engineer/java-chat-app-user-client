@@ -8,7 +8,6 @@ import javax.swing.JOptionPane;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author HP-PC
@@ -229,38 +228,37 @@ public class registerForm extends javax.swing.JFrame {
 
     private void registerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerMousePressed
         // TODO add your handling code here:
-        String nameRegister = fullname.getText();        
+        String nameRegister = fullname.getText();
         String emailRegister = email.getText();
         String addressRegister = address.getText();
         String dobRegister = dob.getText();
         String usernameRegister = username.getText();
         String passwordRegister = new String(password.getPassword());
         String gender = "male";
-        
-        System.out.println(nameRegister);        
+
+        System.out.println(nameRegister);
         System.out.println(emailRegister);
         System.out.println(addressRegister);
         System.out.println(dobRegister);
         System.out.println(usernameRegister);
-        System.out.println(passwordRegister);        
+        System.out.println(passwordRegister);
         System.out.println(gender);
-        
+
         boolean isRegistered = AuthController.apiRegister(nameRegister, usernameRegister, passwordRegister, emailRegister, dobRegister, addressRegister, gender);
-        if (isRegistered){
-            
+        if (isRegistered) {
+
             JOptionPane.showMessageDialog(null, "Register Successfully", "Information", JOptionPane.INFORMATION_MESSAGE);
             dispose();
             java.awt.EventQueue.invokeLater(new Runnable() {
-                        public void run() {
-                            new loginForm().setVisible(true);
-                        }
-            }); 
+                public void run() {
+                    new loginForm().setVisible(true);
+                }
+            });
         } else {
             JOptionPane.showMessageDialog(null, "Register Failed", "Information", JOptionPane.INFORMATION_MESSAGE);
 
         }
 
-        
 
     }//GEN-LAST:event_registerMousePressed
 

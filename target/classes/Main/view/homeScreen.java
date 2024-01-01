@@ -433,7 +433,6 @@ public class homeScreen extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_logoutMousePressed
 
-
     void setColor(JPanel label) {
         label.setBackground(new Color(128, 161, 183));
     }

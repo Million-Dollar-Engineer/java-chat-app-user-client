@@ -9,7 +9,6 @@ import javax.swing.JOptionPane;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author HP-PC
@@ -233,7 +232,7 @@ public class addMemberNewGroup extends javax.swing.JFrame {
         if (isAdded) {
             JOptionPane.showMessageDialog(null, "Add member to group successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
             doneAdding.setVisible(true);
-        
+
         } else {
             JOptionPane.showMessageDialog(null, "Add member to group unsuccessfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
 
@@ -242,7 +241,7 @@ public class addMemberNewGroup extends javax.swing.JFrame {
 
     private void addToGroupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToGroupActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_addToGroupActionPerformed
 
     private void usernameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameMousePressed
@@ -265,8 +264,8 @@ public class addMemberNewGroup extends javax.swing.JFrame {
                 new chatboxGroup().setVisible(true);
             }
         });
-        
-        
+
+
     }//GEN-LAST:event_doneAddingMousePressed
 
     private void doneAddingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doneAddingActionPerformed

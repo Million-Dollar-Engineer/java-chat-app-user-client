@@ -15,6 +15,7 @@ import java.net.Socket;
  * @author HP-PC
  */
 public class ConnectionEntity {
+
     public Socket socket;
     public BufferedReader reader;
     public PrintWriter writer;

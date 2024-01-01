@@ -8,7 +8,6 @@ package main.socket;
  *
  * @author HP-PC
  */
-import Main.controller.NotiController;
 import static Main.controller.NotiController.showNoti;
 import Main.shareEnv.Share;
 import main.entity.ConnectionEntity;
@@ -61,7 +60,7 @@ public class SocketThread extends Thread {
                     case "msg to group" -> {
                         String groupId = connectionEntity.reader.readLine();
                         String sender = connectionEntity.reader.readLine();
-                        
+
                         String message = connectionEntity.reader.readLine();
                         if (!sender.equals(Share.username)) {
                             showNoti(sender + ": " + message);

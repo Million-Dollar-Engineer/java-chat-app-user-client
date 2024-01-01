@@ -324,7 +324,7 @@ public class otherScreen extends javax.swing.JFrame {
 
     private void homeScreenMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeScreenMousePressed
         // TODO add your handling code here:
-                dispose();
+        dispose();
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -354,7 +354,7 @@ public class otherScreen extends javax.swing.JFrame {
 
     private void groupchatMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_groupchatMousePressed
         // TODO add your handling code here:
-                dispose();
+        dispose();
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -411,7 +411,6 @@ public class otherScreen extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_homeMousePressed
-
 
     void setColor(JPanel label) {
         label.setBackground(new Color(128, 161, 183));

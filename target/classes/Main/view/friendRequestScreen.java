@@ -1,17 +1,11 @@
 package Main.view;
 
-import Main.controller.AuthController;
-import Main.controller.FindUserController;
 import Main.controller.FriendController;
 import Main.entity.Friend;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -22,14 +16,15 @@ import javax.swing.table.DefaultTableModel;
  * @author HP-PC
  */
 public class friendRequestScreen extends javax.swing.JFrame {
+
     ArrayList<Friend> friendRequest = FriendController.apiFriendRequestList();
+
     /**
      * Creates new form loginForm
      */
     public friendRequestScreen() {
-        initComponents();        
-        
-        
+        initComponents();
+
         DefaultTableModel model = (DefaultTableModel) requestList.getModel();
         model.setRowCount(0);
         int i = 0;
@@ -158,17 +153,17 @@ public class friendRequestScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
         int selectedRow = requestList.getSelectedRow();
 
-                    // Display the selected row number
+        // Display the selected row number
         int choice = JOptionPane.showOptionDialog(this,
-                            "Accept Friend Request from " + friendRequest.get(selectedRow).getFullname() + "?",
-                            "Friend Request",
-                            JOptionPane.YES_NO_OPTION,
-                            JOptionPane.QUESTION_MESSAGE,
-                            null,
-                            new Object[]{"Yes", "Cancel"},
-                            "Yes");
+                "Accept Friend Request from " + friendRequest.get(selectedRow).getFullname() + "?",
+                "Friend Request",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                new Object[]{"Yes", "Cancel"},
+                "Yes");
 
-                    // Process the user's choice
+        // Process the user's choice
         if (choice == JOptionPane.YES_OPTION) {
             boolean isAccepted = FriendController.apiAcceptFriendRequest(friendRequest.get(selectedRow).getUsername());
             if (isAccepted) {
@@ -178,25 +173,25 @@ public class friendRequestScreen extends javax.swing.JFrame {
                     public void run() {
                         new friendRequestScreen().setVisible(true);
                     }
-                 });
-                
+                });
+
             } else {
                 System.out.println("Wrong");
             }
-                        
+
         } else {
             System.out.println("Cancel");
         }
-                
+
     }//GEN-LAST:event_requestListMousePressed
 
     public static void appendUserToLabel(String name) {
     }
-    
-    public static void addFriendNoti(String noti){
+
+    public static void addFriendNoti(String noti) {
         JOptionPane.showMessageDialog(null, noti, "Information", JOptionPane.INFORMATION_MESSAGE);
     }
-    
+
     /**
      * @param args the command line arguments
      */
