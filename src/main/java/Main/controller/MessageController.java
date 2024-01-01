@@ -22,19 +22,20 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MessageController {
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         ArrayList<MessageEntity> history = getHistoryMessage("");
-        for (MessageEntity i : history){
+        for (MessageEntity i : history) {
             System.out.println("tesst");
         }
     }
-    
-    public static ArrayList<MessageEntity> getHistoryMessage(String receiverUsername){
-        ArrayList<MessageEntity> historyMessage = new ArrayList<>(); 
+
+    public static ArrayList<MessageEntity> getHistoryMessage(String receiverUsername) {
+        ArrayList<MessageEntity> historyMessage = new ArrayList<>();
         try {
             // Specify the URL
             String idUser = File.readFromFile();
-            String apiUrl = Share.apiURL +  "/message/personal-history?senderId=" + idUser +  "&receiverUsername=" + receiverUsername;
+            String apiUrl = Share.apiURL + "/message/personal-history?senderId=" + idUser + "&receiverUsername=" + receiverUsername;
             // Create a URL object
             URL url = new URL(apiUrl);
 
@@ -72,10 +73,9 @@ public class MessageController {
                     String receiverName = jsonObject.getString("receiverName");
                     String message = jsonObject.getString("message");
                     String createdAt = jsonObject.getString("createdAt");
-                    
+
                     MessageEntity tmp = new MessageEntity(senderId, senderName, receiverId, receiverName, message, createdAt);
                     historyMessage.add(tmp);
-                    
 
                 }
             } else {
@@ -88,13 +88,13 @@ public class MessageController {
         }
         return historyMessage;
     }
-    
-    public static ArrayList<MessageEntity> getGroupMessage(String groupId){
-        ArrayList<MessageEntity> historyMessage = new ArrayList<>(); 
+
+    public static ArrayList<MessageEntity> getGroupMessage(String groupId) {
+        ArrayList<MessageEntity> historyMessage = new ArrayList<>();
         try {
             // Specify the URL
             String idUser = File.readFromFile();
-            String apiUrl = Share.apiURL +  "/message/group-history?id=" + groupId;
+            String apiUrl = Share.apiURL + "/message/group-history?id=" + groupId;
             // Create a URL object
             URL url = new URL(apiUrl);
 
@@ -132,7 +132,7 @@ public class MessageController {
                     String receiverName = jsonObject.getString("senderName");
                     String message = jsonObject.getString("message");
                     String createdAt = jsonObject.getString("createdAt");
-                    
+
                     MessageEntity tmp = new MessageEntity(senderId, senderName, receiverId, receiverName, message, createdAt);
                     historyMessage.add(tmp);
                 }

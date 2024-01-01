@@ -9,19 +9,20 @@ package Main.entity;
  * @author HP-PC
  */
 public class Friend {
+
     public String username;
     public String fullname;
-    
-    public Friend(String a, String b){
+
+    public Friend(String a, String b) {
         username = a;
         fullname = b;
     }
-    
-    public String getUsername(){
+
+    public String getUsername() {
         return username;
     }
-    
-    public String getFullname(){
+
+    public String getFullname() {
         return fullname;
     }
 }

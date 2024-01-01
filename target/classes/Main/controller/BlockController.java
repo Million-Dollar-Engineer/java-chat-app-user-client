@@ -19,11 +19,12 @@ import org.json.JSONObject;
  * @author HP-PC
  */
 public class BlockController {
-    public static boolean blockedFriend(String username){
+
+    public static boolean blockedFriend(String username) {
         try {
             // Specify the URL
             String idUser = File.readFromFile();
-            String apiUrl = Share.apiURL +  "/user/block-user?user_id=" + idUser + "&block_user_name=" + username;
+            String apiUrl = Share.apiURL + "/user/block-user?user_id=" + idUser + "&block_user_name=" + username;
             System.out.println(apiUrl);
             // Create a URL object
             URL url = new URL(apiUrl);
@@ -48,13 +49,13 @@ public class BlockController {
             return false;
         }
     }
-    
-    public static String isBlocked(String username){
+
+    public static String isBlocked(String username) {
         String message = "";
         try {
             // Specify the URL
             String idUser = File.readFromFile();
-            String apiUrl = Share.apiURL +  "/user/is-blocked?user_id=" + idUser + "&block_user_name=" + username;
+            String apiUrl = Share.apiURL + "/user/is-blocked?user_id=" + idUser + "&block_user_name=" + username;
             System.out.println(apiUrl);
             // Create a URL object
             URL url = new URL(apiUrl);
@@ -67,13 +68,13 @@ public class BlockController {
 
             // Get the response code
             int responseCode = connection.getResponseCode();
-            
-            
+
             System.out.println("Response code : " + responseCode);
-                
+
             // Get the response message            
             StringBuilder response;
             try ( // Read the response from the API
+
                     BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
                 String line;
                 response = new StringBuilder();
@@ -87,7 +88,7 @@ public class BlockController {
 
             // Access the properties in the response body
             message = jsonResponse.getString("message");
-            
+
             if (responseCode == 200) {
                 return message;
             } else {
@@ -97,14 +98,13 @@ public class BlockController {
         } catch (IOException | JSONException e) {
             return "";
         }
-    } 
-    
-    
-    public static boolean spamUser(String username){
+    }
+
+    public static boolean spamUser(String username) {
         try {
             // Specify the URL
             String idUser = File.readFromFile();
-            String apiUrl = Share.apiURL +  "/user/report-spam?user_id=" + idUser + "&spam_user_name=" + username + "&reason=ok";
+            String apiUrl = Share.apiURL + "/user/report-spam?user_id=" + idUser + "&spam_user_name=" + username + "&reason=ok";
             System.out.println(apiUrl);
             // Create a URL object
             URL url = new URL(apiUrl);
@@ -118,7 +118,6 @@ public class BlockController {
             // Get the response code
             int responseCode = connection.getResponseCode();
             System.out.println("Response code : " + responseCode);
-           
 
             if (responseCode == 200) {
                 return true;
@@ -131,5 +130,5 @@ public class BlockController {
         }
         return false;
     }
-    
+
 }

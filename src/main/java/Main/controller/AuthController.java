@@ -173,7 +173,6 @@ public class AuthController {
             // Get the response code
             int responseCode = connection.getResponseCode();
 
-
             if (responseCode == 200) {
                 return true;
             }

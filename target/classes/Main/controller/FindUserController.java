@@ -22,10 +22,11 @@ import org.json.JSONObject;
  * @author HP-PC
  */
 public class FindUserController {
-    public static void apiFindUser(String user){
+
+    public static void apiFindUser(String user) {
         try {
             // Create a URL object with the API endpoint
-            URL url = new URL(Share.apiURL +"/user/list?username=" + user);
+            URL url = new URL(Share.apiURL + "/user/list?username=" + user);
 
             // Open a connection to the URL
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -37,7 +38,6 @@ public class FindUserController {
             connection.setDoOutput(true);
             connection.setRequestProperty("Content-Type", "application/json");
 
-            
             // Get the response code
             int responseCode = connection.getResponseCode();
 
@@ -55,17 +55,16 @@ public class FindUserController {
             JSONObject jsonResponse = new JSONObject(response.toString());
 
             // Access the properties in the response body
-            String username = jsonResponse.getString("userName");      
+            String username = jsonResponse.getString("userName");
             String name = jsonResponse.getString("name");
-
 
             //Print the response
             System.out.println("Response Code: " + responseCode);
-            System.out.println("Message: " + username);     
+            System.out.println("Message: " + username);
             System.out.println("Message: " + name);
 
-            if (responseCode == 200){
-                addFriendScreen.appendUserToLabel(name);  
+            if (responseCode == 200) {
+                addFriendScreen.appendUserToLabel(name);
 
             }
 
@@ -75,11 +74,11 @@ public class FindUserController {
             e.printStackTrace();
         }
     }
-    
-    public static void apiAddFriend(String user){
+
+    public static void apiAddFriend(String user) {
         try {
             // Create a URL object with the API endpoint
-            URL url = new URL(Share.apiURL +"/user/add-friend?user_id=" + File.readFromFile() + "&friend_user_name=" + user);
+            URL url = new URL(Share.apiURL + "/user/add-friend?user_id=" + File.readFromFile() + "&friend_user_name=" + user);
 
             // Open a connection to the URL
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -91,7 +90,6 @@ public class FindUserController {
             connection.setDoOutput(true);
             connection.setRequestProperty("Content-Type", "application/json");
 
-            
             // Get the response code
             int responseCode = connection.getResponseCode();
 
@@ -109,12 +107,10 @@ public class FindUserController {
             JSONObject jsonResponse = new JSONObject(response.toString());
 
             // Access the properties in the response body      
-
-
             //Print the response
             System.out.println("Response Code: " + responseCode);
 
-            if (responseCode == 200){
+            if (responseCode == 200) {
                 addFriendScreen.addFriendNoti("Add friend successfully");
             } else {
                 addFriendScreen.addFriendNoti("Add friend failed");
@@ -127,8 +123,8 @@ public class FindUserController {
             e.printStackTrace();
         }
     }
-    
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         apiFindUser("ptan21");
     }
 }
